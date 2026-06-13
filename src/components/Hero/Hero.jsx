@@ -1,0 +1,340 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import './Hero.css';
+
+// ==========================================
+// IMAGE ASSET CONSTANTS (Easy to update)
+// ==========================================
+const HERO_IMAGES = {
+  globalLogistics: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+  spicesHeritage: "https://6a2a7ecd88751837051fd5d5.imgix.net/spices.png",
+  coirBackwaters: "https://images.unsplash.com/photo-1661174607003-d9d36388c916?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxLZXJhbGElMjBiYWNrd2F0ZXJzJTIwcGFsbSUyMHRyZWVzJTIwdHJvcGljYWx8ZW58MXx8fHwxNzgxMTQ2MzIxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+};
+
+// Compass/Navigation decorative SVG element in corners of the slides
+export function CompassDecoration({ flip = false }) {
+  return (
+    <svg
+      width="120"
+      height="120"
+      viewBox="0 0 120 120"
+      className="absolute pointer-events-none compass-decoration"
+      style={{
+        opacity: 0.22,
+        transform: flip ? "scaleX(-1)" : "none",
+        top: 0,
+        [flip ? "right" : "left"]: 0,
+        zIndex: 2
+      }}
+    >
+      <path d="M0 0 Q60 0 60 60 Q60 0 120 0" stroke="#C9A84C" strokeWidth="1" fill="none" />
+      <path d="M0 0 Q0 60 60 60" stroke="#C9A84C" strokeWidth="0.8" fill="none" />
+      <circle cx="0" cy="0" r="80" fill="none" stroke="#C9A84C" strokeWidth="0.5" />
+      <circle cx="0" cy="0" r="60" fill="none" stroke="#C9A84C" strokeWidth="0.5" />
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#C9A84C" strokeWidth="0.5" />
+      <circle cx="0" cy="0" r="20" fill="none" stroke="#C9A84C" strokeWidth="0.5" />
+      {[0, 15, 30, 45, 60, 75, 90].map((angle) => (
+        <line
+          key={angle}
+          x1="0"
+          y1="0"
+          x2={80 * Math.cos((angle * Math.PI) / 180)}
+          y2={80 * Math.sin((angle * Math.PI) / 180)}
+          stroke="#C9A84C"
+          strokeWidth="0.4"
+        />
+      ))}
+      <path d="M5 0 C5 5 0 5 0 10 C0 5 -5 5 -5 0" fill="#C9A84C" opacity="0.6" transform="translate(0,0) rotate(-45)" />
+    </svg>
+  );
+}
+
+export default function Hero({
+  setActivePage,
+  setActiveCategory,
+  scrollTo,
+  setActiveNav
+}) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const autoPlayRef = useRef(null);
+
+  const slides = [
+    {
+      id: "global",
+      tag: "Trusted Across Nations",
+      heading1: "GLOBAL EXPORT",
+      heading2: "NETWORK",
+      sub: "From India to the world — by air & sea.\nReliable, certified, on-time delivery.",
+      btnLabel: "GET A QUOTE",
+      bgUrl: HERO_IMAGES.globalLogistics,
+      overlayImg: "",
+      overlay: "linear-gradient(to right, rgba(10,20,40,0.82) 38%, rgba(5,10,25,0.22) 100%)",
+      accent: "#7ab4d8",
+      scrollTarget: "contact-section"
+    },
+    {
+      id: "spices",
+      tag: "From the Land of Spices",
+      heading1: "PREMIUM INDIAN",
+      heading2: "SPICES",
+      sub: "Sourced from the finest farms of India,\ndelivered to the world.",
+      btnLabel: "EXPLORE SPICES",
+      bgUrl: HERO_IMAGES.spicesHeritage,
+      overlay: "linear-gradient(to right, rgba(10,20,5,0.85) 40%, rgba(5,10,2.5,0.22) 100%)",
+      accent: "#c9a84c",
+      scrollTarget: "products-section"
+    },
+    {
+      id: "coir",
+      tag: "From the Backwaters of Kerala",
+      heading1: "NATURAL COIR",
+      heading2: "PRODUCTS",
+      sub: "Eco-friendly coir fibre, mats & coco peat\nfrom the coconut heartland of India.",
+      btnLabel: "EXPLORE COIR",
+      bgUrl: HERO_IMAGES.coirBackwaters,
+      overlay: "linear-gradient(to right, rgba(10,20,5,0.85) 40%, rgba(5,10,2.5,0.22) 100%)",
+      accent: "#5aab6e",
+      scrollTarget: "products-section"
+    }
+  ];
+
+  function changeSlide(index) {
+    if (isAnimating || index === currentSlide) return;
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentSlide(index);
+      setIsAnimating(false);
+    }, 350);
+  }
+
+  const handleNext = () => {
+    changeSlide((currentSlide + 1) % slides.length);
+  };
+
+  const handlePrev = () => {
+    changeSlide((currentSlide - 1 + slides.length) % slides.length);
+  };
+
+  const handleButtonClick = (slide) => {
+    if (slide.id === "global") {
+      if (setActivePage) setActivePage("export");
+      if (setActiveNav) setActiveNav("");
+    } else if (slide.id === "spices") {
+      if (setActiveCategory) setActiveCategory("spices");
+      if (setActiveNav) setActiveNav("Products");
+      if (setActivePage) setActivePage("home");
+      if (scrollTo) {
+        scrollTo("products-section");
+      } else {
+        document.getElementById("products-section")?.scrollIntoView({ behavior: "smooth" });
+      }
+    } else if (slide.id === "coir") {
+      if (setActiveCategory) setActiveCategory("coir");
+      if (setActiveNav) setActiveNav("Products");
+      if (setActivePage) setActivePage("home");
+      if (scrollTo) {
+        scrollTo("products-section");
+      } else {
+        document.getElementById("products-section")?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (isHovered) {
+      if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+      return;
+    }
+    autoPlayRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => {
+      if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+    };
+  }, [isHovered]);
+
+  const activeSlide = slides[currentSlide];
+
+  return (
+    <section
+      className="hero-section select-none"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Background Images */}
+      {slides.map((slide, idx) => (
+        <img
+          key={slide.id}
+          src={slide.bgUrl}
+          alt={slide.id}
+          className={`hero-bg-img ${idx === currentSlide && !isAnimating ? 'visible' : ''}`}
+          style={{ zIndex: 0 }}
+        />
+      ))}
+
+      {/* Slide Gradients */}
+      <div
+        className="hero-overlay"
+        style={{ background: activeSlide.overlay, zIndex: 1 }}
+      />
+
+      {/* Decorative compass shapes */}
+      <CompassDecoration />
+      <CompassDecoration flip />
+
+      {/* SVG Trade Routes Animation on Global Slide */}
+      {activeSlide.id === "global" && !isAnimating && (
+        <div className="hero-svg-routes" style={{ zIndex: 2, opacity: 0.3 }}>
+          <svg viewBox="0 0 900 460" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
+            {[
+              { d: "M 510 230 Q 380 110 155 170", delay: "0s" },
+              { d: "M 510 230 Q 460 120 310 90", delay: "0.5s" },
+              { d: "M 510 230 Q 570 150 710 110", delay: "1s" },
+              { d: "M 510 230 Q 620 280 800 260", delay: "1.5s" },
+              { d: "M 510 230 Q 490 370 400 420", delay: "2s" }
+            ].map((route, idx) => (
+              <g key={idx}>
+                <path
+                  d={route.d}
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="1.5"
+                  strokeDasharray="8 5"
+                  opacity="0.7"
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    from="0"
+                    to="-60"
+                    dur="2s"
+                    repeatCount="indefinite"
+                    begin={route.delay}
+                  />
+                </path>
+                <circle r="4" fill="white" opacity="0.9">
+                  <animateMotion
+                    dur="3s"
+                    repeatCount="indefinite"
+                    begin={route.delay}
+                    path={route.d}
+                  />
+                </circle>
+              </g>
+            ))}
+            {/* Kerala origin node */}
+            <circle cx="510" cy="230" r="7" fill="#c9a84c" opacity="0.9">
+              <animate
+                attributeName="r"
+                values="7;12;7"
+                dur="2s"
+                repeatCount="indefinite"
+              />
+            </circle>
+          </svg>
+        </div>
+      )}
+
+      {/* Main Content Area */}
+      <div className="hero-content-container" style={{ zIndex: 3 }}>
+        <div
+          className="hero-text-content"
+          style={{
+            opacity: isAnimating ? 0 : 1,
+            transform: isAnimating ? "translateY(12px)" : "translateY(0)"
+          }}
+        >
+          <div className="hero-tagline-row">
+            <div className="hero-tagline-line" style={{ background: activeSlide.accent }} />
+            <span className="hero-tagline-text" style={{ color: activeSlide.accent }}>
+              {activeSlide.tag}
+            </span>
+            <div className="hero-tagline-line" style={{ background: activeSlide.accent }} />
+          </div>
+
+          <h1 className="hero-title-main">
+            {activeSlide.heading1}
+          </h1>
+          <h1 className="hero-title-accent" style={{ color: activeSlide.accent }}>
+            {activeSlide.heading2}
+          </h1>
+
+          <p className="hero-subtext">
+            {activeSlide.sub.split('\n').map((line, b) => (
+              <span key={b}>
+                {line}
+                {b === 0 && <br />}
+              </span>
+            ))}
+          </p>
+
+          <div className="hero-ornament">
+            <div className="hero-ornament-line" style={{ background: activeSlide.accent }} />
+            <div className="hero-ornament-dot" style={{ background: activeSlide.accent }} />
+            <div className="hero-ornament-line" style={{ background: activeSlide.accent }} />
+          </div>
+
+          <button
+            onClick={() => handleButtonClick(activeSlide)}
+            className="hero-action-btn"
+            style={{
+              background: activeSlide.id === "coir" ? "#1a4a2e" : activeSlide.id === "global" ? "#0a2040" : "#2d4a1e",
+              border: `1.5px solid ${activeSlide.accent}`
+            }}
+          >
+            {activeSlide.btnLabel}
+            <ArrowRight size={16} />
+          </button>
+        </div>
+      </div>
+
+      {/* Bottom Nav Dot Indicators */}
+      <div className="hero-dots-container" style={{ zIndex: 10 }}>
+        {slides.map((slide, idx) => (
+          <button
+            key={slide.id}
+            onClick={() => changeSlide(idx)}
+            className={`hero-dot-btn ${idx === currentSlide ? 'active' : ''}`}
+            style={{
+              background: idx === currentSlide ? activeSlide.accent : "rgba(255, 255, 255, 0.38)"
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Side Navigation Arrows */}
+      <button
+        onClick={handlePrev}
+        className="hero-arrow-btn left"
+        style={{ zIndex: 10 }}
+      >
+        <ChevronLeft size={20} className="arrow-svg" />
+      </button>
+      <button
+        onClick={handleNext}
+        className="hero-arrow-btn right"
+        style={{ zIndex: 10 }}
+      >
+        <ChevronRight size={20} className="arrow-svg" />
+      </button>
+
+      {/* Side Image Thumbnails */}
+      <div className="hero-thumbnails-container" style={{ zIndex: 10 }}>
+        {slides.map((slide, idx) => (
+          <button
+            key={slide.id}
+            onClick={() => changeSlide(idx)}
+            className={`hero-thumb-btn ${idx === currentSlide ? 'active' : ''}`}
+            style={{
+              outline: idx === currentSlide ? `2px solid ${activeSlide.accent}` : "2px solid transparent"
+            }}
+          >
+            <img src={slide.bgUrl} alt={slide.id} className="thumb-img" />
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+}

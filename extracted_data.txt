@@ -1,0 +1,176 @@
+===========================================
+DATA: I
+===========================================
+--- Array I not found ---
+
+
+
+===========================================
+DATA: ut
+===========================================
+const ut = [
+  { icon: le, title: "100% NATURAL", desc: "Pure and natural spices" },
+  { icon: at, title: "FARM FRESH", desc: "Sourced directly from Indian farms" },
+  { icon: O, title: "GLOBAL EXPORT", desc: "Trusted by clients in 25+ countries" },
+  { icon: Ze, title: "QUALITY ASSURED", desc: "International quality standards" },
+  { icon: st, title: "ON TIME DELIVERY", desc: "Reliable & timely shipment" }
+]
+
+
+
+===========================================
+DATA: oe
+===========================================
+const oe = [
+  { id: "s1", name: "GREEN CARDAMOM", origin: "Kerala, India", desc: "Aromatic green pods with sweet, floral notes. Used in chai, desserts & biryanis.", img: "https://images.unsplash.com/photo-1622042914684-6a6288b14078?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmVlbiUyMGNhcmRhbW9tJTIwc3BpY2V8ZW58MXx8fHwxNzgxMDg4NzIzfDA&ixlib=rb-4.1.0&q=80&w=400" },
+  { id: "s2", name: "BLACK PEPPER", origin: "Wayanad, Kerala", desc: "King of spices. Bold pungent flavour, used globally in cuisine & medicine.", img: "https://images.unsplash.com/photo-1591801058986-9e28e68670f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibGFjayUyMHBlcHBlciUyMHNwaWNlfGVufDF8fHx8MTc4MDk2MjE2Nnww&ixlib=rb-4.1.0&q=80&w=400" },
+  { id: "s3", name: "CINNAMON", origin: "Tamil Nadu, India", desc: "Sweet, warm spice for baking, curries & beverages. Naturally harvested bark.", img: "https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_8jhluf8jhluf8jhl.png" },
+  { id: "s4", name: "CLOVES", origin: "Tamil Nadu, India", desc: "Intensely aromatic dried flower buds prized for medicinal & culinary value.", img: "https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_f39zn8f39zn8f39z.png" },
+  { id: "s5", name: "TURMERIC", origin: "Erode, Tamil Nadu", desc: "Golden spice rich in curcumin. Used worldwide for health & cooking.", img: "https://images.unsplash.com/photo-1606951444141-e5533feb55be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0dXJtZXJpYyUyMHBvd2RlciUyMHllbGxvdyUyMHNwaWNlfGVufDF8fHx8MTc4MTA4ODcyNHww&ixlib=rb-4.1.0&q=80&w=400" },
+  { id: "s6", name: "RED CHILLI", origin: "Guntur, Andhra Pradesh", desc: "Fiery heat & rich colour. One of India's most exported spices.", img: "https://images.unsplash.com/photo-1602237514002-c2d8ae2da393?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWQlMjBjaGlsbGklMjBwZXBwZXIlMjBkcmllZHxlbnwxfHx8fDE3ODEwODg3MjV8MA&ixlib=rb-4.1.0&q=80&w=400" }
+]
+
+
+
+===========================================
+DATA: ce
+===========================================
+--- Array ce not found ---
+
+
+
+===========================================
+DATA: ne
+===========================================
+--- Array ne not found ---
+
+
+
+===========================================
+DATA: de
+===========================================
+--- Array de not found ---
+
+
+
+===========================================
+DATA: Wt
+===========================================
+const Wt = [
+  {
+    id: "spices",
+    icon: "🌶",
+    label: "Spices",
+    accent: "#c9a84c",
+    bg: "#2d4a1e",
+    intro: "Our spices are sourced directly from certified farms across Kerala, Tamil Nadu, and Andhra Pradesh. Each batch is sun-dried or machine-dried under controlled conditions, then cleaned, graded, and tested before packing.",
+    standards: ["FSSAI Licensed", "APEDA Registered", "Spices Board Certified", "ISO 22000:2018", "Moisture content < 12%", "Aflatoxin-free testing"],
+    products: [
+      { name: "Green Cardamom", quality: "Bold AGEB, AGE, Extra Bold grades; moisture ≤ 12%; free from extraneous matter. Stored in airtight containers to preserve volatile oil (≥ 3%)." },
+      { name: "Black Pepper", quality: "FAQ & SQ grades; bulk density ≥ 550 g/L; piperine content ≥ 4%; machine-cleaned and steam-sterilised for microbial safety." },
+      { name: "Cinnamon", quality: "True Ceylon or Cassia type; quills with < 1% broken pieces; moisture ≤ 13%; cinnamaldehyde content tested and certified." },
+      { name: "Cloves", quality: "Hand-picked dried buds; eugenol content ≥ 72%; moisture ≤ 12%; free from stems and broken buds." },
+      { name: "Turmeric", quality: "Alleppey and Erode varieties; curcumin ≥ 3.5%; moisture ≤ 10%; free from artificial colour and adulterants." },
+      { name: "Red Chilli", quality: "S4, S5 Special grades; ASTA colour value ≥ 100; capsaicin tested; aflatoxin B1 < 2 ppb." }
+    ]
+  },
+  {
+    id: "coir",
+    icon: "🌿",
+    label: "Coir Products",
+    accent: "#5aab6e",
+    bg: "#1a4a2e",
+    intro: "Our coir products are manufactured in Alappuzha, Kerala — the coir capital of the world. All products are made from 100% natural coconut husk with no harmful chemicals, and are biodegradable and eco-certified.",
+    standards: ["Coir Board of India Certified", "ISO 9001:2015 QMS", "Phytosanitary Certificate", "EC compliance for geo-textiles", "EU import standards compliant"],
+    products: [
+      { name: "Coco Peat", quality: "EC < 0.5 mS/cm (buffered); pH 5.5–6.5; water holding capacity ≥ 600%; supplied in 650g bricks, 5kg blocks, or loose." },
+      { name: "Coir Mat", quality: "Weight 700–1400 gsm; pile height 10–20 mm; colourfast; tested for tensile strength and UV stability." },
+      { name: "Coir Rope", quality: "Twisted 3-strand construction; breaking load tested per diameter; salt-water and weather resistant." },
+      { name: "Coir Fibre", quality: "Brown fibre length 100–250 mm; moisture ≤ 17%; free from sand and shell fragments; bristle and mattress grades available." },
+      { name: "Geo-Textile", quality: "Woven and non-woven types; tensile strength ≥ 10 kN/m; hydraulic permeability tested; UV degradation rate certified." }
+    ]
+  },
+  {
+    id: "coconut",
+    icon: "🥥",
+    label: "Coconut Products",
+    accent: "#b58a30",
+    bg: "#3a2e10",
+    intro: "Kerala's coconut belt produces some of the world's finest coconut-derived products. Our virgin coconut oil is cold-pressed within hours of dehusking to preserve nutrients and flavour.",
+    standards: ["FSSAI Licensed", "APEDA Registered", "AGMARK Certified", "Kosher & Halal on request", "ISO 22000:2018"],
+    products: [
+      { name: "Virgin Coconut Oil", quality: "Cold-pressed, unrefined; moisture ≤ 0.1%; FFA < 0.1%; lauric acid ≥ 48%; peroxide value < 3 meq/kg; crystal-clear appearance." },
+      { name: "Desiccated Coconut", quality: "Fine, medium, or coarse grades; moisture ≤ 3%; FFA < 0.1%; free from rancidity; packed in multilayer moisture-barrier bags." },
+      { name: "Coconut Shell Charcoal", quality: "Fixed carbon ≥ 75%; ash content < 5%; moisture ≤ 5%; customised mesh sizes for activated carbon production." }
+    ]
+  },
+  {
+    id: "others",
+    icon: "✦",
+    label: "Agro Products",
+    accent: "#9b7cb8",
+    bg: "#2a1a40",
+    intro: "We also export select premium agro products sourced from certified farms across India, meeting all international phytosanitary and food-safety requirements.",
+    standards: ["FSSAI Licensed", "APEDA Registered", "Phytosanitary Certificate", "Export Inspection Council (EIC) Certified"],
+    products: [
+      { name: "Basmati Rice", quality: "Grain length ≥ 7.2 mm; elongation ratio ≥ 1.7; moisture ≤ 12.5%; broken grains < 5%; aromatic, aged 12–24 months." },
+      { name: "Cashew Kernels", quality: "W180–W450 grades; whole white kernels; moisture ≤ 5%; free from insect damage; packed in vacuum-sealed tins or pouches." }
+    ]
+  }
+]
+
+
+
+===========================================
+DATA: Rt
+===========================================
+const Rt = [
+  {
+    label: "Premium Spices",
+    accent: "#c9a84c",
+    icon: "🌶",
+    images: [
+      { url: "https://images.unsplash.com/photo-1532336414038-cf19250c5757?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxJbmRpYW4lMjBzcGljZXMlMjBjb2xvcmZ1bCUyMGJvd2xzfGVufDF8fHx8MTc4MTA4ODcxNXww&ixlib=rb-4.1.0&q=80&w=800", caption: "Indian Spice Bowls" }
+    ]
+  },
+  {
+    label: "Kerala Coir",
+    accent: "#5aab6e",
+    icon: "🌿",
+    images: [
+      { url: "https://images.unsplash.com/photo-1770891290495-8747a7a87e89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2lyJTIwZmliZXIlMjBjb2NvbnV0JTIwaHVzayUyMHByb2R1Y3RzfGVufDF8fHx8MTc4MTE0NjMxN3ww&ixlib=rb-4.1.0&q=80&w=800", caption: "Natural Coir Fibre" }
+    ]
+  },
+  {
+    label: "Coconut Products",
+    accent: "#b58a30",
+    icon: "🥥",
+    images: [
+      { url: "https://images.unsplash.com/photo-1694011772133-dc4b3ff3f24f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2NvbnV0JTIwcGFsbSUyMHBsYW50YXRpb24lMjBJbmRpYXxlbnwxfHx8fDE3ODExNDYzMjJ8MA&ixlib=rb-4.1.0&q=80&w=800", caption: "Coconut Plantation" }
+    ]
+  }
+]
+
+
+
+===========================================
+DATA: X
+===========================================
+const X = [
+  { label: "Home" },
+  { label: "About Us" },
+  { label: "Products", hasDropdown: !0 },
+  { label: "Quality" },
+  { label: "Certifications" },
+  { label: "Gallery" },
+  { label: "Contact Us" }
+]
+
+
+
+===========================================
+DATA: Y
+===========================================
+--- Array Y not found ---
+
+

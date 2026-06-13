@@ -1,0 +1,253 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-color: var(--primary-darker);
+  overflow: hidden;
+}
+
+/* Background image handling */
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-bg-img.visible {
+  opacity: 1;
+}
+
+/* Gradients overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  transition: background 0.8s ease;
+}
+
+/* Compass corners decoration */
+@media (max-width: 640px) {
+  .compass-decoration {
+    display: none !important;
+  }
+}
+
+/* SVG routes animation container */
+.hero-svg-routes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Content Area */
+.hero-content-container {
+  position: relative;
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-text-content {
+  text-align: left;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  margin-top: -200px;
+}
+
+/* Tagline */
+.hero-tagline-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-tagline-line {
+  height: 1px;
+  width: 40px;
+  transition: background-color 0.4s ease;
+}
+
+.hero-tagline-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  transition: color 0.4s ease;
+}
+
+/* Titles */
+.hero-title-main {
+  color: var(--text-white);
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.hero-title-accent {
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.05;
+  transition: color 0.4s ease;
+}
+
+/* Subtext */
+.hero-subtext {
+  margin-top: 1rem;
+  max-width: 500px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.75;
+}
+
+/* Divider Ornament */
+.hero-ornament {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.25rem 0;
+}
+
+.hero-ornament-line {
+  height: 1px;
+  width: 24px;
+}
+
+.hero-ornament-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* CTA Action Button */
+.hero-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  color: var(--text-white);
+  font-weight: 700;
+  font-size: 0.825rem;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  margin-top: 0.75rem;
+}
+
+.hero-action-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  filter: brightness(1.15);
+}
+
+/* Indicator dots */
+.hero-dots-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.65rem;
+}
+
+.hero-dot-btn {
+  height: 8px;
+  border-radius: 50%;
+  transition: var(--transition-smooth);
+}
+
+.hero-dot-btn.active {
+  width: 26px;
+}
+
+.hero-dot-btn:not(.active) {
+  width: 8px;
+  cursor: pointer;
+}
+
+/* Navigation arrows */
+.hero-arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+}
+
+.hero-arrow-btn.left {
+  left: 20px;
+}
+
+.hero-arrow-btn.right {
+  right: 20px;
+}
+
+.hero-arrow-btn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Image Thumbnails in bottom-right corner */
+.hero-thumbnails-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.hero-thumb-btn {
+  width: 48px;
+  height: 32px;
+  border-radius: 4px;
+  overflow: hidden;
+  outline-offset: 2px;
+  opacity: 0.5;
+}
+
+.hero-thumb-btn.active {
+  opacity: 1;
+}
+
+.hero-thumb-btn:not(.active) {
+  cursor: pointer;
+}
+
+.thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 560px;
+  }
+
+  .hero-thumbnails-container,
+  .hero-arrow-btn {
+    display: none !important;
+  }
+
+  .hero-content-container {
+    padding: 0 1rem;
+  }
+}

@@ -1,0 +1,1621 @@
+s most exported spices.", img: "https://images.unsplash.com/photo-1602237514002-c2d8ae2da393?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWQlMjBjaGlsbGklMjBwZXBwZXIlMjBkcmllZHxlbnwxfHx8fDE3ODEwODg3MjV8MA&ixlib=rb-4.1.0&q=80&w=400" }
+], ce = [
+  { id: "c1", name: "COCO PEAT", origin: "Alappuzha, Kerala", desc: "100% natural growing medium from coconut husk. Excellent water retention for horticulture.", img: "https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_2wyvu02wyvu02wyv.png" },
+  { id: "c2", name: "COIR MAT", origin: "Alappuzha, Kerala", desc: "Hand-woven natural coir door mats & floor mats. Durable, eco-friendly & biodegradable.", img: "https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_gimn02gimn02gimn.png" },
+  { id: "c3", name: "COIR ROPE", origin: "Kerala, India", desc: "Twisted natural coir rope in various diameters. Strong, salt-water resistant & widely exported.", img: "https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_50oron50oron50or.png" },
+  { id: "c4", name: "COIR FIBRE", origin: "Alappuzha, Kerala", desc: "Raw & processed coir fibre for mattresses, geo-textiles, brushes & upholstery.", img: "https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_ydpbptydpbptydpb.png" },
+  { id: "c5", name: "COIR GEO-TEXTILE", origin: "Kerala, India", desc: "Biodegradable geo-textiles for soil erosion control & slope stabilisation.", img: "https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_8d69c88d69c88d69.png" },
+  { id: "c6", name: "GROW BAGS", origin: "Kerala, India", desc: "Coir-based grow bags for organic farming & hydroponic horticulture applications.", img: "https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_pb5ldcpb5ldcpb5l.png" }
+], ne = [
+  { id: "n1", name: "COCONUT OIL", origin: "Kerala, India", desc: "Pure cold-pressed virgin coconut oil for cooking, cosmetics & Ayurveda.", img: "https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_athbetathbetathb.png" },
+  { id: "n2", name: "DESICCATED COCONUT", origin: "Kerala, India", desc: "Finely shredded & dried coconut meat for confectionery, bakery & food processing.", img: "https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_tbzawxtbzawxtbza.png" },
+  { id: "n3", name: "COCONUT CHARCOAL", origin: "Kerala, India", desc: "High-quality activated shell charcoal for water purification & industrial use.", img: "https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_aczg7daczg7daczg.png" }
+], de = [
+  { id: "o1", name: "RICE", origin: "Punjab & Kerala", desc: "Premium basmati & non-basmati rice varieties for global export.", img: "https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_dzhsdydzhsdydzhs.png" }
+], gt = [...oe.slice(0, 2), ...ce.slice(0, 2), ...ne.slice(0, 1), ...de.slice(0, 1)], B = [
+  { id: "all", label: "All Products", accent: "#c9a84c", bg: "#2d4a1e", tagline: "Our Premium Products", icon: "✦" },
+  { id: "spices", label: "Spices", accent: "#c9a84c", bg: "#2d4a1e", tagline: "Premium Indian Spices", icon: "🌶" },
+  { id: "coir", label: "Coir Products", accent: "#5aab6e", bg: "#1a4a2e", tagline: "Natural Coir Products", icon: "🌿" },
+  { id: "coconut", label: "Coconut", accent: "#b58a30", bg: "#3a2e10", tagline: "Coconut Products", icon: "🥥" },
+  { id: "rice", label: "Rice", accent: "#9b7cb8", bg: "#2a1a40", tagline: "Other Agro Products", icon: "✦" }
+], ft = {
+  all: [],
+  spices: ["Green Cardamom", "Black Pepper", "White Pepper", "Cinnamon", "Cassia", "Cloves", "Turmeric", "Red Chilli", "Cumin Seeds", "Coriander Seeds", "Fenugreek", "Mustard Seeds", "Star Anise", "Nutmeg", "Mace", "Ginger", "Fennel Seeds", "Bay Leaf"],
+  coir: ["Coco Peat Blocks", "Coco Peat Discs", "Coir Mat (Plain)", "Coir Mat (Tufted)", "Coir Rope", "Coir Fibre (Brown)", "Coir Fibre (White)", "Geo-Textile Mesh", "Coir Grow Bags", "Coir Logs", "Coir Twine", "Brushes & Brooms"],
+  coconut: ["Virgin Coconut Oil", "Refined Coconut Oil", "Desiccated Coconut", "Coconut Milk Powder", "Coconut Shell Charcoal", "Activated Carbon", "Coconut Shell Powder", "Coconut Water"],
+  rice: ["Basmati Rice", "Non-Basmati Rice"]
+};
+function xt(r) {
+  return r === "all" ? gt : r === "spices" ? oe : r === "coir" ? ce : r === "coconut" ? ne : de;
+}
+function yt({ activeCategory: r, setActiveCategory: a }) {
+  const [i, d] = v(null), n = B.find((s) => s.id === r) ?? B[0], o = xt(r), y = ft[r];
+  return /* @__PURE__ */ e("section", { id: "products-section", className: "py-10 px-4", style: { background: "#faf6f0" }, children: /* @__PURE__ */ t("div", { className: "max-w-7xl mx-auto", children: [
+    /* @__PURE__ */ t("div", { className: "text-center mb-10", children: [
+      /* @__PURE__ */ t("div", { className: "flex items-center justify-center gap-3 mb-3", children: [
+        /* @__PURE__ */ e("div", { className: "h-px flex-1 max-w-16", style: { background: n.accent } }),
+        /* @__PURE__ */ e("span", { className: "text-xs tracking-[0.35em] uppercase", style: { color: n.accent }, children: "Our Products" }),
+        /* @__PURE__ */ e("div", { className: "h-px flex-1 max-w-16", style: { background: n.accent } })
+      ] }),
+      /* @__PURE__ */ e("h2", { style: { color: "#1a1a1a" }, children: n.tagline }),
+      /* @__PURE__ */ e("p", { className: "mt-2 text-sm", style: { color: "#888" }, children: "Click a category below to explore our full product range" })
+    ] }),
+    /* @__PURE__ */ e("div", { className: "flex flex-wrap justify-center gap-3 mb-12", children: B.map((s) => {
+      const x = r === s.id;
+      return /* @__PURE__ */ t(
+        "button",
+        {
+          onClick: () => {
+            a(s.id), d(null);
+          },
+          className: "flex items-center gap-2 px-5 py-2.5 rounded-full transition-all duration-300 hover:scale-105",
+          style: {
+            background: x ? s.bg : "white",
+            color: x ? "white" : "#444",
+            border: `1.5px solid ${x ? s.accent : "#e0d8cc"}`,
+            fontWeight: x ? 700 : 400,
+            boxShadow: x ? "0 4px 16px rgba(0,0,0,0.18)" : "0 1px 4px rgba(0,0,0,0.06)",
+            fontSize: "0.8rem",
+            letterSpacing: "0.06em"
+          },
+          children: [
+            /* @__PURE__ */ e("span", { children: s.icon }),
+            s.label,
+            x && /* @__PURE__ */ e("span", { className: "ml-1 w-1.5 h-1.5 rounded-full", style: { background: s.accent } })
+          ]
+        },
+        s.id
+      );
+    }) }),
+    /* @__PURE__ */ e("div", { className: "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6", children: o.map((s) => {
+      const x = i === s.id;
+      return /* @__PURE__ */ t(
+        "div",
+        {
+          className: "group flex flex-col items-center cursor-pointer",
+          onClick: () => d(x ? null : s.id),
+          children: [
+            /* @__PURE__ */ t(
+              "div",
+              {
+                className: "relative w-full aspect-square rounded-full overflow-hidden mb-3 transition-all duration-300 group-hover:scale-105",
+                style: {
+                  border: x ? `3px solid ${n.accent}` : "2px solid #e0d8cc",
+                  boxShadow: x ? `0 6px 24px rgba(0,0,0,0.18), 0 0 0 4px ${n.accent}22` : "0 3px 14px rgba(0,0,0,0.10)"
+                },
+                children: [
+                  /* @__PURE__ */ e("img", { src: s.img, alt: s.name, className: "w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" }),
+                  /* @__PURE__ */ e(
+                    "div",
+                    {
+                      className: "absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100",
+                      style: { background: "rgba(0,0,0,0.35)" },
+                      children: /* @__PURE__ */ e("span", { className: "text-white text-xs font-bold tracking-widest", children: "DETAILS" })
+                    }
+                  )
+                ]
+              }
+            ),
+            /* @__PURE__ */ e("div", { className: "text-xs tracking-wider text-center mb-2.5", style: { color: "#1a1a1a", fontWeight: 700 }, children: s.name }),
+            /* @__PURE__ */ e(
+              "button",
+              {
+                className: "px-4 py-1.5 text-xs tracking-wider text-white transition-all hover:scale-105",
+                style: { background: n.bg, borderRadius: 3, fontWeight: 600, letterSpacing: "0.08em" },
+                children: "VIEW DETAILS"
+              }
+            ),
+            x && /* @__PURE__ */ t(
+              "div",
+              {
+                className: "mt-3 p-4 rounded-lg text-center w-full",
+                style: { background: "white", boxShadow: "0 4px 18px rgba(0,0,0,0.10)", border: `1px solid ${n.accent}44` },
+                children: [
+                  /* @__PURE__ */ t("div", { className: "text-xs mb-1.5", style: { color: n.accent, fontWeight: 700 }, children: [
+                    "📍 ",
+                    s.origin
+                  ] }),
+                  /* @__PURE__ */ e("div", { className: "text-xs leading-relaxed", style: { color: "#555" }, children: s.desc })
+                ]
+              }
+            )
+          ]
+        },
+        s.id
+      );
+    }) }),
+    y.length > 0 && /* @__PURE__ */ t(
+      "div",
+      {
+        className: "mt-12 p-6 rounded-xl",
+        style: { background: "white", border: `1px solid ${n.accent}33`, boxShadow: "0 2px 16px rgba(0,0,0,0.06)" },
+        children: [
+          /* @__PURE__ */ t("div", { className: "flex items-center gap-3 mb-4", children: [
+            /* @__PURE__ */ e("div", { className: "h-px w-6", style: { background: n.accent } }),
+            /* @__PURE__ */ t("span", { className: "text-xs tracking-[0.3em] uppercase", style: { color: n.accent, fontWeight: 700 }, children: [
+              "All ",
+              n.label,
+              " We Export"
+            ] }),
+            /* @__PURE__ */ e("div", { className: "h-px flex-1", style: { background: `${n.accent}33` } })
+          ] }),
+          /* @__PURE__ */ e("div", { className: "flex flex-wrap gap-2", children: y.map((s) => /* @__PURE__ */ e(
+            "span",
+            {
+              className: "px-3.5 py-1.5 text-xs rounded-full transition-colors hover:text-white cursor-default",
+              style: {
+                background: `${n.accent}12`,
+                border: `1px solid ${n.accent}44`,
+                color: "#444"
+              },
+              children: s
+            },
+            s
+          )) })
+        ]
+      }
+    )
+  ] }) });
+}
+function bt() {
+  return /* @__PURE__ */ e("section", { id: "about-section", className: "py-16 px-4", style: { background: "white" }, children: /* @__PURE__ */ t("div", { className: "max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center", children: [
+    /* @__PURE__ */ t("div", { children: [
+      /* @__PURE__ */ t("div", { className: "flex items-center gap-2 mb-3", children: [
+        /* @__PURE__ */ e("div", { className: "h-px w-8", style: { background: "#c9a84c" } }),
+        /* @__PURE__ */ e("span", { className: "text-xs tracking-[0.3em] uppercase", style: { color: "#c9a84c" }, children: "About Us" })
+      ] }),
+      /* @__PURE__ */ e("h2", { style: { color: "#1a1a1a" }, children: "Voyageur Overseas" }),
+      /* @__PURE__ */ e("p", { className: "mt-4 text-sm leading-relaxed", style: { color: "#555" }, children: "Voyageur Overseas is a trusted name in the export of premium quality spices from India. With a strong commitment to quality, purity, and sustainability, we bring the rich flavors of India to global markets." }),
+      /* @__PURE__ */ e("p", { className: "mt-3 text-sm leading-relaxed", style: { color: "#555" }, children: "Our spices are carefully handpicked, hygienically processed, and packed to retain their natural aroma, taste, and freshness. Every batch undergoes rigorous testing to meet international quality standards before shipment." }),
+      /* @__PURE__ */ e("div", { className: "mt-6 grid grid-cols-3 gap-4", children: [["25+", "Countries Served"], ["500+", "Happy Clients"], ["15+", "Years Experience"]].map(([r, a]) => /* @__PURE__ */ t("div", { className: "text-center p-4 rounded", style: { background: "#faf6f0" }, children: [
+        /* @__PURE__ */ e("div", { className: "text-2xl", style: { color: "#c9a84c", fontWeight: 800 }, children: r }),
+        /* @__PURE__ */ e("div", { className: "text-xs mt-1", style: { color: "#666" }, children: a })
+      ] }, a)) }),
+      /* @__PURE__ */ e("button", { className: "mt-8 px-8 py-3 text-sm tracking-wider text-white", style: { background: "#2d4a1e", borderRadius: 3, fontWeight: 600 }, children: "READ MORE" })
+    ] }),
+    /* @__PURE__ */ t("div", { className: "relative", children: [
+      /* @__PURE__ */ t("div", { className: "relative rounded-lg overflow-hidden", style: { height: 400 }, children: [
+        /* @__PURE__ */ e(
+          "img",
+          {
+            src: " https://6a2a7ecd8875183",
+            alt: "Colorful spice powders",
+            className: "w-full h-full object-cover"
+          }
+        ),
+        /* @__PURE__ */ e("div", { className: "absolute inset-0", style: { background: "linear-gradient(135deg, rgba(45,74,30,0.15) 0%, transparent 60%)" } })
+      ] }),
+      /* @__PURE__ */ t(
+        "div",
+        {
+          className: "absolute -bottom-5 -left-5 px-5 py-4 rounded-lg shadow-lg",
+          style: { background: "#2d4a1e" },
+          children: [
+            /* @__PURE__ */ e("div", { className: "text-xs tracking-widest", style: { color: "#c9a84c", fontWeight: 700 }, children: "AUTHENTIC SPICES" }),
+            /* @__PURE__ */ e("div", { className: "text-xs mt-0.5", style: { color: "rgba(255,255,255,0.8)" }, children: "Authentic India" })
+          ]
+        }
+      )
+    ] })
+  ] }) });
+}
+function wt() {
+  const r = [
+    {
+      name: "APEDA",
+      sub: "REGISTERED",
+      icon: /* @__PURE__ */ t("svg", { viewBox: "0 0 40 40", width: "36", height: "36", children: [
+        /* @__PURE__ */ e("circle", { cx: "20", cy: "20", r: "18", fill: "none", stroke: "#2d6a1e", strokeWidth: "1.5" }),
+        /* @__PURE__ */ e("path", { d: "M20 8 C12 14 12 26 20 32 C28 26 28 14 20 8Z", fill: "#2d6a1e", opacity: "0.15" }),
+        /* @__PURE__ */ e("path", { d: "M14 22 L17 25 L26 16", stroke: "#2d6a1e", strokeWidth: "2", fill: "none", strokeLinecap: "round" }),
+        /* @__PURE__ */ e("path", { d: "M20 5 L20 35 M5 20 L35 20", stroke: "#2d6a1e", strokeWidth: "0.5", opacity: "0.3" })
+      ] })
+    },
+    {
+      name: "IEC",
+      sub: "REGISTERED",
+      icon: /* @__PURE__ */ t("svg", { viewBox: "0 0 40 40", width: "36", height: "36", children: [
+        /* @__PURE__ */ e("circle", { cx: "20", cy: "20", r: "18", fill: "none", stroke: "#1a4a7a", strokeWidth: "1.5" }),
+        /* @__PURE__ */ e("text", { x: "20", y: "24", textAnchor: "middle", fontSize: "11", fontWeight: "bold", fill: "#1a4a7a", children: "IEC" })
+      ] })
+    },
+    {
+      name: "fssai",
+      sub: "LICENSED",
+      icon: /* @__PURE__ */ t("svg", { viewBox: "0 0 40 40", width: "36", height: "36", children: [
+        /* @__PURE__ */ e("circle", { cx: "20", cy: "20", r: "18", fill: "none", stroke: "#c0392b", strokeWidth: "1.5" }),
+        /* @__PURE__ */ e("text", { x: "20", y: "19", textAnchor: "middle", fontSize: "9", fontStyle: "italic", fontWeight: "bold", fill: "#c0392b", children: "fssai" }),
+        /* @__PURE__ */ e("path", { d: "M10 24 L30 24", stroke: "#c0392b", strokeWidth: "1" })
+      ] })
+    },
+    {
+      name: "ISO",
+      sub: "22000:2018",
+      icon: /* @__PURE__ */ t("svg", { viewBox: "0 0 40 40", width: "36", height: "36", children: [
+        /* @__PURE__ */ e("circle", { cx: "20", cy: "20", r: "18", fill: "none", stroke: "#1a5a8a", strokeWidth: "1.5" }),
+        /* @__PURE__ */ e("circle", { cx: "20", cy: "20", r: "13", fill: "none", stroke: "#1a5a8a", strokeWidth: "0.8" }),
+        /* @__PURE__ */ e("text", { x: "20", y: "18", textAnchor: "middle", fontSize: "8", fontWeight: "bold", fill: "#1a5a8a", children: "ISO" }),
+        /* @__PURE__ */ e("text", { x: "20", y: "27", textAnchor: "middle", fontSize: "5.5", fill: "#1a5a8a", children: "22000:2018" })
+      ] })
+    },
+    {
+      name: "SPICES BOARD",
+      sub: "INDIA",
+      icon: /* @__PURE__ */ t("svg", { viewBox: "0 0 40 40", width: "36", height: "36", children: [
+        /* @__PURE__ */ e("circle", { cx: "20", cy: "20", r: "18", fill: "none", stroke: "#1a4a7a", strokeWidth: "1.5" }),
+        /* @__PURE__ */ e("circle", { cx: "20", cy: "20", r: "12", fill: "none", stroke: "#1a4a7a", strokeWidth: "0.8" }),
+        /* @__PURE__ */ e("path", { d: "M20 10 L22 16 L28 16 L23 20 L25 26 L20 22 L15 26 L17 20 L12 16 L18 16 Z", fill: "#1a4a7a", opacity: "0.7" })
+      ] })
+    }
+  ];
+  return /* @__PURE__ */ t("section", { id: "certifications-section", className: "relative overflow-hidden", style: { background: "#f5ede0" }, children: [
+    /* @__PURE__ */ e("div", { className: "w-full h-1", style: { background: "linear-gradient(to right, transparent, #c9a84c 30%, #c9a84c 70%, transparent)" } }),
+    /* @__PURE__ */ t("div", { className: "relative", style: { minHeight: 160 }, children: [
+      /* @__PURE__ */ e("div", { className: "absolute left-0 top-0 bottom-0 w-56 overflow-hidden pointer-events-none", style: { opacity: 0.55 }, children: /* @__PURE__ */ t("svg", { viewBox: "0 0 220 160", className: "w-full h-full", preserveAspectRatio: "xMidYMid slice", children: [
+        /* @__PURE__ */ e("rect", { x: "0", y: "110", width: "220", height: "50", fill: "#c4a882" }),
+        [0, 1, 2, 3, 4, 5].map((a) => /* @__PURE__ */ e("path", { d: `M0 ${118 + a * 7} Q110 ${114 + a * 7} 220 ${118 + a * 7}`, stroke: "#a0845a", strokeWidth: "0.8", fill: "none" }, a)),
+        /* @__PURE__ */ e("path", { d: "M0 90 L40 50 L70 75 L110 35 L150 65 L180 45 L220 80 L220 110 L0 110Z", fill: "#b89870" }),
+        /* @__PURE__ */ e("path", { d: "M0 100 L60 70 L100 85 L140 65 L180 80 L220 90 L220 110 L0 110Z", fill: "#c4a882" }),
+        /* @__PURE__ */ e("rect", { x: "18", y: "72", width: "4", height: "18", fill: "#7a5a30" }),
+        /* @__PURE__ */ e("ellipse", { cx: "20", cy: "68", rx: "9", ry: "12", fill: "#6a7a30" }),
+        /* @__PURE__ */ e("rect", { x: "55", y: "80", width: "3", height: "14", fill: "#7a5a30" }),
+        /* @__PURE__ */ e("ellipse", { cx: "56.5", cy: "76", rx: "7", ry: "10", fill: "#6a7a30" }),
+        /* @__PURE__ */ e("ellipse", { cx: "90", cy: "108", rx: "8", ry: "5", fill: "#8a6a40" }),
+        /* @__PURE__ */ e("circle", { cx: "90", cy: "100", r: "5", fill: "#8a6a40" }),
+        /* @__PURE__ */ e("ellipse", { cx: "90", cy: "95", rx: "9", ry: "3", fill: "#6a4a20" }),
+        /* @__PURE__ */ e("rect", { x: "87", y: "90", width: "6", height: "6", rx: "2", fill: "#7a5a30" }),
+        /* @__PURE__ */ e("path", { d: "M86 104 L84 114 M94 104 L96 114", stroke: "#8a6a40", strokeWidth: "2" }),
+        /* @__PURE__ */ e("path", { d: "M84 114 L90 112 L96 114", stroke: "#8a6a40", strokeWidth: "2", fill: "none" }),
+        /* @__PURE__ */ e("circle", { cx: "140", cy: "98", r: "4", fill: "#8a6a40" }),
+        /* @__PURE__ */ e("ellipse", { cx: "140", cy: "94", rx: "7", ry: "2.5", fill: "#6a4a20" }),
+        /* @__PURE__ */ e("path", { d: "M137 102 L135 112 M143 102 L145 112", stroke: "#8a6a40", strokeWidth: "1.8" }),
+        /* @__PURE__ */ e("ellipse", { cx: "105", cy: "112", rx: "6", ry: "4", fill: "#a07840" }),
+        /* @__PURE__ */ e("path", { d: "M99 112 L99 108 L111 108 L111 112", fill: "#c09860" })
+      ] }) }),
+      /* @__PURE__ */ e("div", { className: "relative z-10 max-w-7xl mx-auto px-4 py-8 flex flex-col items-center", children: /* @__PURE__ */ t("div", { className: "flex flex-wrap justify-center items-center gap-2 md:gap-6", children: [
+        r.map((a, i) => /* @__PURE__ */ t("div", { className: "flex flex-col items-center", style: { minWidth: 80 }, children: [
+          i > 0 && /* @__PURE__ */ e("div", { className: "hidden md:block absolute", style: { left: -16, top: "50%", width: 1, height: 50, background: "#c9a84c", opacity: 0.4, transform: "translateY(-50%)" } }),
+          /* @__PURE__ */ t("div", { className: "relative flex flex-col items-center", children: [
+            i > 0 && /* @__PURE__ */ e("div", { className: "hidden md:block h-12 w-px absolute -left-4 top-1/2 -translate-y-1/2", style: { background: "#d4b88a", opacity: 0.6 } }),
+            /* @__PURE__ */ e("div", { className: "mb-1", children: a.icon }),
+            /* @__PURE__ */ e("div", { className: "text-center", style: { color: "#1a1a1a", fontWeight: 800, fontSize: "0.75rem", letterSpacing: "0.08em" }, children: a.name }),
+            /* @__PURE__ */ e("div", { className: "text-center", style: { color: "#8a6a40", fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.12em" }, children: a.sub })
+          ] })
+        ] }, a.name)),
+        /* @__PURE__ */ e("div", { className: "hidden md:block h-14 w-px mx-2", style: { background: "#c9a84c", opacity: 0.5 } }),
+        /* @__PURE__ */ t("div", { className: "flex flex-col items-start", children: [
+          /* @__PURE__ */ e("p", { className: "text-base italic", style: { color: "#1a1a1a", fontWeight: 700, fontFamily: "Georgia, serif", lineHeight: 1.4 }, children: "Authentic Spices." }),
+          /* @__PURE__ */ e("p", { className: "text-base italic", style: { color: "#1a1a1a", fontWeight: 700, fontFamily: "Georgia, serif", lineHeight: 1.4 }, children: "Authentic India." }),
+          /* @__PURE__ */ t("div", { className: "flex items-center gap-1 mt-1", children: [
+            /* @__PURE__ */ e("div", { className: "w-4 h-px", style: { background: "#c9a84c" } }),
+            /* @__PURE__ */ e("svg", { width: "14", height: "14", viewBox: "0 0 20 20", children: /* @__PURE__ */ e("path", { d: "M10 2 C6 6 4 10 10 18 C16 10 14 6 10 2Z", fill: "#2d6a1e" }) }),
+            /* @__PURE__ */ e("div", { className: "w-4 h-px", style: { background: "#c9a84c" } })
+          ] })
+        ] })
+      ] }) }),
+      /* @__PURE__ */ e("div", { className: "absolute right-0 top-0 bottom-0 w-56 overflow-hidden pointer-events-none", style: { opacity: 0.55 }, children: /* @__PURE__ */ t("svg", { viewBox: "0 0 220 160", className: "w-full h-full", preserveAspectRatio: "xMidYMid slice", children: [
+        /* @__PURE__ */ e("rect", { x: "0", y: "0", width: "220", height: "160", fill: "#f5ede0" }),
+        /* @__PURE__ */ e("rect", { x: "40", y: "118", width: "140", height: "8", fill: "#d4b88a", opacity: "0.5" }),
+        /* @__PURE__ */ e("path", { d: "M40 122 Q110 120 180 122", stroke: "#c4a882", strokeWidth: "0.5", fill: "none" }),
+        /* @__PURE__ */ e("rect", { x: "80", y: "72", width: "60", height: "50", fill: "#d4b48a" }),
+        /* @__PURE__ */ e("path", { d: "M80 72 Q110 30 140 72", fill: "#e0c8a0" }),
+        /* @__PURE__ */ e("line", { x1: "110", y1: "30", x2: "110", y2: "22", stroke: "#c4a882", strokeWidth: "1.5" }),
+        /* @__PURE__ */ e("ellipse", { cx: "110", cy: "20", rx: "2.5", ry: "4", fill: "#c4a882" }),
+        /* @__PURE__ */ e("rect", { x: "55", y: "82", width: "14", height: "40", fill: "#d4b48a" }),
+        /* @__PURE__ */ e("path", { d: "M55 82 Q62 68 69 82", fill: "#e0c8a0" }),
+        /* @__PURE__ */ e("line", { x1: "62", y1: "68", x2: "62", y2: "62", stroke: "#c4a882", strokeWidth: "1" }),
+        /* @__PURE__ */ e("ellipse", { cx: "62", cy: "60", rx: "2", ry: "3", fill: "#c4a882" }),
+        /* @__PURE__ */ e("rect", { x: "151", y: "82", width: "14", height: "40", fill: "#d4b48a" }),
+        /* @__PURE__ */ e("path", { d: "M151 82 Q158 68 165 82", fill: "#e0c8a0" }),
+        /* @__PURE__ */ e("line", { x1: "158", y1: "68", x2: "158", y2: "62", stroke: "#c4a882", strokeWidth: "1" }),
+        /* @__PURE__ */ e("ellipse", { cx: "158", cy: "60", rx: "2", ry: "3", fill: "#c4a882" }),
+        /* @__PURE__ */ e("path", { d: "M96 95 Q103 85 110 95 L110 122 L96 122Z", fill: "#c4a882", opacity: "0.4" }),
+        /* @__PURE__ */ e("path", { d: "M110 95 Q117 85 124 95 L124 122 L110 122Z", fill: "#c4a882", opacity: "0.4" }),
+        /* @__PURE__ */ e("circle", { cx: "175", cy: "118", r: "4", fill: "#8a6a40" }),
+        /* @__PURE__ */ e("path", { d: "M172 122 L170 130 M178 122 L176 130", stroke: "#8a6a40", strokeWidth: "1.5" }),
+        /* @__PURE__ */ e("path", { d: "M170 130 L175 128 L176 130", stroke: "#8a6a40", strokeWidth: "1.2", fill: "none" }),
+        /* @__PURE__ */ e("rect", { x: "42", y: "98", width: "3", height: "20", fill: "#7a5a30" }),
+        /* @__PURE__ */ e("ellipse", { cx: "43.5", cy: "94", rx: "6", ry: "9", fill: "#6a7a30" }),
+        /* @__PURE__ */ e("rect", { x: "174", y: "100", width: "3", height: "18", fill: "#7a5a30" }),
+        /* @__PURE__ */ e("ellipse", { cx: "175.5", cy: "96", rx: "6", ry: "9", fill: "#6a7a30" })
+      ] }) })
+    ] }),
+    /* @__PURE__ */ e("div", { className: "w-full h-1", style: { background: "linear-gradient(to right, transparent, #c9a84c 30%, #c9a84c 70%, transparent)" } })
+  ] });
+}
+const Nt = "https://wa.me/919895999505?text=Hello%20Voyageur%20Overseas%2C%20I%20am%20interested%20in%20your%20products.";
+function vt() {
+  const [r, a] = v({ name: "", email: "", company: "", message: "" }), [i, d] = v(!1);
+  function n(o) {
+    o.preventDefault(), d(!0), a({ name: "", email: "", company: "", message: "" });
+  }
+  return /* @__PURE__ */ e("section", { id: "contact-section", className: "py-14 px-4", style: { background: "white" }, children: /* @__PURE__ */ t("div", { className: "max-w-7xl mx-auto grid lg:grid-cols-2 gap-12", children: [
+    /* @__PURE__ */ t("div", { children: [
+      /* @__PURE__ */ t("div", { className: "flex items-center gap-2 mb-3", children: [
+        /* @__PURE__ */ e("div", { className: "h-px w-8", style: { background: "#c9a84c" } }),
+        /* @__PURE__ */ e("span", { className: "text-xs tracking-[0.3em] uppercase", style: { color: "#c9a84c" }, children: "Get In Touch" })
+      ] }),
+      /* @__PURE__ */ e("h2", { style: { color: "#1a1a1a" }, children: "Contact Us" }),
+      /* @__PURE__ */ e("p", { className: "mt-3 text-sm leading-relaxed", style: { color: "#666" }, children: "Ready to source premium Indian spices & coir products? Reach out for bulk orders, pricing, and custom packaging solutions." }),
+      /* @__PURE__ */ e("div", { className: "mt-8 flex flex-col gap-5", children: [
+        { icon: j, label: "Phone / WhatsApp", value: "+91 9895 999 505", href: Nt },
+        { icon: ie, label: "Email", value: "info@voyageuroverseas.com", href: "mailto:info@voyageuroverseas.com" },
+        { icon: se, label: "Address", value: "158/A, Koyilandy, Kozhikode, Kerala 673306, India", href: void 0 }
+      ].map(({ icon: o, label: y, value: s, href: x }) => /* @__PURE__ */ t("div", { className: "flex items-start gap-4", children: [
+        /* @__PURE__ */ e("div", { className: "w-10 h-10 shrink-0 rounded-full flex items-center justify-center", style: { background: "#faf6f0", border: "1px solid #e8dfd0" }, children: /* @__PURE__ */ e(o, { className: "w-4 h-4", style: { color: "#c9a84c" } }) }),
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ e("div", { className: "text-xs tracking-wider mb-0.5", style: { color: "#999", fontWeight: 600 }, children: y }),
+          x ? /* @__PURE__ */ e("a", { href: x, target: "_blank", rel: "noopener noreferrer", className: "text-sm hover:text-amber-600 transition-colors", style: { color: "#333" }, children: s }) : /* @__PURE__ */ e("div", { className: "text-sm", style: { color: "#333" }, children: s })
+        ] })
+      ] }, y)) })
+    ] }),
+    i ? /* @__PURE__ */ t("div", { className: "flex flex-col items-center justify-center py-12 rounded-2xl", style: { background: "#f0faf4", border: "1.5px solid #5aab6e" }, children: [
+      /* @__PURE__ */ e(L, { className: "w-14 h-14 mb-4", style: { color: "#2d7a3a" } }),
+      /* @__PURE__ */ e("h3", { className: "mb-2", style: { color: "#1a4a20" }, children: "Message Sent Successfully!" }),
+      /* @__PURE__ */ t("p", { className: "text-sm text-center mb-6 max-w-xs", style: { color: "#555", lineHeight: 1.7 }, children: [
+        "Thank you for reaching out to ",
+        /* @__PURE__ */ e("strong", { children: "Voyageur Overseas" }),
+        ". Our team will get back to you within 24 hours."
+      ] }),
+      /* @__PURE__ */ e(
+        "button",
+        {
+          onClick: () => d(!1),
+          className: "px-6 py-2.5 text-sm text-white rounded-lg transition-opacity hover:opacity-90",
+          style: { background: "#2d4a1e", fontWeight: 600 },
+          children: "Send Another Message"
+        }
+      )
+    ] }) : /* @__PURE__ */ t("form", { onSubmit: n, className: "flex flex-col gap-4", children: [
+      /* @__PURE__ */ t("div", { className: "grid grid-cols-2 gap-4", children: [
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ e("label", { className: "text-xs tracking-wider mb-1.5 block", style: { color: "#666" }, children: "Your Name *" }),
+          /* @__PURE__ */ e(
+            "input",
+            {
+              required: !0,
+              className: "w-full px-4 py-2.5 text-sm rounded-lg outline-none border transition-colors focus:border-amber-400",
+              style: { borderColor: "#e8dfd0", background: "#faf6f0" },
+              value: r.name,
+              onChange: (o) => a({ ...r, name: o.target.value }),
+              placeholder: "John Smith"
+            }
+          )
+        ] }),
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ e("label", { className: "text-xs tracking-wider mb-1.5 block", style: { color: "#666" }, children: "Email *" }),
+          /* @__PURE__ */ e(
+            "input",
+            {
+              required: !0,
+              type: "email",
+              className: "w-full px-4 py-2.5 text-sm rounded-lg outline-none border transition-colors focus:border-amber-400",
+              style: { borderColor: "#e8dfd0", background: "#faf6f0" },
+              value: r.email,
+              onChange: (o) => a({ ...r, email: o.target.value }),
+              placeholder: "john@company.com"
+            }
+          )
+        ] })
+      ] }),
+      /* @__PURE__ */ t("div", { children: [
+        /* @__PURE__ */ e("label", { className: "text-xs tracking-wider mb-1.5 block", style: { color: "#666" }, children: "Company Name" }),
+        /* @__PURE__ */ e(
+          "input",
+          {
+            className: "w-full px-4 py-2.5 text-sm rounded-lg outline-none border focus:border-amber-400",
+            style: { borderColor: "#e8dfd0", background: "#faf6f0" },
+            value: r.company,
+            onChange: (o) => a({ ...r, company: o.target.value }),
+            placeholder: "Your Company"
+          }
+        )
+      ] }),
+      /* @__PURE__ */ t("div", { children: [
+        /* @__PURE__ */ e("label", { className: "text-xs tracking-wider mb-1.5 block", style: { color: "#666" }, children: "Message / Requirements *" }),
+        /* @__PURE__ */ e(
+          "textarea",
+          {
+            required: !0,
+            rows: 5,
+            className: "w-full px-4 py-2.5 text-sm rounded-lg outline-none border resize-none focus:border-amber-400",
+            style: { borderColor: "#e8dfd0", background: "#faf6f0" },
+            value: r.message,
+            onChange: (o) => a({ ...r, message: o.target.value }),
+            placeholder: "Tell us about your requirements, quantities, destination country..."
+          }
+        )
+      ] }),
+      /* @__PURE__ */ t(
+        "button",
+        {
+          type: "submit",
+          className: "flex items-center justify-center gap-2 px-8 py-3.5 text-sm tracking-wider text-white transition-all hover:opacity-90 hover:scale-105",
+          style: { background: "#c9a84c", borderRadius: 6, fontWeight: 700, boxShadow: "0 3px 14px rgba(201,168,76,0.3)" },
+          children: [
+            /* @__PURE__ */ e(Ye, { className: "w-4 h-4" }),
+            " SEND MESSAGE"
+          ]
+        }
+      )
+    ] })
+  ] }) });
+}
+const J = "https://wa.me/919895999505?text=Hello%20Voyageur%20Overseas%2C%20I%20am%20interested%20in%20your%20products.", kt = "https://www.linkedin.com/company/voyageur-overseas", Ct = "https://www.instagram.com/voyageuroverseas", Mt = [
+  { label: "Home", action: "home", target: "" },
+  { label: "About Us", action: "page", target: "", page: "about" },
+  { label: "Our Products", action: "scroll", target: "products-section" },
+  { label: "Quality", action: "page", target: "", page: "quality" },
+  { label: "Certifications", action: "scroll", target: "certifications-section" },
+  { label: "Gallery", action: "page", target: "", page: "gallery" },
+  { label: "Contact Us", action: "scroll", target: "contact-section" }
+];
+function St({ setActivePage: r, setActiveCategory: a, scrollTo: i, setActiveNav: d }) {
+  function n(o) {
+    if (o.action === "page" && o.page) {
+      r(o.page), d(o.label), window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    r("home"), o.action === "home" ? (d("Home"), window.scrollTo({ top: 0, behavior: "smooth" })) : setTimeout(() => i(o.target), 100);
+  }
+  return /* @__PURE__ */ t("footer", { style: { background: "#0f1e08" }, children: [
+    /* @__PURE__ */ e("div", { className: "w-full h-0.5", style: { background: "linear-gradient(to right, transparent, #c9a84c, transparent)" } }),
+    /* @__PURE__ */ t("div", { className: "max-w-7xl mx-auto px-4 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10", children: [
+      /* @__PURE__ */ t("div", { children: [
+        /* @__PURE__ */ t("div", { className: "flex items-center gap-2.5 mb-4 cursor-pointer", onClick: () => {
+          r("home"), window.scrollTo({ top: 0, behavior: "smooth" });
+        }, children: [
+          /* @__PURE__ */ e("div", { className: "w-10 h-10 rounded-full flex items-center justify-center", style: { background: "linear-gradient(135deg, #c9a84c, #8b6914)" }, children: /* @__PURE__ */ e(O, { className: "w-5 h-5 text-white" }) }),
+          /* @__PURE__ */ t("div", { children: [
+            /* @__PURE__ */ e("div", { className: "tracking-widest text-xs", style: { color: "#c9a84c", fontWeight: 900 }, children: "VOYAGEUR" }),
+            /* @__PURE__ */ e("div", { className: "tracking-widest text-sm", style: { color: "white", fontWeight: 600 }, children: "OVERSEAS" })
+          ] })
+        ] }),
+        /* @__PURE__ */ e("p", { className: "text-xs leading-relaxed mb-5", style: { color: "rgba(255,255,255,0.55)" }, children: "Premium Indian spices & natural coir products exported worldwide. Quality, purity, and authenticity on every shipment." }),
+        /* @__PURE__ */ t("div", { className: "flex items-center gap-3", children: [
+          /* @__PURE__ */ e(
+            "a",
+            {
+              href: kt,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              className: "w-11 h-11 rounded-full flex items-center justify-center transition-all hover:scale-110",
+              style: { background: "rgba(0,119,181,0.15)", border: "1px solid rgba(0,119,181,0.35)" },
+              title: "LinkedIn",
+              children: /* @__PURE__ */ e(q, { className: "w-5 h-5", style: { color: "#7ab4d8" } })
+            }
+          ),
+          /* @__PURE__ */ e(
+            "a",
+            {
+              href: Ct,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              className: "w-11 h-11 rounded-full flex items-center justify-center transition-all hover:scale-110",
+              style: { background: "rgba(225,48,108,0.12)", border: "1px solid rgba(225,48,108,0.3)" },
+              title: "Instagram",
+              children: /* @__PURE__ */ e(U, { className: "w-5 h-5", style: { color: "#f4a0c0" } })
+            }
+          ),
+          /* @__PURE__ */ e(
+            "a",
+            {
+              href: J,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              className: "w-11 h-11 rounded-full flex items-center justify-center transition-all hover:scale-110",
+              style: { background: "rgba(37,211,102,0.12)", border: "1px solid rgba(37,211,102,0.3)" },
+              title: "Chat on WhatsApp",
+              children: /* @__PURE__ */ e(T, { className: "w-5 h-5", style: { color: "#5ae07a" } })
+            }
+          )
+        ] })
+      ] }),
+      /* @__PURE__ */ t("div", { children: [
+        /* @__PURE__ */ e("h4", { className: "mb-5 text-xs tracking-widest", style: { color: "#c9a84c" }, children: "QUICK LINKS" }),
+        /* @__PURE__ */ e("div", { className: "flex flex-col gap-2", children: Mt.map((o) => /* @__PURE__ */ t(
+          "button",
+          {
+            onClick: () => n(o),
+            className: "text-left text-xs py-1 transition-colors hover:text-amber-400 group flex items-center gap-1.5",
+            style: { color: "rgba(255,255,255,0.6)" },
+            children: [
+              /* @__PURE__ */ e("span", { className: "w-1.5 h-1.5 rounded-full transition-colors group-hover:bg-amber-400", style: { background: "rgba(201,168,76,0.4)", flexShrink: 0 } }),
+              o.label
+            ]
+          },
+          o.label
+        )) })
+      ] }),
+      /* @__PURE__ */ t("div", { children: [
+        /* @__PURE__ */ e("h4", { className: "mb-5 text-xs tracking-widest", style: { color: "#c9a84c" }, children: "CONTACT" }),
+        /* @__PURE__ */ t("div", { className: "flex flex-col gap-4", children: [
+          /* @__PURE__ */ t("a", { href: J, target: "_blank", rel: "noopener noreferrer", className: "flex items-start gap-3 group", children: [
+            /* @__PURE__ */ e("div", { className: "w-8 h-8 rounded-full flex items-center justify-center shrink-0", style: { background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.2)" }, children: /* @__PURE__ */ e(j, { className: "w-3.5 h-3.5", style: { color: "#c9a84c" } }) }),
+            /* @__PURE__ */ t("div", { children: [
+              /* @__PURE__ */ e("div", { className: "text-xs mb-0.5", style: { color: "rgba(255,255,255,0.4)" }, children: "Phone / WhatsApp" }),
+              /* @__PURE__ */ e("div", { className: "text-xs group-hover:text-amber-400 transition-colors", style: { color: "rgba(255,255,255,0.7)" }, children: "+91 9895 999 505" })
+            ] })
+          ] }),
+          /* @__PURE__ */ t("a", { href: "mailto:info@voyageuroverseas.com", className: "flex items-start gap-3 group", children: [
+            /* @__PURE__ */ e("div", { className: "w-8 h-8 rounded-full flex items-center justify-center shrink-0", style: { background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.2)" }, children: /* @__PURE__ */ e(ie, { className: "w-3.5 h-3.5", style: { color: "#c9a84c" } }) }),
+            /* @__PURE__ */ t("div", { children: [
+              /* @__PURE__ */ e("div", { className: "text-xs mb-0.5", style: { color: "rgba(255,255,255,0.4)" }, children: "Email" }),
+              /* @__PURE__ */ e("div", { className: "text-xs group-hover:text-amber-400 transition-colors", style: { color: "rgba(255,255,255,0.7)" }, children: "info@voyageuroverseas.com" })
+            ] })
+          ] }),
+          /* @__PURE__ */ t("div", { className: "flex items-start gap-3", children: [
+            /* @__PURE__ */ e("div", { className: "w-8 h-8 rounded-full flex items-center justify-center shrink-0", style: { background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.2)" }, children: /* @__PURE__ */ e(se, { className: "w-3.5 h-3.5", style: { color: "#c9a84c" } }) }),
+            /* @__PURE__ */ t("div", { children: [
+              /* @__PURE__ */ e("div", { className: "text-xs mb-0.5", style: { color: "rgba(255,255,255,0.4)" }, children: "Address" }),
+              /* @__PURE__ */ t("div", { className: "text-xs", style: { color: "rgba(255,255,255,0.65)", lineHeight: 1.6 }, children: [
+                "158/A, Koyilandy",
+                /* @__PURE__ */ e("br", {}),
+                "Kozhikode, Kerala 673306"
+              ] })
+            ] })
+          ] })
+        ] })
+      ] })
+    ] }),
+    /* @__PURE__ */ e("div", { className: "border-t px-4 py-5", style: { borderColor: "rgba(255,255,255,0.07)" }, children: /* @__PURE__ */ t("div", { className: "max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3", children: [
+      /* @__PURE__ */ e("span", { className: "text-xs", style: { color: "rgba(255,255,255,0.3)" }, children: "© 2026 Voyageur Overseas. All rights reserved." }),
+      /* @__PURE__ */ e("span", { className: "text-xs italic", style: { color: "#c9a84c" }, children: "From origin to destination." })
+    ] }) })
+  ] });
+}
+const At = {
+  spices: {
+    label: "Spices",
+    accent: "#c9a84c",
+    bg: "#2d4a1e",
+    icon: "🌶",
+    items: ["Green Cardamom", "Black Pepper", "White Pepper", "Cinnamon", "Cassia", "Cloves", "Turmeric", "Red Chilli", "Cumin Seeds", "Coriander Seeds", "Fenugreek", "Mustard Seeds", "Star Anise", "Nutmeg", "Mace", "Ginger", "Fennel Seeds", "Bay Leaf"]
+  },
+  coir: {
+    label: "Coir Products",
+    accent: "#5aab6e",
+    bg: "#1a4a2e",
+    icon: "🌿",
+    items: ["Coco Peat Blocks", "Coco Peat Discs", "Coir Mat (Plain)", "Coir Mat (Tufted)", "Coir Rope", "Coir Fibre (Brown)", "Coir Fibre (White)", "Coir Geo-Textile", "Coir Grow Bags", "Coir Logs", "Coir Twine", "Brushes & Brooms"]
+  },
+  coconut: {
+    label: "Coconut Products",
+    accent: "#b58a30",
+    bg: "#3a2e10",
+    icon: "🥥",
+    items: ["Virgin Coconut Oil", "Refined Coconut Oil", "Desiccated Coconut", "Coconut Milk Powder", "Coconut Shell Charcoal", "Activated Carbon", "Coconut Shell Powder", "Coconut Water"]
+  },
+  others: {
+    label: "Agro Products",
+    accent: "#9b7cb8",
+    bg: "#2a1a40",
+    icon: "✦",
+    items: ["Basmati Rice", "Non-Basmati Rice", "Cashew W180", "Cashew W240", "Cashew W320", "Dried Mango", "Tamarind"]
+  }
+}, It = ["Bulk (Jute Bags)", "Retail Pouches (50g–500g)", "Vacuum Sealed Packs", "Custom Branded Packaging"], _t = ["United States", "United Kingdom", "Germany", "France", "UAE", "Saudi Arabia", "Australia", "Canada", "Japan", "Singapore", "Netherlands", "Malaysia", "Other"];
+function Et({ setActivePage: r }) {
+  const [a, i] = v(1), [d, n] = v(!1), [o, y] = v(null), [s, x] = v("kg"), [k, m] = v({}), [g, b] = v(""), [h, w] = v({
+    companyName: "",
+    contactName: "",
+    email: "",
+    phone: "",
+    country: "",
+    packaging: "",
+    deliveryDate: "",
+    notes: "",
+    selectedItems: {}
+  });
+  function c(l, u) {
+    w((f) => ({ ...f, [l]: u })), m((f) => {
+      const N = { ...f };
+      return delete N[l], N;
+    });
+  }
+  function S(l) {
+    w((u) => {
+      const f = { ...u.selectedItems };
+      return l in f ? delete f[l] : f[l] = "", { ...u, selectedItems: f };
+    });
+  }
+  function C(l, u) {
+    w((f) => ({ ...f, selectedItems: { ...f.selectedItems, [l]: u } })), u && m((f) => {
+      const N = { ...f };
+      return delete N[`qty_${l}`], N;
+    });
+  }
+  function me() {
+    const l = {};
+    return h.companyName.trim() || (l.companyName = "Company name is required"), h.contactName.trim() || (l.contactName = "Contact person name is required"), h.email.trim() ? /\S+@\S+\.\S+/.test(h.email) || (l.email = "Please enter a valid email address") : l.email = "Email address is required", m(l), Object.keys(l).length === 0;
+  }
+  function he() {
+    if (Object.keys(h.selectedItems).length === 0)
+      return b("Please select at least one product before proceeding."), !1;
+    const u = {};
+    return Object.entries(h.selectedItems).forEach(([f, N]) => {
+      (!N || parseFloat(N) <= 0) && (u[`qty_${f}`] = `Please enter quantity for ${f}`);
+    }), m(u), Object.keys(u).length > 0 ? (b(`Please enter the required weight (in ${s}) for all selected products.`), !1) : (b(""), !0);
+  }
+  const A = Object.keys(h.selectedItems).length;
+  return d ? /* @__PURE__ */ e("div", { className: "min-h-screen flex flex-col items-center justify-center px-4 py-20", style: { background: "#faf6f0" }, children: /* @__PURE__ */ t("div", { className: "text-center max-w-md", children: [
+    /* @__PURE__ */ e("div", { className: "w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6", style: { background: "#2d4a1e" }, children: /* @__PURE__ */ e(L, { className: "w-10 h-10 text-white" }) }),
+    /* @__PURE__ */ e("h2", { className: "mb-3", style: { color: "#1a1a1a" }, children: "Export Enquiry Submitted!" }),
+    /* @__PURE__ */ t("p", { className: "text-sm mb-8", style: { color: "#666" }, children: [
+      "Thank you, ",
+      /* @__PURE__ */ e("strong", { children: h.contactName }),
+      ". Our export team will contact you within 24 hours with a tailored quote."
+    ] }),
+    /* @__PURE__ */ t("div", { className: "p-5 rounded-xl text-left mb-8", style: { background: "white", boxShadow: "0 2px 16px rgba(0,0,0,0.08)" }, children: [
+      /* @__PURE__ */ e("div", { className: "text-xs tracking-widest mb-3", style: { color: "#c9a84c", fontWeight: 700 }, children: "ORDER SUMMARY" }),
+      /* @__PURE__ */ t("div", { className: "text-sm space-y-1.5", style: { color: "#555" }, children: [
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ e("strong", { children: "Company:" }),
+          " ",
+          h.companyName
+        ] }),
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ e("strong", { children: "Destination:" }),
+          " ",
+          h.country
+        ] }),
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ t("strong", { children: [
+            "Products (",
+            A,
+            "):"
+          ] }),
+          " ",
+          Object.keys(h.selectedItems).slice(0, 4).join(", "),
+          A > 4 ? ` +${A - 4} more` : ""
+        ] }),
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ e("strong", { children: "Unit:" }),
+          " ",
+          s.toUpperCase()
+        ] }),
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ e("strong", { children: "Packaging:" }),
+          " ",
+          h.packaging || "—"
+        ] })
+      ] })
+    ] }),
+    /* @__PURE__ */ e("button", { onClick: () => r("home"), className: "px-8 py-3 text-sm text-white tracking-wider rounded-lg", style: { background: "#2d4a1e", fontWeight: 600 }, children: "BACK TO HOME" })
+  ] }) }) : /* @__PURE__ */ t("div", { className: "min-h-screen", style: { background: "#faf6f0" }, children: [
+    /* @__PURE__ */ e("div", { className: "py-8 px-4", style: { background: "#2d4a1e" }, children: /* @__PURE__ */ t("div", { className: "max-w-4xl mx-auto", children: [
+      /* @__PURE__ */ t("button", { onClick: () => r("home"), className: "flex items-center gap-2 text-sm mb-5 hover:opacity-80 transition-opacity", style: { color: "rgba(255,255,255,0.7)" }, children: [
+        /* @__PURE__ */ e(R, { className: "w-4 h-4" }),
+        " Back to Home"
+      ] }),
+      /* @__PURE__ */ t("div", { className: "flex items-center gap-3 mb-1", children: [
+        /* @__PURE__ */ e(V, { className: "w-5 h-5", style: { color: "#c9a84c" } }),
+        /* @__PURE__ */ e("span", { className: "text-xs tracking-[0.3em] uppercase", style: { color: "#c9a84c" }, children: "Export Enquiry" })
+      ] }),
+      /* @__PURE__ */ e("h1", { className: "text-white mb-1", style: { fontSize: "1.8rem", fontWeight: 800 }, children: "Get A Quote" }),
+      /* @__PURE__ */ e("p", { className: "text-sm", style: { color: "rgba(255,255,255,0.65)" }, children: "Fill in your requirements and we
+s finest."` })
+        ] })
+      ] }) })
+    ] })
+  ] });
+}
+const Wt = [
+  {
+    id: "spices",
+    icon: "🌶",
+    label: "Spices",
+    accent: "#c9a84c",
+    bg: "#2d4a1e",
+    intro: "Our spices are sourced directly from certified farms across Kerala, Tamil Nadu, and Andhra Pradesh. Each batch is sun-dried or machine-dried under controlled conditions, then cleaned, graded, and tested before packing.",
+    standards: ["FSSAI Licensed", "APEDA Registered", "Spices Board Certified", "ISO 22000:2018", "Moisture content < 12%", "Aflatoxin-free testing"],
+    products: [
+      { name: "Green Cardamom", quality: "Bold AGEB, AGE, Extra Bold grades; moisture ≤ 12%; free from extraneous matter. Stored in airtight containers to preserve volatile oil (≥ 3%)." },
+      { name: "Black Pepper", quality: "FAQ & SQ grades; bulk density ≥ 550 g/L; piperine content ≥ 4%; machine-cleaned and steam-sterilised for microbial safety." },
+      { name: "Cinnamon", quality: "True Ceylon or Cassia type; quills with < 1% broken pieces; moisture ≤ 13%; cinnamaldehyde content tested and certified." },
+      { name: "Cloves", quality: "Hand-picked dried buds; eugenol content ≥ 72%; moisture ≤ 12%; free from stems and broken buds." },
+      { name: "Turmeric", quality: "Alleppey and Erode varieties; curcumin ≥ 3.5%; moisture ≤ 10%; free from artificial colour and adulterants." },
+      { name: "Red Chilli", quality: "S4, S5 Special grades; ASTA colour value ≥ 100; capsaicin tested; aflatoxin B1 < 2 ppb." }
+    ]
+  },
+  {
+    id: "coir",
+    icon: "🌿",
+    label: "Coir Products",
+    accent: "#5aab6e",
+    bg: "#1a4a2e",
+    intro: "Our coir products are manufactured in Alappuzha, Kerala — the coir capital of the world. All products are made from 100% natural coconut husk with no harmful chemicals, and are biodegradable and eco-certified.",
+    standards: ["Coir Board of India Certified", "ISO 9001:2015 QMS", "Phytosanitary Certificate", "EC compliance for geo-textiles", "EU import standards compliant"],
+    products: [
+      { name: "Coco Peat", quality: "EC < 0.5 mS/cm (buffered); pH 5.5–6.5; water holding capacity ≥ 600%; supplied in 650g bricks, 5kg blocks, or loose." },
+      { name: "Coir Mat", quality: "Weight 700–1400 gsm; pile height 10–20 mm; colourfast; tested for tensile strength and UV stability." },
+      { name: "Coir Rope", quality: "Twisted 3-strand construction; breaking load tested per diameter; salt-water and weather resistant." },
+      { name: "Coir Fibre", quality: "Brown fibre length 100–250 mm; moisture ≤ 17%; free from sand and shell fragments; bristle and mattress grades available." },
+      { name: "Geo-Textile", quality: "Woven and non-woven types; tensile strength ≥ 10 kN/m; hydraulic permeability tested; UV degradation rate certified." }
+    ]
+  },
+  {
+    id: "coconut",
+    icon: "🥥",
+    label: "Coconut Products",
+    accent: "#b58a30",
+    bg: "#3a2e10",
+    intro: "Kerala
+s finest coconut-derived products. Our virgin coconut oil is cold-pressed within hours of dehusking to preserve nutrients and flavour.",
+    standards: ["FSSAI Licensed", "APEDA Registered", "AGMARK Certified", "Kosher & Halal on request", "ISO 22000:2018"],
+    products: [
+      { name: "Virgin Coconut Oil", quality: "Cold-pressed, unrefined; moisture ≤ 0.1%; FFA < 0.1%; lauric acid ≥ 48%; peroxide value < 3 meq/kg; crystal-clear appearance." },
+      { name: "Desiccated Coconut", quality: "Fine, medium, or coarse grades; moisture ≤ 3%; FFA < 0.1%; free from rancidity; packed in multilayer moisture-barrier bags." },
+      { name: "Coconut Shell Charcoal", quality: "Fixed carbon ≥ 75%; ash content < 5%; moisture ≤ 5%; customised mesh sizes for activated carbon production." }
+    ]
+  },
+  {
+    id: "others",
+    icon: "✦",
+    label: "Agro Products",
+    accent: "#9b7cb8",
+    bg: "#2a1a40",
+    intro: "We also export select premium agro products sourced from certified farms across India, meeting all international phytosanitary and food-safety requirements.",
+    standards: ["FSSAI Licensed", "APEDA Registered", "Phytosanitary Certificate", "Export Inspection Council (EIC) Certified"],
+    products: [
+      { name: "Basmati Rice", quality: "Grain length ≥ 7.2 mm; elongation ratio ≥ 1.7; moisture ≤ 12.5%; broken grains < 5%; aromatic, aged 12–24 months." },
+      { name: "Cashew Kernels", quality: "W180–W450 grades; whole white kernels; moisture ≤ 5%; free from insect damage; packed in vacuum-sealed tins or pouches." }
+    ]
+  }
+];
+function Tt({ setActivePage: r }) {
+  return /* @__PURE__ */ t("div", { className: "min-h-screen", style: { background: "#faf6f0" }, children: [
+    /* @__PURE__ */ e("div", { className: "py-14 px-4", style: { background: "#1a3a10" }, children: /* @__PURE__ */ t("div", { className: "max-w-5xl mx-auto", children: [
+      /* @__PURE__ */ t("button", { onClick: () => r("home"), className: "flex items-center gap-2 text-sm mb-6 hover:opacity-80 transition-opacity", style: { color: "rgba(255,255,255,0.65)" }, children: [
+        /* @__PURE__ */ e(R, { className: "w-4 h-4" }),
+        " Back to Home"
+      ] }),
+      /* @__PURE__ */ t("div", { className: "flex items-center gap-2 mb-3", children: [
+        /* @__PURE__ */ e(et, { className: "w-5 h-5", style: { color: "#c9a84c" } }),
+        /* @__PURE__ */ e("span", { className: "text-xs tracking-[0.3em] uppercase", style: { color: "#c9a84c" }, children: "Quality Assurance" })
+      ] }),
+      /* @__PURE__ */ e("h1", { className: "text-white mb-3", style: { fontWeight: 800, fontSize: "clamp(1.8rem,5vw,3rem)" }, children: "Quality & Certifications" }),
+      /* @__PURE__ */ e("p", { className: "max-w-xl text-sm", style: { color: "rgba(255,255,255,0.7)", lineHeight: 1.75 }, children: "Every product we export meets stringent international quality standards. Below you
+s agricultural richness, Voyageur Overseas bridges Indian farmers with global markets. Every product we ship is carefully handpicked, hygienically processed, and packed to retain its natural aroma, taste, and freshness." }),
+          /* @__PURE__ */ e("p", { className: "mt-3 text-sm leading-relaxed", style: { color: "#555" }, children: "We are registered with APEDA, IEC, FSSAI, ISO 22000:2018 certified, and registered with the Spices Board of India — ensuring every shipment meets international quality and food-safety standards." }),
+          /* @__PURE__ */ e("div", { className: "mt-6 grid grid-cols-3 gap-4", children: [["25+", "Countries"], ["500+", "Clients"], ["15+", "Years Exp."]].map(([a, i]) => /* @__PURE__ */ t("div", { className: "text-center p-4 rounded-xl", style: { background: "white", boxShadow: "0 2px 10px rgba(0,0,0,0.07)" }, children: [
+            /* @__PURE__ */ e("div", { className: "text-2xl", style: { color: "#c9a84c", fontWeight: 800 }, children: a }),
+            /* @__PURE__ */ e("div", { className: "text-xs mt-1", style: { color: "#666" }, children: i })
+          ] }, i)) })
+        ] }),
+        /* @__PURE__ */ e("div", { className: "rounded-2xl overflow-hidden shadow-xl", style: { height: 380 }, children: /* @__PURE__ */ e(
+          "img",
+          {
+            src: "https://images.unsplash.com/photo-1486548730767-5c679e8eda6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHxJbmRpYW4lMjBzcGljZXMlMjBjb2xvcmZ1bCUyMGJvd2xzfGVufDF8fHx8MTc4MTA4ODcxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+            alt: "Spice powders",
+            className: "w-full h-full object-cover"
+          }
+        ) })
+      ] }),
+      /* @__PURE__ */ e("section", { className: "rounded-2xl p-10", style: { background: "#1a3a10", color: "white" }, children: /* @__PURE__ */ t("div", { className: "flex items-start gap-5", children: [
+        /* @__PURE__ */ e("div", { className: "w-14 h-14 rounded-full flex items-center justify-center shrink-0", style: { background: "rgba(201,168,76,0.15)", border: "1.5px solid #c9a84c" }, children: /* @__PURE__ */ e(lt, { className: "w-6 h-6", style: { color: "#c9a84c" } }) }),
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ t("div", { className: "flex items-center gap-2 mb-2", children: [
+            /* @__PURE__ */ e("div", { className: "h-px w-8", style: { background: "#c9a84c" } }),
+            /* @__PURE__ */ e("span", { className: "text-xs tracking-[0.3em] uppercase", style: { color: "#c9a84c" }, children: "Our Mission" })
+          ] }),
+          /* @__PURE__ */ e("h2", { className: "text-white mb-4", children: "Our Mission" }),
+          /* @__PURE__ */ e("p", { className: "text-sm leading-relaxed", style: { color: "rgba(255,255,255,0.8)" }, children: "To be the most trusted bridge between India
+s natural coir. By 2030, we aim to serve 50+ countries and empower 1,000+ Indian farming families through fair-trade partnerships." }),
+          /* @__PURE__ */ e("div", { className: "mt-6 p-5 rounded-xl italic text-sm", style: { background: "#faf6f0", borderLeft: "4px solid #c9a84c", color: "#555" }, children: `"From Origin to Destination — We carry India
+s agricultural excellence — one that every international buyer trusts for purity, consistency, and ethical sourcing." }),
+          /* @__PURE__ */ e("p", { className: "mt-3 text-sm leading-relaxed", style: { color: "#555" }, children: "We envision a future where every kitchen in the world carries a pinch of India
+M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z
+We envision a future where every kitchen in the world carries a pinch of India's richness, and every eco-conscious buyer chooses Kerala's natural coir. By 2030, we aim to serve 50+ countries and empower 1,000+ Indian farming families through fair-trade partnerships.
+Founded with a passion for showcasing India's agricultural richness, Voyageur Overseas bridges Indian farmers with global markets. Every product we ship is carefully handpicked, hygienically processed, and packed to retain its natural aroma, taste, and freshness.
+https://images.unsplash.com/photo-1661174607003-d9d36388c916?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxLZXJhbGElMjBiYWNrd2F0ZXJzJTIwcGFsbSUyMHRyZWVzJTIwdHJvcGljYWx8ZW58MXx8fHwxNzgxMTQ2MzIxfDA&ixlib=rb-4.1.0&q=80&w=1080
+https://images.unsplash.com/photo-1770891290495-8747a7a87e89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2lyJTIwZmliZXIlMjBjb2NvbnV0JTIwaHVzayUyMHByb2R1Y3RzfGVufDF8fHx8MTc4MTE0NjMxN3ww&ixlib=rb-4.1.0&q=80&w=800
+https://images.unsplash.com/photo-1694011772133-dc4b3ff3f24f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2NvbnV0JTIwcGFsbSUyMHBsYW50YXRpb24lMjBJbmRpYXxlbnwxfHx8fDE3ODExNDYzMjJ8MA&ixlib=rb-4.1.0&q=80&w=800
+https://images.unsplash.com/photo-1532336414038-cf19250c5757?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxJbmRpYW4lMjBzcGljZXMlMjBjb2xvcmZ1bCUyMGJvd2xzfGVufDF8fHx8MTc4MTA4ODcxNXww&ixlib=rb-4.1.0&q=80&w=1080
+https://images.unsplash.com/photo-1486548730767-5c679e8eda6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHxJbmRpYW4lMjBzcGljZXMlMjBjb2xvcmZ1bCUyMGJvd2xzfGVufDF8fHx8MTc4MTA4ODcxNXww&ixlib=rb-4.1.0&q=80&w=1080
+https://images.unsplash.com/photo-1606951444141-e5533feb55be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0dXJtZXJpYyUyMHBvd2RlciUyMHllbGxvdyUyMHNwaWNlfGVufDF8fHx8MTc4MTA4ODcyNHww&ixlib=rb-4.1.0&q=80&w=400
+https://images.unsplash.com/photo-1532336414038-cf19250c5757?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxJbmRpYW4lMjBzcGljZXMlMjBjb2xvcmZ1bCUyMGJvd2xzfGVufDF8fHx8MTc4MTA4ODcxNXww&ixlib=rb-4.1.0&q=80&w=800
+https://images.unsplash.com/photo-1602237514002-c2d8ae2da393?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWQlMjBjaGlsbGklMjBwZXBwZXIlMjBkcmllZHxlbnwxfHx8fDE3ODEwODg3MjV8MA&ixlib=rb-4.1.0&q=80&w=400
+To be the most trusted bridge between India's finest agricultural producers and global importers — delivering premium-quality spices, coir products, and natural coconut goods with complete transparency, reliability, and care.
+https://images.unsplash.com/photo-1622042914684-6a6288b14078?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmVlbiUyMGNhcmRhbW9tJTIwc3BpY2V8ZW58MXx8fHwxNzgxMDg4NzIzfDA&ixlib=rb-4.1.0&q=80&w=400
+https://images.unsplash.com/photo-1591801058986-9e28e68670f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibGFjayUyMHBlcHBlciUyMHNwaWNlfGVufDF8fHx8MTc4MDk2MjE2Nnww&ixlib=rb-4.1.0&q=80&w=400
+Our spices are carefully handpicked, hygienically processed, and packed to retain their natural aroma, taste, and freshness. Every batch undergoes rigorous testing to meet international quality standards before shipment.
+Our spices are sourced directly from certified farms across Kerala, Tamil Nadu, and Andhra Pradesh. Each batch is sun-dried or machine-dried under controlled conditions, then cleaned, graded, and tested before packing.
+is a trusted export company based in Koyilandy, Kozhikode, Kerala, India. We specialise in exporting premium-quality Indian spices, natural coir products, and coconut-based goods to clients across 25+ countries.
+Our coir products are manufactured in Alappuzha, Kerala — the coir capital of the world. All products are made from 100% natural coconut husk with no harmful chemicals, and are biodegradable and eco-certified.
+Voyageur Overseas is a trusted name in the export of premium quality spices from India. With a strong commitment to quality, purity, and sustainability, we bring the rich flavors of India to global markets.
+We are registered with APEDA, IEC, FSSAI, ISO 22000:2018 certified, and registered with the Spices Board of India — ensuring every shipment meets international quality and food-safety standards.
+To become a globally recognised export brand that stands as a symbol of India's agricultural excellence — one that every international buyer trusts for purity, consistency, and ethical sourcing.
+Kerala's coconut belt produces some of the world's finest coconut-derived products. Our virgin coconut oil is cold-pressed within hours of dehusking to preserve nutrients and flavour.
+M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z
+We also export select premium agro products sourced from certified farms across India, meeting all international phytosanitary and food-safety requirements.
+Every product we export meets stringent international quality standards. Below you'll find detailed quality specifications for each product category.
+Bold AGEB, AGE, Extra Bold grades; moisture ≤ 12%; free from extraneous matter. Stored in airtight containers to preserve volatile oil (≥ 3%).
+`use` is not available in this version of React. Make currently only supports React 18, but `use` is only available in React 19+.
+M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z
+Cold-pressed, unrefined; moisture ≤ 0.1%; FFA < 0.1%; lauric acid ≥ 48%; peroxide value < 3 meq/kg; crystal-clear appearance.
+Fine, medium, or coarse grades; moisture ≤ 3%; FFA < 0.1%; free from rancidity; packed in multilayer moisture-barrier bags.
+Ready to source premium Indian spices & coir products? Reach out for bulk orders, pricing, and custom packaging solutions.
+FAQ & SQ grades; bulk density ≥ 550 g/L; piperine content ≥ 4%; machine-cleaned and steam-sterilised for microbial safety.
+Brown fibre length 100–250 mm; moisture ≤ 17%; free from sand and shell fragments; bristle and mattress grades available.
+M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z
+True Ceylon or Cassia type; quills with < 1% broken pieces; moisture ≤ 13%; cinnamaldehyde content tested and certified.
+W180–W450 grades; whole white kernels; moisture ≤ 5%; free from insect damage; packed in vacuum-sealed tins or pouches.
+m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526
+Premium Indian spices & natural coir products exported worldwide. Quality, purity, and authenticity on every shipment.
+EC < 0.5 mS/cm (buffered); pH 5.5–6.5; water holding capacity ≥ 600%; supplied in 650g bricks, 5kg blocks, or loose.
+Woven and non-woven types; tensile strength ≥ 10 kN/m; hydraulic permeability tested; UV degradation rate certified.
+Grain length ≥ 7.2 mm; elongation ratio ≥ 1.7; moisture ≤ 12.5%; broken grains < 5%; aromatic, aged 12–24 months.
+https://wa.me/919895999505?text=Hello%20Voyageur%20Overseas%2C%20I%20am%20interested%20in%20your%20products.
+Alleppey and Erode varieties; curcumin ≥ 3.5%; moisture ≤ 10%; free from artificial colour and adulterants.
+Fixed carbon ≥ 75%; ash content < 5%; moisture ≤ 5%; customised mesh sizes for activated carbon production.
+M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2
+M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0
+M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0
+Weight 700–1400 gsm; pile height 10–20 mm; colourfast; tested for tensile strength and UV stability.
+Twisted 3-strand construction; breaking load tested per diameter; salt-water and weather resistant.
+group relative rounded-xl overflow-hidden cursor-pointer transition-transform hover:scale-[1.02]
+Twisted natural coir rope in various diameters. Strong, salt-water resistant & widely exported.
+Hand-picked dried buds; eugenol content ≥ 72%; moisture ≤ 12%; free from stems and broken buds.
+A trusted name in premium Indian spices, coir & coconut products — from origin to destination.
+text-left text-xs py-1 transition-colors hover:text-amber-400 group flex items-center gap-1.5
+100% natural growing medium from coconut husk. Excellent water retention for horticulture.
+M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z
+S4, S5 Special grades; ASTA colour value ≥ 100; capsaicin tested; aflatoxin B1 < 2 ppb.
+A visual journey through our products, Kerala's backwaters, and India's spice heritage.
+https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_8jhluf8jhluf8jhl.png
+https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_f39zn8f39zn8f39z.png
+https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_2wyvu02wyvu02wyv.png
+Hand-woven natural coir door mats & floor mats. Durable, eco-friendly & biodegradable.
+https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_gimn02gimn02gimn.png
+https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_50oron50oron50or.png
+https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_ydpbptydpbptydpb.png
+https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_8d69c88d69c88d69.png
+https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_pb5ldcpb5ldcpb5l.png
+https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_athbetathbetathb.png
+https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_tbzawxtbzawxtbza.png
+https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_aczg7daczg7daczg.png
+https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_dzhsdydzhsdydzhs.png
+M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z
+Finely shredded & dried coconut meat for confectionery, bakery & food processing.
+M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z
+Aromatic green pods with sweet, floral notes. Used in chai, desserts & biryanis.
+Coir-based grow bags for organic farming & hydroponic horticulture applications.
+M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14
+M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z
+Raw & processed coir fibre for mattresses, geo-textiles, brushes & upholstery.
+High-quality activated shell charcoal for water purification & industrial use.
+linear-gradient(to right, transparent, #c9a84c 30%, #c9a84c 70%, transparent)
+Sweet, warm spice for baking, curries & beverages. Naturally harvested bark.
+linear-gradient(to right, rgba(10,20,40,0.82) 38%, rgba(5,10,25,0.22) 100%)
+linear-gradient(to right, rgba(10,20,5,0.85) 40%, rgba(5,10,2.5,0.22) 100%)
+Intensely aromatic dried flower buds prized for medicinal & culinary value.
+From Origin to Destination — We carry India's finest to the world's finest.
+King of spices. Bold pungent flavour, used globally in cuisine & medicine.
+Biodegradable geo-textiles for soil erosion control & slope stabilisation.
+. Our export team will contact you within 24 hours with a tailored quote.
+M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2
+Fill in your requirements and we'll send a competitive export quotation.
+Pure cold-pressed virgin coconut oil for cooking, cosmetics & Ayurveda.
+M20 10 L22 16 L28 16 L23 20 L25 26 L20 22 L15 26 L17 20 L12 16 L18 16 Z
+M0 90 L40 50 L70 75 L110 35 L150 65 L180 45 L220 80 L220 110 L0 110Z
+Golden spice rich in curcumin. Used worldwide for health & cooking.
+hidden md:block h-12 w-px absolute -left-4 top-1/2 -translate-y-1/2
+Tell us about your requirements, quantities, destination country...
+linear-gradient(to left, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%)
+linear-gradient(135deg, rgba(45,74,30,0.15) 0%, transparent 60%)
+Click a category to expand, select products, and enter weight in
+No artificial additives or preservatives in any of our products.
+M10 73 C22 66 31 81 44 73 C57 65 67 81 81 72 C88 68 93 69 97 72
+Premium basmati & non-basmati rice varieties for global export.
+Fiery heat & rich colour. One of India's most exported spices.
+M0 100 L60 70 L100 85 L140 65 L180 80 L220 90 L220 110 L0 110Z
+Certifications required, label specifications, port of entry…
+linear-gradient(to right, transparent, #c9a84c, transparent)
+linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)
+Exporting to 25+ countries with on-time, doorstep delivery.
+M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z
+M39 35 H62 Q65 35 66 38 L69 47 H36 L38 38 Q38.5 35 39 35 Z
+ISO, FSSAI, APEDA & Spices Board certified on every batch.
+M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2
+Click a category below to explore our full product range
+M20 59 C31 67 53 72 78 59 L71 73 C55 82 35 78 18 68 Z
+https://6a2a7ecd88751837051fd5d5.imgix.net/spices.png
+Please select at least one product before proceeding.
+https://www.linkedin.com/company/voyageur-overseas
+158/A, Koyilandy, Kozhikode, Kerala 673306, India
+M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12
+. Our team will get back to you within 24 hours.
+M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20
+M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z
+group flex flex-col items-center cursor-pointer
+© 2026 Voyageur Overseas. All rights reserved.
+M13 82 C27 74 38 91 53 82 C67 74 79 89 93 81
+M20 8 C12 14 12 26 20 32 C28 26 28 14 20 8Z
+https://www.instagram.com/voyageuroverseas
+text-xs tracking-wider font-bold uppercase
+m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7
+M31 51 L71 45 L78 58 C62 65 43 65 26 58 Z
+M110 95 Q117 85 124 95 L124 122 L110 122Z
+linear-gradient(135deg, #c9a84c, #8b6914)
+Export Inspection Council (EIC) Certified
+M10 2 C6 6 4 10 10 18 C16 10 14 6 10 2Z
+M96 95 Q103 85 110 95 L110 122 L96 122Z
+text-xs tracking-[0.35em] uppercase
+Trusted by clients in 25+ countries
+M137 102 L135 112 M143 102 L145 112
+M172 122 L170 130 M178 122 L176 130
+text-xs tracking-wider mb-1.5 block
+block text-xs tracking-wider mb-1.5
+Sourced directly from Indian farms
+text-xs tracking-[0.3em] uppercase
+Please enter a valid email address
+mt-6 p-5 rounded-xl italic text-sm
+Quality Specifications & Standards
+w-full bg-white sticky top-0 z-50
+hidden lg:flex items-center gap-1
+hidden lg:flex items-center gap-2
+M5 0 C5 5 0 5 0 10 C0 5 -5 5 -5 0
+M99 112 L99 108 L111 108 L111 112
+block text-xs tracking-wider mb-2
+0 3px 12px rgba(201,168,76,0.35)
+1px solid rgba(255,255,255,0.28)
+mailto:info@voyageuroverseas.com
+0 4px 18px rgba(37,211,102,0.45)
+0 4px 18px rgba(201,168,76,0.45)
+1px solid rgba(225,48,108,0.25)
+1px solid rgba(37,211,102,0.25)
+International quality standards
+M86 104 L84 114 M94 104 L96 114
+0 3px 14px rgba(201,168,76,0.3)
+Contact person name is required
+M7.9 20A9 9 0 1 0 4 16.1L2 22Z
+— From Origin to Destination —
+1px solid rgba(0,119,181,0.25)
+hidden md:block h-14 w-px mx-2
+1px solid rgba(0,119,181,0.35)
+1px solid rgba(225,48,108,0.3)
+1px solid rgba(37,211,102,0.3)
+1px solid rgba(201,168,76,0.2)
+EC compliance for geo-textiles
+M28 43 L32 43 L30 59 L25 58 Z
+From the Backwaters of Kerala
+Thank you for reaching out to
+Coir Board of India Certified
+EU import standards compliant
+M53 5 L55 13 L53 11 L51 13 Z
+M0 0 Q60 0 60 60 Q60 0 120 0
+flex items-start gap-3 group
+Select Products & Quantities
+0 2px 16px rgba(0,0,0,0.08)
+M 510 230 Q 380 110 155 170
+M 510 230 Q 570 150 710 110
+M 510 230 Q 620 280 800 260
+M 510 230 Q 490 370 400 420
+0 4px 16px rgba(0,0,0,0.18)
+0 3px 14px rgba(0,0,0,0.10)
+0 4px 18px rgba(0,0,0,0.10)
+0 2px 16px rgba(0,0,0,0.06)
+From origin to destination.
+0 4px 24px rgba(0,0,0,0.08)
+0 2px 10px rgba(0,0,0,0.07)
+0 4px 24px rgba(0,0,0,0.07)
+0 3px 16px rgba(0,0,0,0.12)
+http://www.w3.org/2000/svg
+m21.854 2.147-10.94 10.939
+translate(0,0) rotate(-45)
+M 510 230 Q 460 120 310 90
+Reliable & timely shipment
+0 1px 4px rgba(0,0,0,0.06)
+M170 130 L175 128 L176 130
+Message Sent Successfully!
+M10 20c5.5-2.5.8-6.4 3-10
+M30 25 C43 31 64 31 76 25
+M28 58 C42 52 65 52 80 58
+M30 56 C41 61 57 61 72 54
+M35 48 C45 52 57 52 69 47
+info@voyageuroverseas.com
+M20 5 L20 35 M5 20 L35 20
+Retail Pouches (50g–500g)
+Email address is required
+Export Enquiry Submitted!
+Phytosanitary Certificate
+Kosher & Halal on request
+hidden md:block absolute
+M40 122 Q110 120 180 122
+Message / Requirements *
+Kozhikode, Kerala 673306
+Custom Branded Packaging
+Company name is required
+Quality & Certifications
+M14 2v4a2 2 0 0 0 2 2h4
+From the Land of Spices
+Pure and natural spices
+https://6a2a7ecd8875183
+M84 114 L90 112 L96 114
+text-xs hidden sm:block
+About Voyageur Overseas
+s backwaters, and India
+certifications-section
+Trusted Across Nations
+clamp(2.2rem,5vw,4rem)
+rgba(255,255,255,0.88)
+rgba(255,255,255,0.38)
+rgba(255,255,255,0.13)
+rgba(255,255,255,0.75)
+Guntur, Andhra Pradesh
+Coconut Shell Charcoal
+Colorful spice powders
+M151 82 Q158 68 165 82
+rgba(255,255,255,0.55)
+rgba(255,255,255,0.65)
+rgba(255,255,255,0.07)
+rgba(255,255,255,0.15)
+Destination & Delivery
+clamp(2rem,5vw,3.5rem)
+Spices Board Certified
+Moisture content < 12%
+Aflatoxin-free testing
+clamp(1.8rem,5vw,3rem)
+2px solid transparent
+rgba(201,168,76,0.08)
+Premium Indian Spices
+Natural Coir Products
+rgba(255,255,255,0.8)
+M80 72 Q110 30 140 72
+rgba(225,48,108,0.12)
+rgba(37,211,102,0.12)
+rgba(255,255,255,0.6)
+rgba(255,255,255,0.4)
+rgba(255,255,255,0.7)
+rgba(255,255,255,0.3)
+rgba(255,255,255,0.5)
+NEXT: SELECT PRODUCTS
+rgba(201,168,76,0.07)
+DESTINATION COUNTRY *
+rgba(201,168,76,0.15)
+rgba(201,168,76,0.12)
+3.29 7 12 12 20.71 7
+🥥  Coconut Products
+rgba(201,168,76,0.1)
+rgba(225,48,108,0.1)
+rgba(37,211,102,0.1)
+Our Premium Products
+Coconut Shell Powder
+M14 22 L17 25 L26 16
+Send Another Message
+rgba(0,119,181,0.15)
+rgba(201,168,76,0.4)
+PACKAGING PREFERENCE
+Compliance Standards
+View All Products →
+noopener noreferrer
+rgba(0,119,181,0.1)
+1.5px solid #c9a84c
+Other Agro Products
+Refined Coconut Oil
+Coconut Milk Powder
+M55 82 Q62 68 69 82
+1.5px solid #5aab6e
+Vacuum Sealed Packs
+Company Information
+PRODUCT CATEGORIES
+inline w-3.5 h-3.5
+DESICCATED COCONUT
+Coir Fibre (Brown)
+Coir Fibre (White)
+Virgin Coconut Oil
+Desiccated Coconut
+Indian Spice Bowls
+Natural Coir Fibre
+Coconut Plantation
+🌿  Coir Products
+✦   Agro Products
+2px solid #C9A84C
+1px solid #e8dfd0
+stroke-dashoffset
+Tamil Nadu, India
+Erode, Tamil Nadu
+Alappuzha, Kerala
+Coir Mat (Tufted)
+2px solid #e0d8cc
+Voyageur Overseas
+Authentic Spices.
+Your Company Ltd.
+email@company.com
+1px solid #e53e3e
+NEXT: DESTINATION
+Certified Quality
+4px solid #c9a84c
+ISO 9001:2015 QMS
+Quality Assurance
+1px solid #ede8e0
+M6.453 15h11.094
+m7.5 4.27 9 5.15
+products-section
++91 9895 999 505
+M0 0 Q0 60 60 60
+translateY(10px)
+ON TIME DELIVERY
+COIR GEO-TEXTILE
+COCONUT CHARCOAL
+Coconut Products
+Coco Peat Blocks
+Coir Mat (Plain)
+Geo-Textile Mesh
+Brushes & Brooms
+Activated Carbon
+Non-Basmati Rice
+rgba(0,0,0,0.35)
+Countries Served
+Years Experience
+AUTHENTIC SPICES
+translateY(-50%)
+text-base italic
+Authentic India.
+Phone / WhatsApp
+john@company.com
+Chat on WhatsApp
+158/A, Koyilandy
+Coir Geo-Textile
+Bulk (Jute Bags)
+Contact Person *
+REQUIRED BY DATE
+ADDITIONAL NOTES
+APEDA Registered
+AGMARK Certified
+contact-section
+QUALITY ASSURED
+Wayanad, Kerala
+Punjab & Kerala
+Coriander Seeds
+Coco Peat Discs
+Authentic India
+Select Products
+Email Address *
++1 234 567 8900
+Select country…
+Visual Showcase
+m12 19-7-7 7-7
+m15 18-6-6 6-6
+clipboard-list
+message-circle
+Certifications
+rotate(180deg)
+PREMIUM INDIAN
+EXPLORE SPICES
+xMidYMid slice
+GREEN CARDAMOM
+Green Cardamom
+Coir Grow Bags
+Georgia, serif
+text-xs italic
+United Kingdom
+Export Enquiry
+Company Name *
+SUBMIT ENQUIRY
+FSSAI Licensed
+ISO 22000:2018
+Cashew Kernels
+Premium Spices
+m12 5 7 7-7 7
+m9 18 6-6-6-6
+chevron-right
+m9 12 2 2 4-4
+m9 15 3 3 3-3
+flask-conical
+Voyageur logo
+GLOBAL EXPORT
+animateMotion
+translateY(0)
+Kerala, India
+Coir Products
+Mustard Seeds
+Coconut Water
+about-section
+Happy Clients
+M10 24 L30 24
+Agro Products
+United States
+ORDER SUMMARY
+rotate(90deg)
+ORDER PREVIEW
+sm:col-span-2
+Spice powders
+currentColor
+m6 9 6 6 6-6
+chevron-down
+chevron-left
+circle-alert
+circle-check
+shield-check
+NATURAL COIR
+EXPLORE COIR
+opacity 0.7s
+100% NATURAL
+BLACK PEPPER
+All Products
+Black Pepper
+White Pepper
+Fennel Seeds
+Basmati Rice
+Our Products
+VIEW DETAILS
+SPICES BOARD
+Get In Touch
+Company Name
+Your Company
+SEND MESSAGE
+Saudi Arabia
+Destination:
+BACK TO HOME
+min-h-screen
+Back to Home
+Company Info
+Phone Number
+100% Natural
+Global Reach
+arrow-right
+0 0 100 100
+transparent
+GET A QUOTE
+0 0 120 120
+0 0 900 460
+COCONUT OIL
+Cumin Seeds
+0 0 220 160
+text-center
+Your Name *
+QUICK LINKS
+Cashew W180
+Cashew W240
+Cashew W320
+Dried Mango
+Netherlands
+Get A Quote
+Destination
+companyName
+contactName
+Our Mission
+Geo-Textile
+Kerala Coir
+arrow-left
+M18 6 6 18
+m6 6 12 12
+aria-label
+M22 42 H84
+Contact Us
+text-right
+scaleX(-1)
+indefinite
+text-white
+FARM FRESH
+RED CHILLI
+COIR FIBRE
+Red Chilli
+Star Anise
+Coir Twine
+py-10 px-4
+py-16 px-4
+REGISTERED
+22000:2018
+w-full h-1
+py-14 px-4
+John Smith
+Thank you,
+Products (
+Packaging:
+Who We Are
+Years Exp.
+Our Vision
+Coir Fibre
+0 0 24 24
+M8 11h.01
+M8 16h.01
+M12 18v-6
+file-down
+instagram
+M12 22V12
+mousedown
+rotate(0)
+Instagram
+lg:hidden
+h-px w-10
+COCO PEAT
+COIR ROPE
+GROW BAGS
+Fenugreek
+Coir Rope
+Coir Logs
+We Export
+READ MORE
+0 0 40 40
+0 0 20 20
+Australia
+Singapore
+py-8 px-4
+Full Name
+text-left
+Our Story
+Countries
+Coco Peat
+M19 12H5
+M5 12h14
+M12 11h4
+M12 16h4
+M8.5 2h7
+M2 12h20
+linkedin
+polyline
+M7 20h10
+M15 18H9
+About Us
+Products
+VOYAGEUR
+OVERSEAS
+relative
+LinkedIn
+WhatsApp
+PRODUCTS
+h-px w-6
+CINNAMON
+TURMERIC
+COIR MAT
+Cinnamon
+Turmeric
+Bay Leaf
+h-px w-8
+text-2xl
+LICENSED
+w-4 h-px
+textarea
+Tamarind
+Malaysia
+Company:
+selected
+Contact:
+Coir Mat
+text-3xl
+map-pin
+package
+coconut
+ellipse
+Quality
+Gallery
+quality
+gallery
+2.15rem
+1.85rem
+text-xs
+w-6 h-6
+NETWORK
+section
+animate
+w-4 h-4
+w-5 h-5
+Coconut
+DETAILS
+0.75rem
+Address
+text-sm
+Email *
+CONTACT
+Germany
+text-lg
+Clients
+w-3 h-3
+lucide
+1l729n
+x3x0zl
+1ays0h
+xquz4c
+1yiouv
+circle
+1vp47v
+qrunsl
+1wnfg3
+mthhwq
+1mglay
+1pkeuh
+4dfq90
+dzmm74
+tgr4d6
+116196
+1jrz19
+n85exb
+1dfujw
+18s6g9
+1nclc0
+1v7zrd
+1rqfz7
+tnqrlb
+17g6i2
+1npd3o
+18mbvz
+3shlmq
+csnxdl
+13o1zl
+9i4pu4
+2e1cvw
+9exkf1
+r4j83e
+nnexq3
+mt58a7
+c2jq9f
+mk3on5
+bt5ra8
+18n3k1
+1ocrg3
+1r0f0z
+ilqhr7
+1e0a9i
+1owob3
+yk5zj1
+vv11sd
+1a0edw
+d0xqtd
+ousv84
+1c824w
+foiqr5
+1ffxy3
+12cjpa
+oel41y
+shield
+e6iznv
+161w41
+9gtqwd
+bkxnd2
+sprout
+1vlfrh
+1c9p78
+target
+wrbu53
+1lyqi6
+lysw3i
+332jqn
+19iecd
+1bl5f8
+d8bk6v
+spices
+others
+smooth
+0.12em
+0.22em
+0.9rem
+italic
+0.05em
+button
+export
+0.04em
+global
+SPICES
+7;12;7
+0.06em
+CLOVES
+Spices
+Cassia
+Cloves
+Nutmeg
+Ginger
+0.8rem
+0.08em
+middle
+0.6rem
+strong
+submit
+scroll
+footer
+France
+Canada
+1.8rem
+number
+select
+option
+flex-1
+Module
+round
+award
+12.01
+globe
+17.51
+phone
+truck
+about
+white
+right
+APEDA
+fssai
+INDIA
+175.5
+Email
+label
+input
+email
+Japan
+Other
+Unit:
+light
+none
+path
+line
+rect
+17.5
+leaf
+mail
+menu
+send
+coir
+Home
+home
+left
+0.5s
+1.5s
+span
+RICE
+rice
+Rice
+Mace
+500+
+0.15
+text
+bold
+56.5
+mb-1
+43.5
+mb-2
+form
+page
+mb-3
+mb-6
+mb-5
+date
+use
+svg
+eye
+6.5
+100
+1.1
+2.4
+1.5
+4.5
+4.2
+nav
+div
+all
+120
+0.8
+0.5
+0.4
+0.6
+img
+8 5
+0.7
+0.9
+510
+230
+All
+25+
+15+
+0.3
+IEC
+ISO
+5.5
+110
+220
+108
+140
+2.5
+1.8
+105
+112
+50%
+160
+118
+151
+158
+175
+1.2
+174
+UAE
+Qty
+0.1
+4/3

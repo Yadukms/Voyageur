@@ -1,0 +1,1017 @@
+===========================================
+COMPONENT: ht
+===========================================
+function ht() {
+  const [r, a] = v(0), [i, d] = v(!1), [n, o] = v(!1), y = ae(null);
+  function s(g) {
+    n || g === r || (o(!0), setTimeout(() => {
+      a(g), o(!1);
+    }, 350));
+  }
+  function x() {
+    s((r + 1) % I.length);
+  }
+  function k() {
+    s((r - 1 + I.length) % I.length);
+  }
+  te(() => {
+    if (i) {
+      y.current && clearInterval(y.current);
+      return;
+    }
+    return y.current = setInterval(() => a((g) => (g + 1) % I.length), 5e3), () => {
+      y.current && clearInterval(y.current);
+    };
+  }, [i]);
+  const m = I[r];
+  return /* @__PURE__ */ t(
+    "section",
+    {
+      className: "relative w-full overflow-hidden select-none",
+      style: { height: 460 },
+      onMouseEnter: () => d(!0),
+      onMouseLeave: () => d(!1),
+      children: [
+        I.map((g, b) => /* @__PURE__ */ e(
+          "img",
+          {
+            src: g.bgUrl,
+            alt: g.id,
+            className: "absolute inset-0 w-full h-full object-cover transition-opacity duration-700",
+            style: { opacity: b === r && !n ? 1 : 0, zIndex: 0 }
+          },
+          g.id
+        )),
+        /* @__PURE__ */ e("div", { className: "absolute inset-0 transition-all duration-700", style: { background: m.overlay, zIndex: 1 } }),
+        m.overlayImg && /* @__PURE__ */ e("div", { className: "absolute right-0 inset-y-0 w-1/2 overflow-hidden pointer-events-none", style: { zIndex: 1 }, children: /* @__PURE__ */ e(
+          "img",
+          {
+            src: m.overlayImg,
+            alt: "",
+            className: "w-full h-full object-cover",
+            style: { opacity: n ? 0 : 0.5, transition: "opacity 0.7s", maskImage: "linear-gradient(to left, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%)" }
+          }
+        ) }),
+        m.id === "global" && !n && /* @__PURE__ */ e("div", { className: "absolute inset-0 pointer-events-none", style: { zIndex: 2, opacity: 0.3 }, children: /* @__PURE__ */ t("svg", { viewBox: "0 0 900 460", className: "w-full h-full", preserveAspectRatio: "xMidYMid slice", children: [
+          [
+            { d: "M 510 230 Q 380 110 155 170", delay: "0s" },
+            { d: "M 510 230 Q 460 120 310 90", delay: "0.5s" },
+            { d: "M 510 230 Q 570 150 710 110", delay: "1s" },
+            { d: "M 510 230 Q 620 280 800 260", delay: "1.5s" },
+            { d: "M 510 230 Q 490 370 400 420", delay: "2s" }
+          ].map((g, b) => /* @__PURE__ */ t("g", { children: [
+            /* @__PURE__ */ e("path", { d: g.d, fill: "none", stroke: "white", strokeWidth: "1.5", strokeDasharray: "8 5", opacity: "0.7", children: /* @__PURE__ */ e("animate", { attributeName: "stroke-dashoffset", from: "0", to: "-60", dur: "2s", repeatCount: "indefinite", begin: g.delay }) }),
+            /* @__PURE__ */ e("circle", { r: "4", fill: "white", opacity: "0.9", children: /* @__PURE__ */ e("animateMotion", { dur: "3s", repeatCount: "indefinite", begin: g.delay, path: g.d }) })
+          ] }, b)),
+          /* @__PURE__ */ e("circle", { cx: "510", cy: "230", r: "7", fill: "#c9a84c", opacity: "0.9", children: /* @__PURE__ */ e("animate", { attributeName: "r", values: "7;12;7", dur: "2s", repeatCount: "indefinite" }) })
+        ] }) }),
+        /* @__PURE__ */ e("div", { style: { zIndex: 3 }, children: /* @__PURE__ */ e(Z, {}) }),
+        /* @__PURE__ */ e("div", { style: { zIndex: 3 }, children: /* @__PURE__ */ e(Z, { flip: !0 }) }),
+        /* @__PURE__ */ e("div", { className: "relative z-10 max-w-7xl mx-auto px-8 h-full flex flex-col justify-center", children: /* @__PURE__ */ t("div", { className: "transition-all duration-500", style: { opacity: n ? 0 : 1, transform: n ? "translateY(10px)" : "translateY(0)" }, children: [
+          /* @__PURE__ */ t("div", { className: "flex items-center gap-3 mb-3", children: [
+            /* @__PURE__ */ e("div", { className: "h-px w-10", style: { background: m.accent } }),
+            /* @__PURE__ */ e("span", { className: "text-xs tracking-[0.35em] uppercase", style: { color: m.accent }, children: m.tag }),
+            /* @__PURE__ */ e("div", { className: "h-px w-10", style: { background: m.accent } })
+          ] }),
+          /* @__PURE__ */ e("h1", { className: "text-white", style: { fontSize: "clamp(2.2rem,5vw,4rem)", fontWeight: 900, lineHeight: 1.05 }, children: m.heading1 }),
+          /* @__PURE__ */ e("h1", { style: { fontSize: "clamp(2.2rem,5vw,4rem)", fontWeight: 900, lineHeight: 1.05, color: m.accent }, children: m.heading2 }),
+          /* @__PURE__ */ e("p", { className: "mt-3 max-w-sm text-sm", style: { color: "rgba(255,255,255,0.88)", lineHeight: 1.75 }, children: m.sub.split(`
+`).map((g, b) => /* @__PURE__ */ t("span", { children: [
+            g,
+            b === 0 && /* @__PURE__ */ e("br", {})
+          ] }, b)) }),
+          /* @__PURE__ */ t("div", { className: "flex items-center gap-3 my-4", children: [
+            /* @__PURE__ */ e("div", { className: "h-px w-6", style: { background: m.accent } }),
+            /* @__PURE__ */ e("div", { className: "w-1.5 h-1.5 rounded-full", style: { background: m.accent } }),
+            /* @__PURE__ */ e("div", { className: "h-px w-6", style: { background: m.accent } })
+          ] }),
+          /* @__PURE__ */ t(
+            "button",
+            {
+              onClick: () => document.getElementById(m.scrollTarget)?.scrollIntoView({ behavior: "smooth" }),
+              className: "flex items-center gap-2 px-7 py-3.5 text-sm text-white transition-all hover:scale-105",
+              style: { background: m.id === "coir" ? "#1a4a2e" : m.id === "global" ? "#0a2040" : "#2d4a1e", border: `1.5px solid ${m.accent}`, borderRadius: 4, fontWeight: 700, letterSpacing: "0.06em" },
+              children: [
+                m.btnLabel,
+                " ",
+                /* @__PURE__ */ e(Ne, { className: "w-4 h-4" })
+              ]
+            }
+          )
+        ] }) }),
+        /* @__PURE__ */ e("div", { className: "absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2.5", style: { zIndex: 10 }, children: I.map((g, b) => /* @__PURE__ */ e(
+          "button",
+          {
+            onClick: () => s(b),
+            className: "rounded-full transition-all duration-300",
+            style: { width: b === r ? 26 : 8, height: 8, background: b === r ? m.accent : "rgba(255,255,255,0.38)" }
+          },
+          g.id
+        )) }),
+        /* @__PURE__ */ e(
+          "button",
+          {
+            onClick: k,
+            className: "absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110",
+            style: { background: "rgba(255,255,255,0.13)", border: "1px solid rgba(255,255,255,0.28)", zIndex: 10 },
+            children: /* @__PURE__ */ e(Se, { className: "w-5 h-5 text-white" })
+          }
+        ),
+        /* @__PURE__ */ e(
+          "button",
+          {
+            onClick: x,
+            className: "absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110",
+            style: { background: "rgba(255,255,255,0.13)", border: "1px solid rgba(255,255,255,0.28)", zIndex: 10 },
+            children: /* @__PURE__ */ e(E, { className: "w-5 h-5 text-white" })
+          }
+        ),
+        /* @__PURE__ */ e("div", { className: "absolute bottom-5 right-4 flex gap-2", style: { zIndex: 10 }, children: I.map((g, b) => /* @__PURE__ */ e(
+          "button",
+          {
+            onClick: () => s(b),
+            className: "rounded overflow-hidden transition-all",
+            style: { width: 48, height: 32, outline: b === r ? `2px solid ${m.accent}` : "2px solid transparent", outlineOffset: 2, opacity: b === r ? 1 : 0.5 },
+            children: /* @__PURE__ */ e("img", { src: g.bgUrl, alt: g.id, className: "w-full h-full object-cover" })
+          },
+          g.id
+        )) })
+      ]
+    }
+  );
+}
+
+
+
+===========================================
+COMPONENT: pt
+===========================================
+function pt() {
+  return /* @__PURE__ */ e("section", { className: "w-full py-5 px-4", style: { background: "#172C19" }, children: /* @__PURE__ */ e("div", { className: "max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4", children: ut.map(({ icon: r, title: a, desc: i }) => /* @__PURE__ */ t("div", { className: "flex items-center gap-3 py-2", children: [
+    /* @__PURE__ */ e("div", { className: "shrink-0 w-10 h-10 rounded-full flex items-center justify-center", style: { border: "1.5px solid #c9a84c" }, children: /* @__PURE__ */ e(r, { className: "w-5 h-5", style: { color: "#c9a84c" } }) }),
+    /* @__PURE__ */ t("div", { children: [
+      /* @__PURE__ */ e("div", { className: "text-xs tracking-wider", style: { color: "#c9a84c", fontWeight: 700 }, children: a }),
+      /* @__PURE__ */ e("div", { className: "text-xs mt-0.5", style: { color: "rgba(255,255,255,0.75)" }, children: i })
+    ] })
+  ] }, a)) }) });
+}
+
+
+
+===========================================
+COMPONENT: dt
+===========================================
+function dt({ activePage: r, setActivePage: a, setActiveCategory: i, scrollTo: d, activeNav: n, setActiveNav: o, goHome: y }) {
+  const [s, x] = v(!1), [k, m] = v(!1), g = ae(null);
+  te(() => {
+    function c(S) {
+      g.current && !g.current.contains(S.target) && m(!1);
+    }
+    return document.addEventListener("mousedown", c), () => document.removeEventListener("mousedown", c);
+  }, []);
+  function b(c) {
+    i(c), a("home"), m(!1), x(!1), o("Products"), setTimeout(() => document.getElementById("products-section")?.scrollIntoView({ behavior: "smooth" }), 100);
+  }
+  function h(c) {
+    if (o(c), x(!1), m(!1), c === "Home") {
+      y();
+      return;
+    }
+    if (c === "About Us") {
+      a("about"), window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    if (c === "Quality") {
+      a("quality"), window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    if (c === "Gallery") {
+      a("gallery"), window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    if (c === "Certifications") {
+      a("home"), setTimeout(() => d("certifications-section"), 120);
+      return;
+    }
+    if (c === "Contact Us") {
+      a("home"), setTimeout(() => d("contact-section"), 120);
+      return;
+    }
+  }
+  const w = (c) => c === "Home" && r === "home" && n === "Home" || c === "About Us" && r === "about" || c === "Quality" && r === "quality" || c === "Gallery" && r === "gallery" || c === "Products" && n === "Products" || c === "Contact Us" && n === "Contact Us" || c === "Certifications" && n === "Certifications";
+  return /* @__PURE__ */ t("nav", { className: "w-full bg-white sticky top-0 z-50", style: { boxShadow: "0 2px 16px rgba(0,0,0,0.08)" }, children: [
+    /* @__PURE__ */ t("div", { className: "max-w-7xl mx-auto px-4 flex items-center justify-between", style: { height: 95 }, children: [
+      /* @__PURE__ */ t("div", { className: "flex items-center gap-3 cursor-pointer shrink-0", onClick: () => {
+        y(), o("Home");
+      }, children: [
+        /* @__PURE__ */ e(nt, { size: 68 }),
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ e("div", { style: { color: "#1a3a20", fontWeight: 900, fontSize: "2.15rem", letterSpacing: "0.12em", lineHeight: 1.1 }, children: "VOYAGEUR" }),
+          /* @__PURE__ */ e("div", { style: { color: "#C9A84C", fontWeight: 500, fontSize: "1.85rem", letterSpacing: "0.22em", lineHeight: 1.1 }, children: "OVERSEAS" }),
+          /* @__PURE__ */ e("div", { style: { color: "#8a6a2a", fontSize: "0.9rem", fontStyle: "italic", letterSpacing: "0.05em", marginTop: 2 }, children: "— From Origin to Destination —" })
+        ] })
+      ] }),
+      /* @__PURE__ */ e("ul", { className: "hidden lg:flex items-center gap-1", children: X.map(
+        ({ label: c, hasDropdown: S }) => S ? /* @__PURE__ */ t("li", { className: "relative", ref: g, children: [
+          /* @__PURE__ */ t(
+            "button",
+            {
+              onClick: () => m((C) => !C),
+              className: "flex items-center gap-1 px-3 py-2 rounded-md text-sm transition-all",
+              style: {
+                color: w(c) ? "#C9A84C" : "#2a2a2a",
+                background: w(c) ? "rgba(201,168,76,0.1)" : "transparent",
+                fontWeight: w(c) ? 700 : 400,
+                borderBottom: w(c) ? "2px solid #C9A84C" : "2px solid transparent"
+              },
+              children: [
+                c,
+                /* @__PURE__ */ e(F, { className: "w-3.5 h-3.5 transition-transform", style: { transform: k ? "rotate(180deg)" : "rotate(0)" } })
+              ]
+            }
+          ),
+          k && /* @__PURE__ */ t("div", { className: "absolute top-full left-0 mt-1 rounded-xl shadow-2xl py-2 z-50", style: { background: "white", border: "1px solid #e8dfd0", minWidth: 210 }, children: [
+            /* @__PURE__ */ e("div", { className: "px-4 py-2 text-xs tracking-widest border-b mb-1", style: { color: "#C9A84C", fontWeight: 700, borderColor: "#f0ebe3" }, children: "PRODUCT CATEGORIES" }),
+            Y.map((C) => /* @__PURE__ */ e("button", { className: "w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-amber-50", style: { color: "#333" }, onClick: () => b(C.id), children: C.label }, C.id)),
+            /* @__PURE__ */ e("div", { className: "mx-4 my-1 h-px", style: { background: "#f0ebe3" } }),
+            /* @__PURE__ */ e("button", { className: "w-full text-left px-4 py-2 text-xs hover:bg-amber-50 transition-colors", style: { color: "#999" }, onClick: () => b("all"), children: "View All Products →" })
+          ] })
+        ] }, c) : /* @__PURE__ */ e("li", { children: /* @__PURE__ */ e(
+          "button",
+          {
+            onClick: () => h(c),
+            className: "px-3 py-2 rounded-md text-sm transition-all",
+            style: {
+              color: w(c) ? "#C9A84C" : "#2a2a2a",
+              background: w(c) ? "rgba(201,168,76,0.1)" : "transparent",
+              fontWeight: w(c) ? 700 : 400,
+              borderBottom: w(c) ? "2px solid #C9A84C" : "2px solid transparent"
+            },
+            children: c
+          }
+        ) }, c)
+      ) }),
+      /* @__PURE__ */ t("div", { className: "hidden lg:flex items-center gap-2", children: [
+        /* @__PURE__ */ t("div", { className: "flex items-center gap-1.5", children: [
+          /* @__PURE__ */ e(
+            "a",
+            {
+              href: Q,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              title: "LinkedIn",
+              className: "w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-115",
+              style: { background: "rgba(0,119,181,0.1)", border: "1px solid rgba(0,119,181,0.25)" },
+              children: /* @__PURE__ */ e(q, { className: "w-4.5 h-4.5", style: { color: "#0077b5", width: 18, height: 18 } })
+            }
+          ),
+          /* @__PURE__ */ e(
+            "a",
+            {
+              href: K,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              title: "Instagram",
+              className: "w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-115",
+              style: { background: "rgba(225,48,108,0.1)", border: "1px solid rgba(225,48,108,0.25)" },
+              children: /* @__PURE__ */ e(U, { style: { color: "#e1306c", width: 18, height: 18 } })
+            }
+          ),
+          /* @__PURE__ */ e(
+            "a",
+            {
+              href: z,
+              target: "_blank",
+              rel: "noopener noreferrer",
+              title: "WhatsApp",
+              className: "w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-115",
+              style: { background: "rgba(37,211,102,0.1)", border: "1px solid rgba(37,211,102,0.25)" },
+              children: /* @__PURE__ */ e(T, { style: { color: "#25d366", width: 18, height: 18 } })
+            }
+          )
+        ] }),
+        /* @__PURE__ */ e("div", { className: "h-8 w-px mx-1", style: { background: "#e8dfd0" } }),
+        /* @__PURE__ */ t("a", { href: z, target: "_blank", rel: "noopener noreferrer", className: "text-right", children: [
+          /* @__PURE__ */ t("div", { className: "flex items-center gap-1 text-xs", style: { color: "#1a3a20", fontWeight: 700 }, children: [
+            /* @__PURE__ */ e(j, { style: { color: "#C9A84C", width: 13, height: 13 } }),
+            "+91 9895 999 505"
+          ] }),
+          /* @__PURE__ */ e("div", { className: "text-xs", style: { color: "#999" }, children: "info@voyageuroverseas.com" })
+        ] }),
+        /* @__PURE__ */ e(
+          "button",
+          {
+            onClick: () => {
+              a("export"), o("");
+            },
+            className: "ml-1 px-5 py-2.5 text-sm text-white transition-all hover:opacity-90 hover:scale-105",
+            style: { background: "#C9A84C", borderRadius: 5, fontWeight: 700, boxShadow: "0 3px 12px rgba(201,168,76,0.35)", letterSpacing: "0.04em" },
+            children: "GET A QUOTE"
+          }
+        )
+      ] }),
+      /* @__PURE__ */ e("button", { className: "lg:hidden", onClick: () => x(!s), children: s ? /* @__PURE__ */ e(ct, { className: "w-6 h-6" }) : /* @__PURE__ */ e(De, { className: "w-6 h-6" }) })
+    ] }),
+    s && /* @__PURE__ */ t("div", { className: "lg:hidden bg-white border-t px-4 py-3 flex flex-col gap-0.5", style: { borderColor: "#f0ebe3" }, children: [
+      X.map(({ label: c, hasDropdown: S }) => /* @__PURE__ */ t("div", { children: [
+        /* @__PURE__ */ t(
+          "button",
+          {
+            className: "w-full text-left px-3 py-2.5 text-sm rounded-lg transition-colors",
+            style: { color: w(c) ? "#C9A84C" : "#333", fontWeight: w(c) ? 700 : 400, background: w(c) ? "rgba(201,168,76,0.08)" : "transparent" },
+            onClick: () => S ? m((C) => !C) : h(c),
+            children: [
+              c,
+              " ",
+              S && /* @__PURE__ */ e(F, { className: "inline w-3.5 h-3.5" })
+            ]
+          }
+        ),
+        S && k && /* @__PURE__ */ e("div", { className: "pl-4 flex flex-col", children: Y.map((C) => /* @__PURE__ */ e("button", { className: "text-left text-sm py-2 px-2", style: { color: "#666" }, onClick: () => b(C.id), children: C.label }, C.id)) })
+      ] }, c)),
+      /* @__PURE__ */ t("div", { className: "flex gap-3 pt-3 mt-1 border-t", style: { borderColor: "#f0ebe3" }, children: [
+        /* @__PURE__ */ e("a", { href: Q, target: "_blank", rel: "noopener noreferrer", children: /* @__PURE__ */ e(q, { style: { color: "#0077b5", width: 22, height: 22 } }) }),
+        /* @__PURE__ */ e("a", { href: K, target: "_blank", rel: "noopener noreferrer", children: /* @__PURE__ */ e(U, { style: { color: "#e1306c", width: 22, height: 22 } }) }),
+        /* @__PURE__ */ e("a", { href: z, target: "_blank", rel: "noopener noreferrer", children: /* @__PURE__ */ e(T, { style: { color: "#25d366", width: 22, height: 22 } }) })
+      ] }),
+      /* @__PURE__ */ e("button", { onClick: () => {
+        a("export"), x(!1);
+      }, className: "mt-2 py-3 text-sm text-white font-bold rounded-lg", style: { background: "#C9A84C" }, children: "GET A QUOTE" })
+    ] })
+  ] });
+}
+
+
+
+===========================================
+COMPONENT: Et
+===========================================
+function Et({ setActivePage: r }) {
+  const [a, i] = v(1), [d, n] = v(!1), [o, y] = v(null), [s, x] = v("kg"), [k, m] = v({}), [g, b] = v(""), [h, w] = v({
+    companyName: "",
+    contactName: "",
+    email: "",
+    phone: "",
+    country: "",
+    packaging: "",
+    deliveryDate: "",
+    notes: "",
+    selectedItems: {}
+  });
+  function c(l, u) {
+    w((f) => ({ ...f, [l]: u })), m((f) => {
+      const N = { ...f };
+      return delete N[l], N;
+    });
+  }
+  function S(l) {
+    w((u) => {
+      const f = { ...u.selectedItems };
+      return l in f ? delete f[l] : f[l] = "", { ...u, selectedItems: f };
+    });
+  }
+  function C(l, u) {
+    w((f) => ({ ...f, selectedItems: { ...f.selectedItems, [l]: u } })), u && m((f) => {
+      const N = { ...f };
+      return delete N[`qty_${l}`], N;
+    });
+  }
+  function me() {
+    const l = {};
+    return h.companyName.trim() || (l.companyName = "Company name is required"), h.contactName.trim() || (l.contactName = "Contact person name is required"), h.email.trim() ? /\S+@\S+\.\S+/.test(h.email) || (l.email = "Please enter a valid email address") : l.email = "Email address is required", m(l), Object.keys(l).length === 0;
+  }
+  function he() {
+    if (Object.keys(h.selectedItems).length === 0)
+      return b("Please select at least one product before proceeding."), !1;
+    const u = {};
+    return Object.entries(h.selectedItems).forEach(([f, N]) => {
+      (!N || parseFloat(N) <= 0) && (u[`qty_${f}`] = `Please enter quantity for ${f}`);
+    }), m(u), Object.keys(u).length > 0 ? (b(`Please enter the required weight (in ${s}) for all selected products.`), !1) : (b(""), !0);
+  }
+  const A = Object.keys(h.selectedItems).length;
+  return d ? /* @__PURE__ */ e("div", { className: "min-h-screen flex flex-col items-center justify-center px-4 py-20", style: { background: "#faf6f0" }, children: /* @__PURE__ */ t("div", { className: "text-center max-w-md", children: [
+    /* @__PURE__ */ e("div", { className: "w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6", style: { background: "#2d4a1e" }, children: /* @__PURE__ */ e(L, { className: "w-10 h-10 text-white" }) }),
+    /* @__PURE__ */ e("h2", { className: "mb-3", style: { color: "#1a1a1a" }, children: "Export Enquiry Submitted!" }),
+    /* @__PURE__ */ t("p", { className: "text-sm mb-8", style: { color: "#666" }, children: [
+      "Thank you, ",
+      /* @__PURE__ */ e("strong", { children: h.contactName }),
+      ". Our export team will contact you within 24 hours with a tailored quote."
+    ] }),
+    /* @__PURE__ */ t("div", { className: "p-5 rounded-xl text-left mb-8", style: { background: "white", boxShadow: "0 2px 16px rgba(0,0,0,0.08)" }, children: [
+      /* @__PURE__ */ e("div", { className: "text-xs tracking-widest mb-3", style: { color: "#c9a84c", fontWeight: 700 }, children: "ORDER SUMMARY" }),
+      /* @__PURE__ */ t("div", { className: "text-sm space-y-1.5", style: { color: "#555" }, children: [
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ e("strong", { children: "Company:" }),
+          " ",
+          h.companyName
+        ] }),
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ e("strong", { children: "Destination:" }),
+          " ",
+          h.country
+        ] }),
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ t("strong", { children: [
+            "Products (",
+            A,
+            "):"
+          ] }),
+          " ",
+          Object.keys(h.selectedItems).slice(0, 4).join(", "),
+          A > 4 ? ` +${A - 4} more` : ""
+        ] }),
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ e("strong", { children: "Unit:" }),
+          " ",
+          s.toUpperCase()
+        ] }),
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ e("strong", { children: "Packaging:" }),
+          " ",
+          h.packaging || "—"
+        ] })
+      ] })
+    ] }),
+    /* @__PURE__ */ e("button", { onClick: () => r("home"), className: "px-8 py-3 text-sm text-white tracking-wider rounded-lg", style: { background: "#2d4a1e", fontWeight: 600 }, children: "BACK TO HOME" })
+  ] }) }) : /* @__PURE__ */ t("div", { className: "min-h-screen", style: { background: "#faf6f0" }, children: [
+    /* @__PURE__ */ e("div", { className: "py-8 px-4", style: { background: "#2d4a1e" }, children: /* @__PURE__ */ t("div", { className: "max-w-4xl mx-auto", children: [
+      /* @__PURE__ */ t("button", { onClick: () => r("home"), className: "flex items-center gap-2 text-sm mb-5 hover:opacity-80 transition-opacity", style: { color: "rgba(255,255,255,0.7)" }, children: [
+        /* @__PURE__ */ e(R, { className: "w-4 h-4" }),
+        " Back to Home"
+      ] }),
+      /* @__PURE__ */ t("div", { className: "flex items-center gap-3 mb-1", children: [
+        /* @__PURE__ */ e(V, { className: "w-5 h-5", style: { color: "#c9a84c" } }),
+        /* @__PURE__ */ e("span", { className: "text-xs tracking-[0.3em] uppercase", style: { color: "#c9a84c" }, children: "Export Enquiry" })
+      ] }),
+      /* @__PURE__ */ e("h1", { className: "text-white mb-1", style: { fontSize: "1.8rem", fontWeight: 800 }, children: "Get A Quote" }),
+      /* @__PURE__ */ e("p", { className: "text-sm", style: { color: "rgba(255,255,255,0.65)" }, children: "Fill in your requirements and we'll send a competitive export quotation." }),
+      /* @__PURE__ */ e("div", { className: "flex items-center gap-3 mt-6 flex-wrap", children: [{ n: 1, label: "Company Info", icon: Le }, { n: 2, label: "Select Products", icon: Ve }, { n: 3, label: "Destination", icon: O }].map(({ n: l, label: u, icon: f }, N) => /* @__PURE__ */ t("div", { className: "flex items-center gap-2", children: [
+        /* @__PURE__ */ e(
+          "div",
+          {
+            className: "w-8 h-8 rounded-full flex items-center justify-center text-xs cursor-pointer transition-colors",
+            style: { background: a >= l ? "#c9a84c" : "rgba(255,255,255,0.15)", color: a >= l ? "white" : "rgba(255,255,255,0.5)", fontWeight: 700 },
+            onClick: () => a > l && i(l),
+            children: a > l ? /* @__PURE__ */ e(L, { className: "w-4 h-4" }) : l
+          }
+        ),
+        /* @__PURE__ */ e("span", { className: "text-xs hidden sm:block", style: { color: a === l ? "white" : "rgba(255,255,255,0.5)", fontWeight: a === l ? 600 : 400 }, children: u }),
+        N < 2 && /* @__PURE__ */ e(E, { className: "w-4 h-4", style: { color: "rgba(255,255,255,0.3)" } })
+      ] }, l)) })
+    ] }) }),
+    /* @__PURE__ */ e("div", { className: "max-w-4xl mx-auto px-4 py-8", children: /* @__PURE__ */ t("form", { onSubmit: (l) => {
+      l.preventDefault(), a === 3 && n(!0);
+    }, children: [
+      a === 1 && /* @__PURE__ */ t("div", { className: "p-8 rounded-2xl", style: { background: "white", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }, children: [
+        /* @__PURE__ */ e("h3", { className: "mb-6", style: { color: "#1a1a1a" }, children: "Company Information" }),
+        /* @__PURE__ */ e("div", { className: "grid sm:grid-cols-2 gap-5", children: [
+          { key: "companyName", label: "Company Name *", ph: "Your Company Ltd." },
+          { key: "contactName", label: "Contact Person *", ph: "Full Name" },
+          { key: "email", label: "Email Address *", ph: "email@company.com", type: "email" },
+          { key: "phone", label: "Phone Number", ph: "+1 234 567 8900" }
+        ].map(({ key: l, label: u, ph: f, type: N }) => /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ e("label", { className: "block text-xs tracking-wider mb-1.5", style: { color: "#888" }, children: u }),
+          /* @__PURE__ */ e(
+            "input",
+            {
+              type: N ?? "text",
+              placeholder: f,
+              className: "w-full px-4 py-3 text-sm rounded-lg border outline-none transition-colors",
+              style: { borderColor: k[l] ? "#e53e3e" : "#e8dfd0", background: "#faf6f0" },
+              value: h[l],
+              onChange: (W) => c(l, W.target.value)
+            }
+          ),
+          k[l] && /* @__PURE__ */ t("div", { className: "flex items-center gap-1.5 mt-1.5", children: [
+            /* @__PURE__ */ e(P, { className: "w-3.5 h-3.5 shrink-0", style: { color: "#e53e3e" } }),
+            /* @__PURE__ */ e("span", { className: "text-xs", style: { color: "#e53e3e" }, children: k[l] })
+          ] })
+        ] }, l)) }),
+        /* @__PURE__ */ e("div", { className: "flex justify-end mt-8", children: /* @__PURE__ */ t(
+          "button",
+          {
+            type: "button",
+            onClick: () => {
+              me() && i(2);
+            },
+            className: "flex items-center gap-2 px-8 py-3.5 text-sm text-white tracking-wider rounded-lg",
+            style: { background: "#c9a84c", fontWeight: 700 },
+            children: [
+              "NEXT: SELECT PRODUCTS ",
+              /* @__PURE__ */ e(E, { className: "w-4 h-4" })
+            ]
+          }
+        ) })
+      ] }),
+      a === 2 && /* @__PURE__ */ t("div", { className: "p-8 rounded-2xl", style: { background: "white", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }, children: [
+        /* @__PURE__ */ t("div", { className: "flex flex-wrap items-center justify-between gap-3 mb-2", children: [
+          /* @__PURE__ */ e("h3", { style: { color: "#1a1a1a" }, children: "Select Products & Quantities" }),
+          /* @__PURE__ */ t("div", { className: "flex items-center gap-2", children: [
+            /* @__PURE__ */ e("span", { className: "text-xs", style: { color: "#888" }, children: "Unit:" }),
+            ["kg", "lb"].map((l) => /* @__PURE__ */ e(
+              "button",
+              {
+                type: "button",
+                onClick: () => x(l),
+                className: "px-4 py-1.5 text-xs rounded-full border transition-all",
+                style: { background: s === l ? "#2d4a1e" : "white", color: s === l ? "white" : "#555", borderColor: s === l ? "#2d4a1e" : "#e8dfd0", fontWeight: s === l ? 700 : 400 },
+                children: l.toUpperCase()
+              },
+              l
+            )),
+            A > 0 && /* @__PURE__ */ t("span", { className: "text-xs px-3 py-1 rounded-full", style: { background: "#2d4a1e", color: "white", fontWeight: 700 }, children: [
+              A,
+              " selected"
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ t("p", { className: "text-xs mb-4", style: { color: "#999" }, children: [
+          "Click a category to expand, select products, and enter weight in ",
+          s.toUpperCase(),
+          "."
+        ] }),
+        g && /* @__PURE__ */ t("div", { className: "flex items-center gap-2 p-3 rounded-lg mb-4", style: { background: "#fff5f5", border: "1px solid #e53e3e" }, children: [
+          /* @__PURE__ */ e(P, { className: "w-4 h-4 shrink-0", style: { color: "#e53e3e" } }),
+          /* @__PURE__ */ e("span", { className: "text-sm", style: { color: "#e53e3e" }, children: g })
+        ] }),
+        /* @__PURE__ */ e("div", { className: "flex flex-col gap-3 mb-5", children: Object.entries(At).map(([l, u]) => {
+          const f = o === l, N = u.items.filter((M) => M in h.selectedItems), W = N.some((M) => k[`qty_${M}`]);
+          return /* @__PURE__ */ t(
+            "div",
+            {
+              className: "rounded-xl overflow-hidden border transition-all",
+              style: { borderColor: f ? u.accent : W ? "#e53e3e" : "#e8dfd0" },
+              children: [
+                /* @__PURE__ */ t(
+                  "button",
+                  {
+                    type: "button",
+                    className: "w-full flex items-center justify-between px-5 py-4 transition-colors",
+                    style: { background: f ? u.bg : "#faf6f0" },
+                    onClick: () => y(f ? null : l),
+                    children: [
+                      /* @__PURE__ */ t("div", { className: "flex items-center gap-3", children: [
+                        /* @__PURE__ */ e("span", { className: "text-lg", children: u.icon }),
+                        /* @__PURE__ */ t("div", { className: "text-left", children: [
+                          /* @__PURE__ */ e("div", { className: "text-sm", style: { color: f ? "white" : "#1a1a1a", fontWeight: 700 }, children: u.label }),
+                          /* @__PURE__ */ e("div", { className: "text-xs", style: { color: f ? "rgba(255,255,255,0.65)" : "#999" }, children: N.length > 0 ? `${N.length} product(s) selected` : `${u.items.length} products available` })
+                        ] })
+                      ] }),
+                      /* @__PURE__ */ t("div", { className: "flex items-center gap-2", children: [
+                        N.length > 0 && /* @__PURE__ */ e("span", { className: "px-2 py-0.5 rounded-full text-xs", style: { background: u.accent, color: "white", fontWeight: 700 }, children: N.length }),
+                        W && /* @__PURE__ */ e(P, { className: "w-4 h-4", style: { color: "#e53e3e" } }),
+                        /* @__PURE__ */ e(E, { className: "w-4 h-4 transition-transform", style: { color: f ? "white" : "#999", transform: f ? "rotate(90deg)" : "rotate(0)" } })
+                      ] })
+                    ]
+                  }
+                ),
+                f && /* @__PURE__ */ e("div", { className: "px-5 py-4 grid sm:grid-cols-2 gap-2.5", style: { background: "#fcfaf7" }, children: u.items.map((M) => {
+                  const _ = M in h.selectedItems, D = k[`qty_${M}`];
+                  return /* @__PURE__ */ t(
+                    "div",
+                    {
+                      className: "flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-all",
+                      style: { background: _ ? `${u.accent}12` : "white", border: `1px solid ${D ? "#e53e3e" : _ ? u.accent : "#e8dfd0"}` },
+                      onClick: () => S(M),
+                      children: [
+                        /* @__PURE__ */ e(
+                          "div",
+                          {
+                            className: "w-5 h-5 rounded flex items-center justify-center shrink-0 transition-all",
+                            style: { background: _ ? u.accent : "transparent", border: `1.5px solid ${_ ? u.accent : "#ccc"}` },
+                            children: _ && /* @__PURE__ */ e(L, { className: "w-3.5 h-3.5 text-white" })
+                          }
+                        ),
+                        /* @__PURE__ */ e("span", { className: "text-xs flex-1", style: { color: "#333", fontWeight: _ ? 600 : 400 }, children: M }),
+                        _ && /* @__PURE__ */ t("div", { className: "flex items-center gap-1", onClick: (H) => H.stopPropagation(), children: [
+                          /* @__PURE__ */ e(
+                            "input",
+                            {
+                              type: "number",
+                              placeholder: "Qty",
+                              min: "0.1",
+                              step: "0.1",
+                              className: "w-16 px-2 py-1 text-xs rounded border outline-none text-center",
+                              style: { borderColor: D ? "#e53e3e" : `${u.accent}66`, background: "white" },
+                              value: h.selectedItems[M],
+                              onChange: (H) => C(M, H.target.value)
+                            }
+                          ),
+                          /* @__PURE__ */ e("span", { className: "text-xs", style: { color: "#888" }, children: s })
+                        ] })
+                      ]
+                    },
+                    M
+                  );
+                }) })
+              ]
+            },
+            l
+          );
+        }) }),
+        /* @__PURE__ */ t("div", { className: "mb-5", children: [
+          /* @__PURE__ */ e("label", { className: "block text-xs tracking-wider mb-2", style: { color: "#888" }, children: "PACKAGING PREFERENCE" }),
+          /* @__PURE__ */ e("div", { className: "grid sm:grid-cols-2 gap-3", children: It.map((l) => /* @__PURE__ */ t(
+            "div",
+            {
+              className: "flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all",
+              style: { borderColor: h.packaging === l ? "#c9a84c" : "#e8dfd0", background: h.packaging === l ? "rgba(201,168,76,0.07)" : "#faf6f0" },
+              onClick: () => w({ ...h, packaging: l }),
+              children: [
+                /* @__PURE__ */ e("div", { className: "w-4 h-4 rounded-full border flex items-center justify-center shrink-0", style: { borderColor: h.packaging === l ? "#c9a84c" : "#ccc" }, children: h.packaging === l && /* @__PURE__ */ e("div", { className: "w-2 h-2 rounded-full", style: { background: "#c9a84c" } }) }),
+                /* @__PURE__ */ e("span", { className: "text-xs", style: { color: "#333" }, children: l })
+              ]
+            },
+            l
+          )) })
+        ] }),
+        /* @__PURE__ */ t("div", { className: "flex justify-between mt-6", children: [
+          /* @__PURE__ */ e("button", { type: "button", onClick: () => i(1), className: "px-6 py-3 text-sm", style: { color: "#666" }, children: "← BACK" }),
+          /* @__PURE__ */ t(
+            "button",
+            {
+              type: "button",
+              onClick: () => {
+                he() && i(3);
+              },
+              className: "flex items-center gap-2 px-8 py-3.5 text-sm text-white tracking-wider rounded-lg",
+              style: { background: "#c9a84c", fontWeight: 700 },
+              children: [
+                "NEXT: DESTINATION ",
+                /* @__PURE__ */ e(E, { className: "w-4 h-4" })
+              ]
+            }
+          )
+        ] })
+      ] }),
+      a === 3 && /* @__PURE__ */ t("div", { className: "p-8 rounded-2xl", style: { background: "white", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }, children: [
+        /* @__PURE__ */ e("h3", { className: "mb-6", style: { color: "#1a1a1a" }, children: "Destination & Delivery" }),
+        /* @__PURE__ */ t("div", { className: "grid sm:grid-cols-2 gap-5 mb-5", children: [
+          /* @__PURE__ */ t("div", { children: [
+            /* @__PURE__ */ e("label", { className: "block text-xs tracking-wider mb-1.5", style: { color: "#888" }, children: "DESTINATION COUNTRY *" }),
+            /* @__PURE__ */ t(
+              "select",
+              {
+                required: !0,
+                className: "w-full px-4 py-3 text-sm rounded-lg border outline-none appearance-none cursor-pointer",
+                style: { borderColor: "#e8dfd0", background: "#faf6f0" },
+                value: h.country,
+                onChange: (l) => w({ ...h, country: l.target.value }),
+                children: [
+                  /* @__PURE__ */ e("option", { value: "", children: "Select country…" }),
+                  _t.map((l) => /* @__PURE__ */ e("option", { value: l, children: l }, l))
+                ]
+              }
+            )
+          ] }),
+          /* @__PURE__ */ t("div", { children: [
+            /* @__PURE__ */ e("label", { className: "block text-xs tracking-wider mb-1.5", style: { color: "#888" }, children: "REQUIRED BY DATE" }),
+            /* @__PURE__ */ e("div", { className: "relative", children: /* @__PURE__ */ e(
+              "input",
+              {
+                type: "date",
+                className: "w-full px-4 py-3 pr-10 text-sm rounded-lg border outline-none cursor-pointer",
+                style: { borderColor: "#e8dfd0", background: "#faf6f0", colorScheme: "light" },
+                min: (/* @__PURE__ */ new Date()).toISOString().split("T")[0],
+                value: h.deliveryDate,
+                onChange: (l) => w({ ...h, deliveryDate: l.target.value })
+              }
+            ) })
+          ] })
+        ] }),
+        /* @__PURE__ */ t("div", { className: "mb-5", children: [
+          /* @__PURE__ */ e("label", { className: "block text-xs tracking-wider mb-1.5", style: { color: "#888" }, children: "ADDITIONAL NOTES" }),
+          /* @__PURE__ */ e(
+            "textarea",
+            {
+              rows: 4,
+              className: "w-full px-4 py-3 text-sm rounded-lg border outline-none resize-none",
+              style: { borderColor: "#e8dfd0", background: "#faf6f0" },
+              value: h.notes,
+              onChange: (l) => w({ ...h, notes: l.target.value }),
+              placeholder: "Certifications required, label specifications, port of entry…"
+            }
+          )
+        ] }),
+        /* @__PURE__ */ t("div", { className: "p-5 rounded-xl mb-6", style: { background: "#faf6f0", border: "1px solid #e8dfd0" }, children: [
+          /* @__PURE__ */ e("div", { className: "text-xs tracking-widest mb-3", style: { color: "#c9a84c", fontWeight: 700 }, children: "ORDER PREVIEW" }),
+          /* @__PURE__ */ t("div", { className: "grid sm:grid-cols-2 gap-2 text-xs", style: { color: "#555" }, children: [
+            /* @__PURE__ */ t("div", { children: [
+              /* @__PURE__ */ e("strong", { children: "Company:" }),
+              " ",
+              h.companyName
+            ] }),
+            /* @__PURE__ */ t("div", { children: [
+              /* @__PURE__ */ e("strong", { children: "Contact:" }),
+              " ",
+              h.contactName
+            ] }),
+            /* @__PURE__ */ t("div", { className: "sm:col-span-2", children: [
+              /* @__PURE__ */ t("strong", { children: [
+                "Products (",
+                A,
+                "):"
+              ] }),
+              " ",
+              Object.keys(h.selectedItems).slice(0, 5).join(", "),
+              A > 5 ? ` +${A - 5} more` : ""
+            ] }),
+            /* @__PURE__ */ t("div", { children: [
+              /* @__PURE__ */ e("strong", { children: "Unit:" }),
+              " ",
+              s.toUpperCase()
+            ] }),
+            /* @__PURE__ */ t("div", { children: [
+              /* @__PURE__ */ e("strong", { children: "Packaging:" }),
+              " ",
+              h.packaging || "—"
+            ] }),
+            /* @__PURE__ */ t("div", { children: [
+              /* @__PURE__ */ e("strong", { children: "Destination:" }),
+              " ",
+              h.country || "—"
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ t("div", { className: "flex justify-between", children: [
+          /* @__PURE__ */ e("button", { type: "button", onClick: () => i(2), className: "px-6 py-3 text-sm", style: { color: "#666" }, children: "← BACK" }),
+          /* @__PURE__ */ t(
+            "button",
+            {
+              type: "submit",
+              className: "flex items-center gap-2 px-8 py-3.5 text-sm text-white tracking-wider rounded-lg",
+              style: { background: "#2d4a1e", fontWeight: 700 },
+              children: [
+                /* @__PURE__ */ e(V, { className: "w-4 h-4" }),
+                " SUBMIT ENQUIRY"
+              ]
+            }
+          )
+        ] })
+      ] })
+    ] }) })
+  ] });
+}
+
+
+
+===========================================
+COMPONENT: Lt
+===========================================
+function Lt({ setActivePage: r }) {
+  return /* @__PURE__ */ t("div", { className: "min-h-screen", style: { background: "#faf6f0" }, children: [
+    /* @__PURE__ */ t("div", { className: "relative py-16 px-4 overflow-hidden", style: { background: "#1a3a10" }, children: [
+      /* @__PURE__ */ e("div", { className: "absolute inset-0 overflow-hidden pointer-events-none", style: { opacity: 0.08 }, children: /* @__PURE__ */ e(
+        "img",
+        {
+          src: "https://images.unsplash.com/photo-1532336414038-cf19250c5757?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxJbmRpYW4lMjBzcGljZXMlMjBjb2xvcmZ1bCUyMGJvd2xzfGVufDF8fHx8MTc4MTA4ODcxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+          alt: "",
+          className: "w-full h-full object-cover"
+        }
+      ) }),
+      /* @__PURE__ */ t("div", { className: "relative max-w-5xl mx-auto", children: [
+        /* @__PURE__ */ t("button", { onClick: () => r("home"), className: "flex items-center gap-2 text-sm mb-6 hover:opacity-80 transition-opacity", style: { color: "rgba(255,255,255,0.65)" }, children: [
+          /* @__PURE__ */ e(R, { className: "w-4 h-4" }),
+          " Back to Home"
+        ] }),
+        /* @__PURE__ */ t("div", { className: "flex items-center gap-3 mb-3", children: [
+          /* @__PURE__ */ e("div", { className: "h-px w-8", style: { background: "#c9a84c" } }),
+          /* @__PURE__ */ e("span", { className: "text-xs tracking-[0.35em] uppercase", style: { color: "#c9a84c" }, children: "Our Story" })
+        ] }),
+        /* @__PURE__ */ e("h1", { className: "text-white mb-3", style: { fontWeight: 800, fontSize: "clamp(2rem,5vw,3.5rem)", lineHeight: 1.1 }, children: "About Voyageur Overseas" }),
+        /* @__PURE__ */ e("p", { className: "max-w-xl text-sm leading-relaxed", style: { color: "rgba(255,255,255,0.75)" }, children: "A trusted name in premium Indian spices, coir & coconut products — from origin to destination." })
+      ] })
+    ] }),
+    /* @__PURE__ */ t("div", { className: "max-w-5xl mx-auto px-4 py-14 flex flex-col gap-14", children: [
+      /* @__PURE__ */ t("section", { className: "grid lg:grid-cols-2 gap-10 items-center", children: [
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ t("div", { className: "flex items-center gap-2 mb-3", children: [
+            /* @__PURE__ */ e("div", { className: "h-px w-8", style: { background: "#c9a84c" } }),
+            /* @__PURE__ */ e("span", { className: "text-xs tracking-[0.3em] uppercase", style: { color: "#c9a84c" }, children: "Who We Are" })
+          ] }),
+          /* @__PURE__ */ e("h2", { style: { color: "#1a1a1a" }, children: "About Us" }),
+          /* @__PURE__ */ t("p", { className: "mt-4 text-sm leading-relaxed", style: { color: "#555" }, children: [
+            /* @__PURE__ */ e("strong", { children: "Voyageur Overseas" }),
+            " is a trusted export company based in Koyilandy, Kozhikode, Kerala, India. We specialise in exporting premium-quality Indian spices, natural coir products, and coconut-based goods to clients across 25+ countries."
+          ] }),
+          /* @__PURE__ */ e("p", { className: "mt-3 text-sm leading-relaxed", style: { color: "#555" }, children: "Founded with a passion for showcasing India's agricultural richness, Voyageur Overseas bridges Indian farmers with global markets. Every product we ship is carefully handpicked, hygienically processed, and packed to retain its natural aroma, taste, and freshness." }),
+          /* @__PURE__ */ e("p", { className: "mt-3 text-sm leading-relaxed", style: { color: "#555" }, children: "We are registered with APEDA, IEC, FSSAI, ISO 22000:2018 certified, and registered with the Spices Board of India — ensuring every shipment meets international quality and food-safety standards." }),
+          /* @__PURE__ */ e("div", { className: "mt-6 grid grid-cols-3 gap-4", children: [["25+", "Countries"], ["500+", "Clients"], ["15+", "Years Exp."]].map(([a, i]) => /* @__PURE__ */ t("div", { className: "text-center p-4 rounded-xl", style: { background: "white", boxShadow: "0 2px 10px rgba(0,0,0,0.07)" }, children: [
+            /* @__PURE__ */ e("div", { className: "text-2xl", style: { color: "#c9a84c", fontWeight: 800 }, children: a }),
+            /* @__PURE__ */ e("div", { className: "text-xs mt-1", style: { color: "#666" }, children: i })
+          ] }, i)) })
+        ] }),
+        /* @__PURE__ */ e("div", { className: "rounded-2xl overflow-hidden shadow-xl", style: { height: 380 }, children: /* @__PURE__ */ e(
+          "img",
+          {
+            src: "https://images.unsplash.com/photo-1486548730767-5c679e8eda6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHxJbmRpYW4lMjBzcGljZXMlMjBjb2xvcmZ1bCUyMGJvd2xzfGVufDF8fHx8MTc4MTA4ODcxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+            alt: "Spice powders",
+            className: "w-full h-full object-cover"
+          }
+        ) })
+      ] }),
+      /* @__PURE__ */ e("section", { className: "rounded-2xl p-10", style: { background: "#1a3a10", color: "white" }, children: /* @__PURE__ */ t("div", { className: "flex items-start gap-5", children: [
+        /* @__PURE__ */ e("div", { className: "w-14 h-14 rounded-full flex items-center justify-center shrink-0", style: { background: "rgba(201,168,76,0.15)", border: "1.5px solid #c9a84c" }, children: /* @__PURE__ */ e(lt, { className: "w-6 h-6", style: { color: "#c9a84c" } }) }),
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ t("div", { className: "flex items-center gap-2 mb-2", children: [
+            /* @__PURE__ */ e("div", { className: "h-px w-8", style: { background: "#c9a84c" } }),
+            /* @__PURE__ */ e("span", { className: "text-xs tracking-[0.3em] uppercase", style: { color: "#c9a84c" }, children: "Our Mission" })
+          ] }),
+          /* @__PURE__ */ e("h2", { className: "text-white mb-4", children: "Our Mission" }),
+          /* @__PURE__ */ e("p", { className: "text-sm leading-relaxed", style: { color: "rgba(255,255,255,0.8)" }, children: "To be the most trusted bridge between India's finest agricultural producers and global importers — delivering premium-quality spices, coir products, and natural coconut goods with complete transparency, reliability, and care." }),
+          /* @__PURE__ */ e("div", { className: "mt-6 grid sm:grid-cols-3 gap-4", children: [
+            { icon: le, title: "100% Natural", desc: "No artificial additives or preservatives in any of our products." },
+            { icon: ke, title: "Certified Quality", desc: "ISO, FSSAI, APEDA & Spices Board certified on every batch." },
+            { icon: O, title: "Global Reach", desc: "Exporting to 25+ countries with on-time, doorstep delivery." }
+          ].map(({ icon: a, title: i, desc: d }) => /* @__PURE__ */ t("div", { className: "p-4 rounded-xl", style: { background: "rgba(255,255,255,0.07)" }, children: [
+            /* @__PURE__ */ e(a, { className: "w-5 h-5 mb-2", style: { color: "#c9a84c" } }),
+            /* @__PURE__ */ e("div", { className: "text-sm mb-1", style: { color: "white", fontWeight: 700 }, children: i }),
+            /* @__PURE__ */ e("div", { className: "text-xs leading-relaxed", style: { color: "rgba(255,255,255,0.6)" }, children: d })
+          ] }, i)) })
+        ] })
+      ] }) }),
+      /* @__PURE__ */ e("section", { className: "rounded-2xl p-10", style: { background: "white", boxShadow: "0 4px 24px rgba(0,0,0,0.07)" }, children: /* @__PURE__ */ t("div", { className: "flex items-start gap-5", children: [
+        /* @__PURE__ */ e("div", { className: "w-14 h-14 rounded-full flex items-center justify-center shrink-0", style: { background: "rgba(201,168,76,0.12)", border: "1.5px solid #c9a84c" }, children: /* @__PURE__ */ e(Te, { className: "w-6 h-6", style: { color: "#c9a84c" } }) }),
+        /* @__PURE__ */ t("div", { className: "flex-1", children: [
+          /* @__PURE__ */ t("div", { className: "flex items-center gap-2 mb-2", children: [
+            /* @__PURE__ */ e("div", { className: "h-px w-8", style: { background: "#c9a84c" } }),
+            /* @__PURE__ */ e("span", { className: "text-xs tracking-[0.3em] uppercase", style: { color: "#c9a84c" }, children: "Our Vision" })
+          ] }),
+          /* @__PURE__ */ e("h2", { style: { color: "#1a1a1a" }, children: "Our Vision" }),
+          /* @__PURE__ */ e("p", { className: "mt-4 text-sm leading-relaxed", style: { color: "#555" }, children: "To become a globally recognised export brand that stands as a symbol of India's agricultural excellence — one that every international buyer trusts for purity, consistency, and ethical sourcing." }),
+          /* @__PURE__ */ e("p", { className: "mt-3 text-sm leading-relaxed", style: { color: "#555" }, children: "We envision a future where every kitchen in the world carries a pinch of India's richness, and every eco-conscious buyer chooses Kerala's natural coir. By 2030, we aim to serve 50+ countries and empower 1,000+ Indian farming families through fair-trade partnerships." }),
+          /* @__PURE__ */ e("div", { className: "mt-6 p-5 rounded-xl italic text-sm", style: { background: "#faf6f0", borderLeft: "4px solid #c9a84c", color: "#555" }, children: `"From Origin to Destination — We carry India's finest to the world's finest."` })
+        ] })
+      ] }) })
+    ] })
+  ] });
+}
+
+
+
+===========================================
+COMPONENT: Tt
+===========================================
+function Tt({ setActivePage: r }) {
+  return /* @__PURE__ */ t("div", { className: "min-h-screen", style: { background: "#faf6f0" }, children: [
+    /* @__PURE__ */ e("div", { className: "py-14 px-4", style: { background: "#1a3a10" }, children: /* @__PURE__ */ t("div", { className: "max-w-5xl mx-auto", children: [
+      /* @__PURE__ */ t("button", { onClick: () => r("home"), className: "flex items-center gap-2 text-sm mb-6 hover:opacity-80 transition-opacity", style: { color: "rgba(255,255,255,0.65)" }, children: [
+        /* @__PURE__ */ e(R, { className: "w-4 h-4" }),
+        " Back to Home"
+      ] }),
+      /* @__PURE__ */ t("div", { className: "flex items-center gap-2 mb-3", children: [
+        /* @__PURE__ */ e(et, { className: "w-5 h-5", style: { color: "#c9a84c" } }),
+        /* @__PURE__ */ e("span", { className: "text-xs tracking-[0.3em] uppercase", style: { color: "#c9a84c" }, children: "Quality Assurance" })
+      ] }),
+      /* @__PURE__ */ e("h1", { className: "text-white mb-3", style: { fontWeight: 800, fontSize: "clamp(1.8rem,5vw,3rem)" }, children: "Quality & Certifications" }),
+      /* @__PURE__ */ e("p", { className: "max-w-xl text-sm", style: { color: "rgba(255,255,255,0.7)", lineHeight: 1.75 }, children: "Every product we export meets stringent international quality standards. Below you'll find detailed quality specifications for each product category." })
+    ] }) }),
+    /* @__PURE__ */ e("div", { className: "max-w-5xl mx-auto px-4 py-12 flex flex-col gap-12", children: Wt.map((a) => /* @__PURE__ */ t("section", { className: "rounded-2xl overflow-hidden shadow-md", children: [
+      /* @__PURE__ */ t("div", { className: "px-8 py-5 flex items-center gap-4", style: { background: a.bg }, children: [
+        /* @__PURE__ */ e("span", { className: "text-3xl", children: a.icon }),
+        /* @__PURE__ */ t("div", { children: [
+          /* @__PURE__ */ e("h2", { className: "text-white", style: { fontWeight: 800 }, children: a.label }),
+          /* @__PURE__ */ e("p", { className: "text-xs mt-0.5", style: { color: a.accent }, children: "Quality Specifications & Standards" })
+        ] })
+      ] }),
+      /* @__PURE__ */ t("div", { className: "bg-white p-8", children: [
+        /* @__PURE__ */ e("p", { className: "text-sm leading-relaxed mb-6", style: { color: "#555" }, children: a.intro }),
+        /* @__PURE__ */ t("div", { className: "mb-6", children: [
+          /* @__PURE__ */ t("div", { className: "flex items-center gap-2 mb-3", children: [
+            /* @__PURE__ */ e(je, { className: "w-4 h-4", style: { color: a.accent } }),
+            /* @__PURE__ */ e("span", { className: "text-xs tracking-wider font-bold uppercase", style: { color: a.accent }, children: "Compliance Standards" })
+          ] }),
+          /* @__PURE__ */ e("div", { className: "flex flex-wrap gap-2", children: a.standards.map((i) => /* @__PURE__ */ t(
+            "span",
+            {
+              className: "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs",
+              style: { background: `${a.accent}12`, border: `1px solid ${a.accent}44`, color: "#333" },
+              children: [
+                /* @__PURE__ */ e(L, { className: "w-3 h-3", style: { color: a.accent } }),
+                i
+              ]
+            },
+            i
+          )) })
+        ] }),
+        /* @__PURE__ */ e("div", { className: "flex flex-col gap-4", children: a.products.map((i, d) => /* @__PURE__ */ t("div", { className: "p-4 rounded-xl", style: { background: d % 2 === 0 ? "#faf6f0" : "white", border: "1px solid #ede8e0" }, children: [
+          /* @__PURE__ */ t("div", { className: "flex items-center gap-2 mb-2", children: [
+            /* @__PURE__ */ e("div", { className: "w-2 h-2 rounded-full", style: { background: a.accent } }),
+            /* @__PURE__ */ e("span", { className: "text-sm font-bold", style: { color: "#1a1a1a" }, children: i.name })
+          ] }),
+          /* @__PURE__ */ e("p", { className: "text-xs leading-relaxed", style: { color: "#666" }, children: i.quality })
+        ] }, i.name)) })
+      ] })
+    ] }, a.id)) })
+  ] });
+}
+
+
+
+===========================================
+COMPONENT: Ot
+===========================================
+function Ot({ setActivePage: r }) {
+  return /* @__PURE__ */ t("div", { className: "min-h-screen", style: { background: "#faf6f0" }, children: [
+    /* @__PURE__ */ e("div", { className: "py-14 px-4", style: { background: "#1a3a10" }, children: /* @__PURE__ */ t("div", { className: "max-w-6xl mx-auto", children: [
+      /* @__PURE__ */ t("button", { onClick: () => r("home"), className: "flex items-center gap-2 text-sm mb-6 hover:opacity-80 transition-opacity", style: { color: "rgba(255,255,255,0.65)" }, children: [
+        /* @__PURE__ */ e(R, { className: "w-4 h-4" }),
+        " Back to Home"
+      ] }),
+      /* @__PURE__ */ t("div", { className: "flex items-center gap-2 mb-3", children: [
+        /* @__PURE__ */ e("div", { className: "h-px w-8", style: { background: "#c9a84c" } }),
+        /* @__PURE__ */ e("span", { className: "text-xs tracking-[0.3em] uppercase", style: { color: "#c9a84c" }, children: "Visual Showcase" })
+      ] }),
+      /* @__PURE__ */ e("h1", { className: "text-white mb-2", style: { fontWeight: 800, fontSize: "clamp(1.8rem,5vw,3rem)" }, children: "Gallery" }),
+      /* @__PURE__ */ e("p", { className: "text-sm", style: { color: "rgba(255,255,255,0.65)" }, children: "A visual journey through our products, Kerala's backwaters, and India's spice heritage." })
+    ] }) }),
+    /* @__PURE__ */ e("div", { className: "max-w-6xl mx-auto px-4 py-12 flex flex-col gap-14", children: Rt.map((a) => /* @__PURE__ */ t("section", { children: [
+      /* @__PURE__ */ t("div", { className: "flex items-center gap-3 mb-6", children: [
+        /* @__PURE__ */ e("span", { className: "text-2xl", children: a.icon }),
+        /* @__PURE__ */ e("h2", { style: { color: "#1a1a1a" }, children: a.label }),
+        /* @__PURE__ */ e("div", { className: "h-px flex-1", style: { background: `${a.accent}44` } })
+      ] }),
+      /* @__PURE__ */ e("div", { className: "grid grid-cols-2 md:grid-cols-3 gap-3", children: a.images.map((i, d) => /* @__PURE__ */ t(
+        "div",
+        {
+          className: "group relative rounded-xl overflow-hidden cursor-pointer transition-transform hover:scale-[1.02]",
+          style: { aspectRatio: "4/3", boxShadow: "0 3px 16px rgba(0,0,0,0.12)" },
+          children: [
+            /* @__PURE__ */ e("img", { src: i.url, alt: i.caption, className: "w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" }),
+            /* @__PURE__ */ e(
+              "div",
+              {
+                className: "absolute inset-0 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300",
+                style: { background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%)" },
+                children: /* @__PURE__ */ e("span", { className: "p-3 text-xs text-white font-medium tracking-wide", children: i.caption })
+              }
+            ),
+            /* @__PURE__ */ e(
+              "div",
+              {
+                className: "absolute top-2 right-2 w-6 h-6 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity",
+                style: { background: a.accent },
+                children: /* @__PURE__ */ e("div", { className: "w-2 h-2 rounded-full bg-white" })
+              }
+            )
+          ]
+        },
+        d
+      )) })
+    ] }, a.label)) })
+  ] });
+}
+
+
+
+===========================================
+COMPONENT: Ht
+===========================================
+function Ht({ scrollTo: r, activePage: a }) {
+  function i() {
+    a !== "home" && (window.location.hash = ""), setTimeout(() => r("contact-section"), 150);
+  }
+  return /* @__PURE__ */ t(
+    "div",
+    {
+      className: "fixed flex flex-col gap-3 z-50",
+      style: { bottom: 24, right: 20 },
+      children: [
+        /* @__PURE__ */ e(
+          "a",
+          {
+            href: jt,
+            target: "_blank",
+            rel: "noopener noreferrer",
+            title: "Chat on WhatsApp",
+            className: "flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 hover:shadow-xl",
+            style: {
+              width: 54,
+              height: 54,
+              background: "#25d366",
+              boxShadow: "0 4px 18px rgba(37,211,102,0.45)"
+            },
+            children: /* @__PURE__ */ e(T, { className: "text-white", style: { width: 26, height: 26 } })
+          }
+        ),
+        /* @__PURE__ */ e(
+          "button",
+          {
+            onClick: i,
+            title: "Contact Us",
+            className: "flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 hover:shadow-xl",
+            style: {
+              width: 54,
+              height: 54,
+              background: "#c9a84c",
+              boxShadow: "0 4px 18px rgba(201,168,76,0.45)"
+            },
+            children: /* @__PURE__ */ e(j, { className: "text-white", style: { width: 24, height: 24 } })
+          }
+        )
+      ]
+    }
+  );
+}
+
+

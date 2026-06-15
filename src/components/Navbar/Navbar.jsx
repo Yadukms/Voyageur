@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronDown, Menu, X, Phone, Mail, Linkedin, Instagram, MessageCircle } from 'lucide-react';
+import { ChevronDown, Menu, X, Phone, Mail } from 'lucide-react';
 import './Navbar.css';
 
 // SVG brand logo for Voyageur Overseas
@@ -198,13 +198,13 @@ export default function Navbar({
         <div className="navbar-right-area">
           <div className="navbar-social-icons">
             <a href={linkedinLink} target="_blank" rel="noopener noreferrer" title="LinkedIn" className="nav-social-btn linkedin">
-              <Linkedin size={16} />
+              <img src="/link1.png" alt="LinkedIn" className="nav-social-icon-img" />
             </a>
             <a href={instagramLink} target="_blank" rel="noopener noreferrer" title="Instagram" className="nav-social-btn instagram">
-              <Instagram size={16} />
+              <img src="/i1.png" alt="Instagram" className="nav-social-icon-img" />
             </a>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" title="WhatsApp" className="nav-social-btn whatsapp">
-              <MessageCircle size={16} />
+              <img src="/w1.png" alt="WhatsApp" className="nav-social-icon-img" />
             </a>
           </div>
           <div className="nav-divider"></div>
@@ -258,9 +258,9 @@ export default function Navbar({
           ))}
           <div className="mobile-drawer-footer">
             <div className="mobile-socials">
-              <a href={linkedinLink} target="_blank" rel="noopener noreferrer"><Linkedin size={20} /></a>
-              <a href={instagramLink} target="_blank" rel="noopener noreferrer"><Instagram size={20} /></a>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer"><MessageCircle size={20} /></a>
+              <a href={linkedinLink} target="_blank" rel="noopener noreferrer"><img src="/link1.png" alt="LinkedIn" className="mobile-social-icon-img" /></a>
+              <a href={instagramLink} target="_blank" rel="noopener noreferrer"><img src="/i1.png" alt="Instagram" className="mobile-social-icon-img" /></a>
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer"><img src="/w1.png" alt="WhatsApp" className="mobile-social-icon-img" /></a>
             </div>
             <button
               onClick={() => { setActivePage("export"); setMobileMenuOpen(false); }}

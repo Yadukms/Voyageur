@@ -61,7 +61,7 @@ const QUALITY_STANDARDS = [
     standards: ["FSSAI Licensed", "APEDA Registered", "Phytosanitary Certificate", "Export Inspection Council (EIC) Certified"],
     products: [
       { name: "Basmati Rice", quality: "Grain length ≥ 7.2 mm; elongation ratio ≥ 1.7; moisture ≤ 12.5%; broken grains < 5%; aromatic, aged 12–24 months." },
-      { name: "Cashew Kernels", quality: "W180–W450 grades; whole white kernels; moisture ≤ 5%; free from insect damage; packed in vacuum-sealed tins or pouches." }
+      { name: "Non-Basmati Rice", quality: "Long grain white rice, PR11, IR64 varieties; moisture ≤ 14%; broken grains ≤ 5%; well-milled and double-polished; free from foreign matter and live insects." }
     ]
   }
 ];

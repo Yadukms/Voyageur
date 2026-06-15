@@ -1,18 +1,12 @@
 import React from 'react';
-import aboutOverviewImg from '../../assets/about_overview.jpg';
+import LottieComponent from 'lottie-react';
+import aboutAnimation from '../../assets/about-animation.json';
 import './AboutOverview.css';
 
-// ==========================================
-// IMAGE ASSETS (Easy to update)
-// ==========================================
-const ABOUT_OVERVIEW_IMAGE = aboutOverviewImg;
+const Lottie = LottieComponent.default || LottieComponent;
 
 export default function AboutOverview({ setActivePage, setActiveNav }) {
-  const stats = [
-    { value: "25+", label: "Countries Served" },
-    { value: "500+", label: "Happy Clients" },
-    { value: "15+", label: "Years Experience" }
-  ];
+
 
   function handleReadMoreClick() {
     setActivePage("about");
@@ -42,36 +36,22 @@ export default function AboutOverview({ setActivePage, setActiveNav }) {
             to meet international quality standards before shipment.
           </p>
 
-          {/* Stats grid */}
-          <div className="about-stats-grid">
-            {stats.map(({ value, label }) => (
-              <div className="stat-card" key={label}>
-                <div className="stat-value">{value}</div>
-                <div className="stat-label">{label}</div>
-              </div>
-            ))}
-          </div>
+
 
           <button onClick={handleReadMoreClick} className="about-read-more-btn">
             READ MORE
           </button>
         </div>
 
-        {/* Right Side: Image Banner */}
+        {/* Right Side: Lottie Animation */}
         <div className="about-overview-media-container">
-          <div className="about-media-wrapper">
-            <img
-              src={ABOUT_OVERVIEW_IMAGE}
-              alt="Colorful spice powders"
-              className="about-overview-img"
+          <div className="about-lottie-wrapper">
+            <Lottie
+              animationData={aboutAnimation}
+              loop={true}
+              autoplay={true}
+              className="about-lottie-animation"
             />
-            <div className="about-media-overlay" />
-          </div>
-          
-          {/* Floating badge */}
-          <div className="about-floating-badge">
-            <div className="floating-badge-tag">AUTHENTIC SPICES</div>
-            <div className="floating-badge-sub">Authentic India</div>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, Phone } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import './WhatsAppWidget.css';
 
 export default function WhatsAppWidget({ scrollTo, activePage, setActivePage, setActiveNav }) {
@@ -29,7 +29,7 @@ export default function WhatsAppWidget({ scrollTo, activePage, setActivePage, se
         title="Chat on WhatsApp"
         className="widget-floating-btn whatsapp"
       >
-        <MessageCircle size={26} className="widget-icon" />
+        <img src="/w1.png" alt="WhatsApp" className="widget-icon-img" />
       </a>
 
       {/* Scroll to Contact Us button */}

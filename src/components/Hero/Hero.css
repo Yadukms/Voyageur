@@ -1,9 +1,10 @@
 .hero-section {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 480px;
   background-color: var(--primary-darker);
   overflow: hidden;
+  cursor: pointer;
 }
 
 /* Background image handling */
@@ -59,7 +60,7 @@
 .hero-text-content {
   text-align: left;
   transition: opacity 0.4s ease, transform 0.4s ease;
-  margin-top: -200px;
+  margin-top: -140px;
 }
 
 /* Tagline */
@@ -160,19 +161,18 @@
   gap: 0.65rem;
 }
 
-.hero-dot-btn {
+.hero-dot-indicator {
   height: 8px;
   border-radius: 50%;
   transition: var(--transition-smooth);
 }
 
-.hero-dot-btn.active {
+.hero-dot-indicator.active {
   width: 26px;
 }
 
-.hero-dot-btn:not(.active) {
+.hero-dot-indicator:not(.active) {
   width: 8px;
-  cursor: pointer;
 }
 
 /* Navigation arrows */
@@ -213,21 +213,18 @@
   gap: 0.5rem;
 }
 
-.hero-thumb-btn {
+.hero-thumb-indicator {
   width: 48px;
   height: 32px;
   border-radius: 4px;
   overflow: hidden;
   outline-offset: 2px;
   opacity: 0.5;
+  transition: var(--transition-smooth);
 }
 
-.hero-thumb-btn.active {
+.hero-thumb-indicator.active {
   opacity: 1;
-}
-
-.hero-thumb-btn:not(.active) {
-  cursor: pointer;
 }
 
 .thumb-img {
@@ -239,7 +236,11 @@
 /* Responsive adjustment */
 @media (max-width: 768px) {
   .hero-section {
-    height: 560px;
+    height: 400px;
+  }
+
+  .hero-text-content {
+    margin-top: -85px;
   }
 
   .hero-thumbnails-container,

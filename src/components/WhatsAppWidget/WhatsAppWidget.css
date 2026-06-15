@@ -44,3 +44,10 @@
 .widget-icon {
   display: block;
 }
+
+.widget-icon-img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+}

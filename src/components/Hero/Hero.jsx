@@ -56,9 +56,11 @@ export default function Hero({
   setActiveNav
 }) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const autoPlayRef = useRef(null);
+  const handleHeroClick = () => {
+    changeSlide((currentSlide + 1) % slides.length);
+  };
 
   const slides = [
     {
@@ -143,26 +145,21 @@ export default function Hero({
   };
 
   useEffect(() => {
-    if (isHovered) {
-      if (autoPlayRef.current) clearInterval(autoPlayRef.current);
-      return;
-    }
     autoPlayRef.current = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      changeSlide((currentSlide + 1) % slides.length);
     }, 5000);
 
     return () => {
       if (autoPlayRef.current) clearInterval(autoPlayRef.current);
     };
-  }, [isHovered]);
+  }, [currentSlide]);
 
   const activeSlide = slides[currentSlide];
 
   return (
     <section
       className="hero-section select-none"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onClick={handleHeroClick}
     >
       {/* Background Images */}
       {slides.map((slide, idx) => (
@@ -277,7 +274,10 @@ export default function Hero({
           </div>
 
           <button
-            onClick={() => handleButtonClick(activeSlide)}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleButtonClick(activeSlide);
+            }}
             className="hero-action-btn"
             style={{
               background: activeSlide.id === "coir" ? "#1a4a2e" : activeSlide.id === "global" ? "#0a2040" : "#2d4a1e",
@@ -293,10 +293,9 @@ export default function Hero({
       {/* Bottom Nav Dot Indicators */}
       <div className="hero-dots-container" style={{ zIndex: 10 }}>
         {slides.map((slide, idx) => (
-          <button
+          <div
             key={slide.id}
-            onClick={() => changeSlide(idx)}
-            className={`hero-dot-btn ${idx === currentSlide ? 'active' : ''}`}
+            className={`hero-dot-indicator ${idx === currentSlide ? 'active' : ''}`}
             style={{
               background: idx === currentSlide ? activeSlide.accent : "rgba(255, 255, 255, 0.38)"
             }}
@@ -306,14 +305,20 @@ export default function Hero({
 
       {/* Side Navigation Arrows */}
       <button
-        onClick={handlePrev}
+        onClick={(e) => {
+          e.stopPropagation();
+          handlePrev();
+        }}
         className="hero-arrow-btn left"
         style={{ zIndex: 10 }}
       >
         <ChevronLeft size={20} className="arrow-svg" />
       </button>
       <button
-        onClick={handleNext}
+        onClick={(e) => {
+          e.stopPropagation();
+          handleNext();
+        }}
         className="hero-arrow-btn right"
         style={{ zIndex: 10 }}
       >
@@ -323,16 +328,15 @@ export default function Hero({
       {/* Side Image Thumbnails */}
       <div className="hero-thumbnails-container" style={{ zIndex: 10 }}>
         {slides.map((slide, idx) => (
-          <button
+          <div
             key={slide.id}
-            onClick={() => changeSlide(idx)}
-            className={`hero-thumb-btn ${idx === currentSlide ? 'active' : ''}`}
+            className={`hero-thumb-indicator ${idx === currentSlide ? 'active' : ''}`}
             style={{
               outline: idx === currentSlide ? `2px solid ${activeSlide.accent}` : "2px solid transparent"
             }}
           >
             <img src={slide.bgUrl} alt={slide.id} className="thumb-img" />
-          </button>
+          </div>
         ))}
       </div>
     </section>

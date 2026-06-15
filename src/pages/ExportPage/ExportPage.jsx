@@ -3,6 +3,7 @@ import { ArrowLeft, ClipboardList, Package, Globe, CheckCircle, FileText, Calend
 import './ExportPage.css';
 
 // Product catalog matching specifications
+
 const QUOTE_CATALOG = {
   spices: {
     label: "Spices",
@@ -30,7 +31,7 @@ const QUOTE_CATALOG = {
     accent: "#9b7cb8",
     bg: "#2a1a40",
     icon: "✦",
-    items: ["Basmati Rice", "Non-Basmati Rice", "Cashew W180", "Cashew W240", "Cashew W320", "Dried Mango", "Tamarind"]
+    items: ["Basmati Rice", "Non-Basmati Rice"]
   }
 };
 
@@ -49,6 +50,7 @@ const COUNTRIES = [
 export default function ExportPage({ setActivePage }) {
   const [step, setStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   const [activeAccordion, setActiveAccordion] = useState(null);
   const [weightUnit, setWeightUnit] = useState("kg");
   const [formErrors, setFormErrors] = useState({});
@@ -64,9 +66,62 @@ export default function ExportPage({ setActivePage }) {
     notes: "",
     selectedItems: {} // Key: product name, Value: quantity string
   });
+  // Validate Step 3 (Destination & Date)
+  function validateStep3() {
+    const errors = {};
+    if (!formData.country) errors.country = "Destination country is required";
+    if (!formData.deliveryDate) errors.deliveryDate = "Required by date is mandatory";
+
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  }
+
+  async function handleFormSubmit(e) {
+    e.preventDefault();
+    if (step === 3) {
+      if (!validateStep3()) return;
+      setIsSending(true);
+      setErrorMessage("");
+
+      try {
+        // Replace with your live Render backend URL when deployed, or use environment variable
+        const API_URL = "http://localhost:5000/api/enquiry";
+
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            ...formData,
+            weightUnit: weightUnit
+          })
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          setIsSubmitted(true);
+        } else {
+          setErrorMessage(result.message || "Failed to submit enquiry. Please try again.");
+        }
+      } catch (error) {
+        console.error("Submission Error:", error);
+        setErrorMessage("Server error: Could not reach the email service.");
+      } finally {
+        setIsSending(false);
+      }
+    }
+  }
+
 
   function handleFieldChange(key, val) {
-    setFormData((prev) => ({ ...prev, [key]: val }));
+    let sanitizedVal = val;
+    if (key === "phone") {
+      // Allow only numbers, spaces, and basic phone symbols (+, -, (, ))
+      sanitizedVal = val.replace(/[^\d\s()\-+]/g, "");
+    }
+    setFormData((prev) => ({ ...prev, [key]: sanitizedVal }));
     // Clear field-specific error when typed
     setFormErrors((prev) => {
       const copy = { ...prev };
@@ -116,7 +171,7 @@ export default function ExportPage({ setActivePage }) {
     const errors = {};
     if (!formData.companyName.trim()) errors.companyName = "Company name is required";
     if (!formData.contactName.trim()) errors.contactName = "Contact person name is required";
-    
+
     if (!formData.email.trim()) {
       errors.email = "Email address is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
@@ -152,12 +207,7 @@ export default function ExportPage({ setActivePage }) {
     return true;
   }
 
-  function handleFormSubmit(e) {
-    e.preventDefault();
-    if (step === 3) {
-      setIsSubmitted(true);
-    }
-  }
+
 
   const selectedProductsCount = Object.keys(formData.selectedItems).length;
 
@@ -204,7 +254,7 @@ export default function ExportPage({ setActivePage }) {
                 <ArrowLeft size={16} />
                 Back to Home
               </button>
-              
+
               <div className="wizard-tagline-row">
                 <FileText size={18} className="wizard-decor-icon" />
                 <span className="wizard-tagline">Export Enquiry</span>
@@ -319,7 +369,7 @@ export default function ExportPage({ setActivePage }) {
                       )}
                     </div>
                   </div>
-                  
+
                   <p className="step-instructions">
                     Click a category to expand, select products, and enter weight in {weightUnit.toUpperCase()}.
                   </p>
@@ -480,7 +530,7 @@ export default function ExportPage({ setActivePage }) {
                       <label className="wizard-label">DESTINATION COUNTRY *</label>
                       <select
                         required
-                        className="wizard-select"
+                        className={`wizard-select ${formErrors.country ? 'error' : ''}`}
                         value={formData.country}
                         onChange={(e) => handleFieldChange("country", e.target.value)}
                       >
@@ -489,19 +539,32 @@ export default function ExportPage({ setActivePage }) {
                           <option value={c} key={c}>{c}</option>
                         ))}
                       </select>
+                      {formErrors.country && (
+                        <div className="wizard-field-error">
+                          <AlertCircle size={14} className="error-icon" />
+                          <span>{formErrors.country}</span>
+                        </div>
+                      )}
                     </div>
 
                     <div className="wizard-field-group">
-                      <label className="wizard-label">REQUIRED BY DATE</label>
+                      <label className="wizard-label">REQUIRED BY DATE *</label>
                       <div className="relative">
                         <input
                           type="date"
-                          className="wizard-input date-input"
+                          required
+                          className={`wizard-input date-input ${formErrors.deliveryDate ? 'error' : ''}`}
                           min={new Date().toISOString().split("T")[0]}
                           value={formData.deliveryDate}
                           onChange={(e) => handleFieldChange("deliveryDate", e.target.value)}
                         />
                       </div>
+                      {formErrors.deliveryDate && (
+                        <div className="wizard-field-error">
+                          <AlertCircle size={14} className="error-icon" />
+                          <span>{formErrors.deliveryDate}</span>
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -534,13 +597,39 @@ export default function ExportPage({ setActivePage }) {
                     </div>
                   </div>
 
-                  <div className="step-nav-buttons">
+
+
+                  {/* <div className="step-nav-buttons">
                     <button type="button" onClick={() => setStep(2)} className="wizard-back-btn-gray">
                       ← BACK
                     </button>
                     <button type="submit" className="wizard-submit-btn">
                       <CheckCircle size={16} />
                       SUBMIT ENQUIRY
+                    </button>
+                  </div> */}
+                  <div className="step-nav-buttons">
+                    <button
+                      type="button"
+                      onClick={() => setStep(2)}
+                      className="wizard-back-btn-gray"
+                    >
+                      ← BACK
+                    </button>
+
+                    <button
+                      type="submit"
+                      className="wizard-submit-btn"
+                      disabled={isSending}
+                    >
+                      {isSending ? (
+                        <span>Sending Enquiry...</span>
+                      ) : (
+                        <>
+                          <CheckCircle size={16} />
+                          SUBMIT ENQUIRY
+                        </>
+                      )}
                     </button>
                   </div>
                 </div>

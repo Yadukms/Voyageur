@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Instagram, MessageCircle, Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { Logo } from '../Navbar/Navbar';
 import './Footer.css';
 
@@ -58,13 +58,13 @@ export default function Footer({ setActivePage, setActiveCategory, scrollTo, set
           </p>
           <div className="footer-social-row">
             <a href={linkedinLink} target="_blank" rel="noopener noreferrer" title="LinkedIn" className="footer-social-btn">
-              <Linkedin size={18} />
+              <img src="/link1.png" alt="LinkedIn" className="footer-social-icon-img" />
             </a>
             <a href={instagramLink} target="_blank" rel="noopener noreferrer" title="Instagram" className="footer-social-btn">
-              <Instagram size={18} />
+              <img src="/i1.png" alt="Instagram" className="footer-social-icon-img" />
             </a>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" className="footer-social-btn">
-              <MessageCircle size={18} />
+              <img src="/w1.png" alt="WhatsApp" className="footer-social-icon-img" />
             </a>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function Footer({ setActivePage, setActiveCategory, scrollTo, set
               </div>
               <div className="contact-info-text">
                 <div className="contact-info-label">Phone / WhatsApp</div>
-                <div className="contact-info-val">+91 9895 999 505</div>
+                <div className="contact-info-val">+91 9895 999 505, +971 50 246 1236</div>
               </div>
             </a>
             

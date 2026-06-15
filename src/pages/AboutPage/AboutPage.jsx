@@ -9,11 +9,7 @@ const ABOUT_HERO_BG = "https://images.unsplash.com/photo-1532336414038-cf19250c5
 const ABOUT_BODY_IMAGE = "https://images.unsplash.com/photo-1486548730767-5c679e8eda6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHxJbmRpYW4lMjBzcGljZXMlMjBjb2xvcmZ1bCUyMGJvd2xzfGVufDF8fHx8MTc4MTA4ODcxNXww&ixlib=rb-4.1.0&q=80&w=1080";
 
 export default function AboutPage({ setActivePage }) {
-  const stats = [
-    { value: "25+", label: "Countries Served" },
-    { value: "500+", label: "Happy Clients" },
-    { value: "15+", label: "Years Experience" }
-  ];
+
 
   const missionItems = [
     { icon: Leaf, title: "100% Natural", desc: "No artificial additives or preservatives in any of our products." },
@@ -67,14 +63,7 @@ export default function AboutPage({ setActivePage }) {
               and freshness.
             </p>
 
-            <div className="about-page-stats">
-              {stats.map(({ value, label }) => (
-                <div className="about-page-stat-card" key={label}>
-                  <div className="stat-card-val">{value}</div>
-                  <div className="stat-card-label">{label}</div>
-                </div>
-              ))}
-            </div>
+
           </div>
           <div className="about-img-col">
             <div className="about-img-wrapper-card">

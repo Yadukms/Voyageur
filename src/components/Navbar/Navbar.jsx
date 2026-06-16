@@ -68,13 +68,14 @@ export default function Navbar({
 
   useEffect(() => {
     function handleClickOutside(event) {
+      if (mobileMenuOpen) return;
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setDropdownOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [mobileMenuOpen]);
 
   function handleProductCategoryClick(categoryId) {
     setActiveCategory(categoryId);
@@ -82,9 +83,7 @@ export default function Navbar({
     setDropdownOpen(false);
     setMobileMenuOpen(false);
     setActiveNav("Products");
-    setTimeout(() => {
-      document.getElementById("products-section")?.scrollIntoView({ behavior: "smooth" });
-    }, 100);
+    setTimeout(() => scrollTo("products-section"), 150);
   }
 
   function handleNavigation(label) {
@@ -224,7 +223,15 @@ export default function Navbar({
         </div>
 
         {/* Mobile menu trigger */}
-        <button className="navbar-mobile-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <button
+          className="navbar-mobile-toggle"
+          onClick={() => {
+            if (mobileMenuOpen) {
+              setDropdownOpen(false);
+            }
+            setMobileMenuOpen(!mobileMenuOpen);
+          }}
+        >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -234,25 +241,44 @@ export default function Navbar({
         <div className="navbar-mobile-drawer">
           {menuItems.map(({ label, hasDropdown }) => (
             <div key={label} className="mobile-menu-item-group">
-              <button
-                className={`mobile-link-btn ${isLinkActive(label) ? 'active' : ''}`}
-                onClick={() => hasDropdown ? setDropdownOpen(!dropdownOpen) : handleNavigation(label)}
-              >
-                {label}
-                {hasDropdown && <ChevronDown size={14} className="mobile-chevron-inline" />}
-              </button>
-              {hasDropdown && dropdownOpen && (
-                <div className="mobile-submenu">
-                  {categories.map((cat) => (
+              {hasDropdown ? (
+                <>
+                  <div className={`mobile-dropdown-toggle-wrapper ${isLinkActive(label) ? 'active' : ''}`}>
                     <button
-                      className="mobile-submenu-item"
-                      key={cat.id}
-                      onClick={() => handleProductCategoryClick(cat.id)}
+                      className="mobile-link-btn-main"
+                      onClick={() => handleProductCategoryClick("all")}
                     >
-                      {cat.label}
+                      {label}
                     </button>
-                  ))}
-                </div>
+                    <button
+                      className="mobile-link-btn-chevron"
+                      onClick={() => setDropdownOpen(!dropdownOpen)}
+                      aria-label="Toggle Submenu"
+                    >
+                      <ChevronDown size={16} className={`mobile-chevron-inline ${dropdownOpen ? 'rotated' : ''}`} />
+                    </button>
+                  </div>
+                  {dropdownOpen && (
+                    <div className="mobile-submenu">
+                      {categories.map((cat) => (
+                        <button
+                          className="mobile-submenu-item"
+                          key={cat.id}
+                          onClick={() => handleProductCategoryClick(cat.id)}
+                        >
+                          {cat.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <button
+                  className={`mobile-link-btn ${isLinkActive(label) ? 'active' : ''}`}
+                  onClick={() => handleNavigation(label)}
+                >
+                  {label}
+                </button>
               )}
             </div>
           ))}

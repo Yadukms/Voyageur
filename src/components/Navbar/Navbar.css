@@ -322,6 +322,8 @@
     padding: 1rem;
     gap: 0.5rem;
     animation: fadeIn 0.2s ease-out;
+    max-height: calc(100vh - 95px);
+    overflow-y: auto;
   }
 
   .mobile-link-btn {
@@ -343,6 +345,70 @@
     font-weight: 700;
   }
 
+  .mobile-dropdown-toggle-wrapper {
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+  }
+
+  .mobile-dropdown-toggle-wrapper.active {
+    background-color: var(--primary-accent-light);
+  }
+
+  .mobile-link-btn-main {
+    flex: 1;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-medium);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-link-btn-main:hover {
+    color: var(--primary-accent);
+  }
+
+  .mobile-dropdown-toggle-wrapper.active .mobile-link-btn-main {
+    color: var(--primary-accent);
+    font-weight: 700;
+  }
+
+  .mobile-link-btn-chevron {
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-medium);
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+  }
+
+  .mobile-link-btn-chevron:hover {
+    color: var(--primary-accent);
+  }
+
+  .mobile-dropdown-toggle-wrapper.active .mobile-link-btn-chevron {
+    color: var(--primary-accent);
+  }
+
+  .mobile-chevron-inline {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-chevron-inline.rotated {
+    transform: rotate(180deg);
+  }
+
   .mobile-submenu {
     padding-left: 1.5rem;
     display: flex;
@@ -355,6 +421,18 @@
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
     color: var(--text-light);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 6px;
+    transition: var(--transition-smooth);
+    display: block;
+  }
+
+  .mobile-submenu-item:hover {
+    color: var(--primary-accent);
+    background-color: rgba(201, 168, 76, 0.08);
   }
 
   .mobile-drawer-footer {

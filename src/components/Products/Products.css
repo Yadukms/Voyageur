@@ -1,6 +1,7 @@
 .products-section {
   padding: 2.5rem 1rem;
   background-color: var(--bg-gold-light);
+  scroll-margin-top: 95px;
 }
 
 .products-inner-container {

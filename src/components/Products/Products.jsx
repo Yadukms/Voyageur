@@ -48,7 +48,7 @@ const FULL_PRODUCT_TAGS = {
   spices: ["Green Cardamom", "Black Pepper", "White Pepper", "Cinnamon", "Cassia", "Cloves", "Turmeric", "Red Chilli", "Cumin Seeds", "Coriander Seeds", "Fenugreek", "Mustard Seeds", "Star Anise", "Nutmeg", "Mace", "Ginger", "Fennel Seeds", "Bay Leaf"],
   coir: ["Coco Peat Blocks", "Coco Peat Discs", "Coir Mat (Plain)", "Coir Mat (Tufted)", "Coir Rope", "Coir Fibre (Brown)", "Coir Fibre (White)", "Geo-Textile Mesh", "Coir Grow Bags", "Coir Logs", "Coir Twine", "Brushes & Brooms"],
   coconut: ["Virgin Coconut Oil", "Refined Coconut Oil", "Desiccated Coconut", "Coconut Milk Powder", "Coconut Shell Charcoal", "Activated Carbon", "Coconut Shell Powder", "Coconut Water"],
-  rice: ["Basmati Rice", "Non-Basmati Rice"]
+  others: ["Basmati Rice", "Non-Basmati Rice"]
 };
 
 const CATEGORIES = [
@@ -56,7 +56,7 @@ const CATEGORIES = [
   { id: "spices", label: "Spices", accent: "#c9a84c", bg: "#2d4a1e", tagline: "Premium Indian Spices", icon: "🌶" },
   { id: "coir", label: "Coir Products", accent: "#5aab6e", bg: "#1a4a2e", tagline: "Natural Coir Products", icon: "🌿" },
   { id: "coconut", label: "Coconut", accent: "#b58a30", bg: "#3a2e10", tagline: "Coconut Products", icon: "🥥" },
-  { id: "rice", label: "Rice", accent: "#9b7cb8", bg: "#2a1a40", tagline: "Other Agro Products", icon: "✦" }
+  { id: "others", label: "Agro Products", accent: "#9b7cb8", bg: "#2a1a40", tagline: "Other Agro Products", icon: "✦" }
 ];
 
 export default function Products({ activeCategory, setActiveCategory }) {
@@ -70,7 +70,7 @@ export default function Products({ activeCategory, setActiveCategory }) {
       case "spices": return SPICES_PRODUCTS;
       case "coir": return COIR_PRODUCTS;
       case "coconut": return COCONUT_PRODUCTS;
-      case "rice": return RICE_PRODUCTS;
+      case "others": return RICE_PRODUCTS;
       default: return ALL_PRODUCTS_DEFAULT;
     }
   }

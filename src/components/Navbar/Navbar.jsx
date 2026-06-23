@@ -6,7 +6,7 @@ import './Navbar.css';
 export function Logo({ size = 68 }) {
   return (
     <img
-      src="/mainlogo.jpeg"
+      src="/mainlogo.png"
       alt="Voyageur Overseas Logo"
       style={{
         width: size,

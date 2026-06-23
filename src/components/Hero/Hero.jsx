@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import './Hero.css';
 
@@ -6,9 +6,9 @@ import './Hero.css';
 // IMAGE ASSET CONSTANTS (Easy to update)
 // ==========================================
 const HERO_IMAGES = {
-  globalLogistics: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+  globalLogistics: "/heroimg.jpg",
   spicesHeritage: "https://6a2a7ecd88751837051fd5d5.imgix.net/spices.png",
-  coirBackwaters: "https://images.unsplash.com/photo-1661174607003-d9d36388c916?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxLZXJhbGElMjBiYWNrd2F0ZXJzJTIwcGFsbSUyMHRyZWVzJTIwdHJvcGljYWx8ZW58MXx8fHwxNzgxMTQ2MzIxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+  coirBackwaters: "/coir1.jpg"
 };
 
 // Compass/Navigation decorative SVG element in corners of the slides
@@ -84,7 +84,7 @@ export default function Hero({
       sub: "Sourced from the finest farms of India,\ndelivered to the world.",
       btnLabel: "EXPLORE SPICES",
       bgUrl: HERO_IMAGES.spicesHeritage,
-      overlay: "linear-gradient(to right, rgba(10,20,5,0.85) 40%, rgba(5,10,2.5,0.22) 100%)",
+      overlay: "linear-gradient(to right, rgba(245, 234, 216, 0.28) 24%, rgba(233, 213, 182, 0.22) 56%, rgba(210, 186, 151, 0.10) 100%)",
       accent: "#c9a84c",
       scrollTarget: "products-section"
     },
@@ -159,7 +159,7 @@ export default function Hero({
   return (
     <section
       className="hero-section select-none"
-      onClick={handleHeroClick}
+      onMouseEnter={handleHeroClick}
     >
       {/* Background Images */}
       {slides.map((slide, idx) => (
@@ -251,10 +251,10 @@ export default function Hero({
             <div className="hero-tagline-line" style={{ background: activeSlide.accent }} />
           </div>
 
-          <h1 className="hero-title-main">
+          <h1 className={`hero-title-main hero-title-cinzel`} style={{ color: activeSlide.id === 'spices' ? '#1f3f24' : 'var(--text-white)' }}>
             {activeSlide.heading1}
           </h1>
-          <h1 className="hero-title-accent" style={{ color: activeSlide.accent }}>
+          <h1 className={`hero-title-accent hero-title-cinzel`} style={{ color: activeSlide.accent }}>
             {activeSlide.heading2}
           </h1>
 

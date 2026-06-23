@@ -3,6 +3,7 @@
   width: 100%;
   background-color: var(--bg-gold-light);
   overflow: hidden;
+  scroll-margin-top: 95px;
 }
 
 .decor-line-wrapper {
@@ -28,16 +29,21 @@
 .side-art {
   width: 220px;
   height: 160px;
-  opacity: 0.9;
+  opacity: 0.75;
   pointer-events: none;
+  mix-blend-mode: multiply;
 }
 
 .left-art {
   overflow: hidden;
+  mask-image: linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
 }
 
 .right-art {
   overflow: hidden;
+  mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
 }
 
 .side-art-img {

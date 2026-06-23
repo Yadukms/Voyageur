@@ -1,6 +1,7 @@
 .contact-section {
   padding: 3.5rem 1rem;
   background-color: var(--bg-white);
+  scroll-margin-top: 95px;
 }
 
 .contact-container {

@@ -118,7 +118,7 @@ export default function Products({ activeCategory, setActiveCategory }) {
                   boxShadow: isActive ? '0 4px 16px rgba(0,0,0,0.18)' : '0 1px 4px rgba(0,0,0,0.06)'
                 }}
               >
-                <span>{cat.icon}</span>
+                <span style={{ color: cat.id === 'spices' ? '#ff4444' : 'inherit' }}>{cat.icon}</span>
                 {cat.label}
                 {isActive && (
                   <span className="active-dot" style={{ background: cat.accent }} />

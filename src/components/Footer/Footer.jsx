@@ -1,9 +1,8 @@
-import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { Logo } from '../Navbar/Navbar';
 import './Footer.css';
 
-export default function Footer({ setActivePage, setActiveCategory, scrollTo, setActiveNav }) {
+export default function Footer({ setActivePage, scrollTo, setActiveNav }) {
   const whatsappLink = "https://wa.me/919895999505?text=Hello%20Voyageur%20Overseas%2C%20I%20am%20interested%20in%20your%20products.";
   const linkedinLink = "https://www.linkedin.com/company/voyageur-overseas";
   const instagramLink = "https://www.instagram.com/voyageuroverseas";
@@ -45,7 +44,7 @@ export default function Footer({ setActivePage, setActiveCategory, scrollTo, set
         <div className="footer-brand-column">
           <div className="footer-logo-row" onClick={() => { setActivePage("home"); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
             <div className="footer-logo-wrapper">
-              <Logo size={42} />
+              <Logo size={70} />
             </div>
             <div className="footer-logo-text">
               <div className="footer-title">VOYAGEUR</div>
@@ -90,13 +89,23 @@ export default function Footer({ setActivePage, setActiveCategory, scrollTo, set
         <div className="footer-contact-column">
           <h4 className="footer-column-heading">CONTACT</h4>
           <div className="footer-contact-links">
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="footer-contact-item group">
+            <a href="https://wa.me/919895999505?text=Hello%20Voyageur%20Overseas%2C%20I%20am%20interested%20in%20your%20products." target="_blank" rel="noopener noreferrer" className="footer-contact-item group">
               <div className="contact-icon-box">
                 <Phone size={14} />
               </div>
               <div className="contact-info-text">
-                <div className="contact-info-label">Phone / WhatsApp</div>
-                <div className="contact-info-val">+91 9895 999 505, +971 50 246 1236</div>
+                <div className="contact-info-label">India Office (Phone / WA)</div>
+                <div className="contact-info-val">+91 9895 999 505</div>
+              </div>
+            </a>
+
+            <a href="https://wa.me/971502461236?text=Hello%20Voyageur%20Overseas%2C%20I%20am%20interested%20in%20your%20products." target="_blank" rel="noopener noreferrer" className="footer-contact-item group">
+              <div className="contact-icon-box">
+                <Phone size={14} />
+              </div>
+              <div className="contact-info-text">
+                <div className="contact-info-label">UAE Office (Phone / WA)</div>
+                <div className="contact-info-val">+971 50 246 1236</div>
               </div>
             </a>
             
@@ -118,7 +127,7 @@ export default function Footer({ setActivePage, setActiveCategory, scrollTo, set
                 <div className="contact-info-label">Address</div>
                 <div className="contact-info-val">
                   158/A, Koyilandy<br />
-                  Kozhikode, Kerala 673306
+                  Kozhikode, Kerala 673306,India
                 </div>
               </div>
             </div>

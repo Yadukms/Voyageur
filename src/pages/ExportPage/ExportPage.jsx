@@ -185,26 +185,33 @@ export default function ExportPage({ setActivePage }) {
   // Validate Step 2 (Products & Quantities)
   function validateStep2() {
     const selectedCount = Object.keys(formData.selectedItems).length;
+    let hasError = false;
+    const errors = {};
+
     if (selectedCount === 0) {
       setErrorMessage("Please select at least one product before proceeding.");
-      return false;
+      hasError = true;
+    } else {
+      Object.entries(formData.selectedItems).forEach(([item, qty]) => {
+        if (!qty || parseFloat(qty) <= 0) {
+          errors[`qty_${item}`] = `Please enter quantity for ${item}`;
+        }
+      });
+      if (Object.keys(errors).some(k => k.startsWith('qty_'))) {
+        setErrorMessage(`Please enter the required weight (in ${weightUnit.toUpperCase()}) for all selected products.`);
+        hasError = true;
+      } else {
+        setErrorMessage("");
+      }
     }
 
-    const errors = {};
-    Object.entries(formData.selectedItems).forEach(([item, qty]) => {
-      if (!qty || parseFloat(qty) <= 0) {
-        errors[`qty_${item}`] = `Please enter quantity for ${item}`;
-      }
-    });
+    if (!formData.packaging) {
+      errors.packaging = "Packaging preference is required";
+      hasError = true;
+    }
 
     setFormErrors(errors);
-    if (Object.keys(errors).length > 0) {
-      setErrorMessage(`Please enter the required weight (in ${weightUnit.toUpperCase()}) for all selected products.`);
-      return false;
-    }
-
-    setErrorMessage("");
-    return true;
+    return !hasError;
   }
 
 
@@ -488,21 +495,27 @@ export default function ExportPage({ setActivePage }) {
 
                   {/* Packaging Preference selections */}
                   <div className="packaging-selection-area">
-                    <label className="wizard-label">PACKAGING PREFERENCE</label>
+                    <label className="wizard-label">PACKAGING PREFERENCE *</label>
                     <div className="packaging-options-grid">
                       {PACKAGING_PREFERENCES.map((pref) => (
                         <div
                           key={pref}
-                          className={`packaging-option-card ${formData.packaging === pref ? 'active' : ''}`}
+                          className={`packaging-option-card ${formData.packaging === pref ? 'active' : ''} ${formErrors.packaging ? 'error' : ''}`}
                           onClick={() => handleFieldChange("packaging", pref)}
                         >
-                          <div className={`radio-circle ${formData.packaging === pref ? 'checked' : ''}`}>
+                          <div className={`radio-circle ${formData.packaging === pref ? 'checked' : ''} ${formErrors.packaging ? 'error' : ''}`}>
                             {formData.packaging === pref && <div className="inner-dot" />}
                           </div>
                           <span className="radio-label">{pref}</span>
                         </div>
                       ))}
                     </div>
+                    {formErrors.packaging && (
+                      <div className="wizard-field-error">
+                        <AlertCircle size={14} className="error-icon" />
+                        <span>{formErrors.packaging}</span>
+                      </div>
+                    )}
                   </div>
 
                   <div className="step-nav-buttons">

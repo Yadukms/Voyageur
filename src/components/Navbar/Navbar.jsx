@@ -2,33 +2,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown, Menu, X, Phone, Mail } from 'lucide-react';
 import './Navbar.css';
 
-// SVG brand logo for Voyageur Overseas
+// Brand logo for Voyageur Overseas
 export function Logo({ size = 68 }) {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 100 100"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-label="Voyageur logo"
-    >
-      <rect width="100" height="100" fill="#f7efe7" />
-      <circle cx="53" cy="42" r="34" fill="none" stroke="#b8953d" strokeWidth="2" />
-      <ellipse cx="53" cy="42" rx="18" ry="34" fill="none" stroke="#b8953d" strokeWidth="1.1" />
-      <line x1="53" y1="8" x2="53" y2="76" stroke="#b8953d" strokeWidth="1.1" />
-      <path d="M22 42 H84" fill="none" stroke="#b8953d" strokeWidth="1.1" />
-      <path d="M30 25 C43 31 64 31 76 25" fill="none" stroke="#b8953d" strokeWidth="1" />
-      <path d="M28 58 C42 52 65 52 80 58" fill="none" stroke="#b8953d" strokeWidth="1" />
-      <path d="M53 5 L55 13 L53 11 L51 13 Z" fill="#b8953d" />
-      <path d="M20 59 C31 67 53 72 78 59 L71 73 C55 82 35 78 18 68 Z" fill="#07392f" />
-      <path d="M31 51 L71 45 L78 58 C62 65 43 65 26 58 Z" fill="#07392f" />
-      <path d="M30 56 C41 61 57 61 72 54" fill="none" stroke="#f7efe7" strokeWidth="3" strokeLinecap="round" />
-      <path d="M35 48 C45 52 57 52 69 47" fill="none" stroke="#f7efe7" strokeWidth="2.4" strokeLinecap="round" />
-      <path d="M39 35 H62 Q65 35 66 38 L69 47 H36 L38 38 Q38.5 35 39 35 Z" fill="#07392f" />
-      <rect x="45" y="27" width="16" height="8" rx="1.5" fill="#07392f" />
-      <rect x="47" y="39" width="12" height="5" rx="1" fill="#f7efe7" />
-      <rect x="53" y="19" width="4" height="8" rx="1" fill="#07392f" />
-    </svg>
+    <img
+      src="/mainlogo.jpeg"
+      alt="Voyageur Overseas Logo"
+      style={{
+        width: size,
+        height: size,
+        objectFit: 'contain'
+      }}
+    />
   );
 }
 
@@ -138,7 +123,7 @@ export default function Navbar({
       <div className="navbar-container">
         {/* Brand Logo & Title */}
         <div className="navbar-logo-area" onClick={() => { goHome(); setActiveNav("Home"); }}>
-          <Logo size={62} />
+          <Logo size={90} />
           <div className="navbar-logo-text">
             <div className="navbar-title">VOYAGEUR</div>
             <div className="navbar-subtitle">OVERSEAS</div>

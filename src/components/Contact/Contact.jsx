@@ -192,15 +192,18 @@ export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const whatsappLink =
-    "https://wa.me/919895999505?text=Hello%20Voyageur%20Overseas%2C%20I%20am%20interested%20in%20your%20spices%20and%20coir%20products.";
-
   const contactDetails = [
     {
       icon: Phone,
-      label: "Phone / WhatsApp",
-      value: "+91 9895 999 505, +971 50 246 1236",
-      href: whatsappLink
+      label: "India Office (Phone / WhatsApp)",
+      value: "+91 9895 999 505",
+      href: "https://wa.me/919895999505?text=Hello%20Voyageur%20Overseas%2C%20I%20am%20interested%20in%20your%20spices%20and%20coir%20products."
+    },
+    {
+      icon: Phone,
+      label: "UAE Office (Phone / WhatsApp)",
+      value: "+971 50 246 1236",
+      href: "https://wa.me/971502461236?text=Hello%20Voyageur%20Overseas%2C%20I%20am%20interested%20in%20your%20spices%20and%20coir%20products."
     },
     {
       icon: Mail,

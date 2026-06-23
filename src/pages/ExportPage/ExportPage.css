@@ -585,6 +585,11 @@
   background-color: var(--primary-accent-light);
 }
 
+.packaging-option-card.error {
+  border-color: #e53e3e;
+  background-color: #fff5f5;
+}
+
 .radio-circle {
   width: 16px;
   height: 16px;
@@ -598,6 +603,10 @@
 
 .radio-circle.checked {
   border-color: var(--primary-accent);
+}
+
+.radio-circle.error {
+  border-color: #e53e3e;
 }
 
 .inner-dot {

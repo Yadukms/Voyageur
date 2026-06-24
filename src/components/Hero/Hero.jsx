@@ -58,8 +58,30 @@ export default function Hero({
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const autoPlayRef = useRef(null);
+  const touchStartX = useRef(0);
+  
   const handleHeroClick = () => {
     changeSlide((currentSlide + 1) % slides.length);
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const swipeDistance = touchStartX.current - touchEndX;
+    const swipeThreshold = 50; // Minimum swipe distance
+
+    if (Math.abs(swipeDistance) > swipeThreshold) {
+      if (swipeDistance > 0) {
+        // Swiped left - go to next slide
+        handleNext();
+      } else {
+        // Swiped right - go to previous slide
+        handlePrev();
+      }
+    }
   };
 
   const slides = [
@@ -147,7 +169,7 @@ export default function Hero({
   useEffect(() => {
     autoPlayRef.current = setInterval(() => {
       changeSlide((currentSlide + 1) % slides.length);
-    }, 5000);
+    }, 8000);
 
     return () => {
       if (autoPlayRef.current) clearInterval(autoPlayRef.current);
@@ -160,6 +182,8 @@ export default function Hero({
     <section
       className="hero-section select-none"
       onMouseEnter={handleHeroClick}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Background Images */}
       {slides.map((slide, idx) => (

@@ -50,21 +50,23 @@
 .navbar-title {
   color: var(--primary-dark);
   font-weight: 900;
-  font-size: 1.45rem;
+  font-size: 1.8rem;
   letter-spacing: 0.12em;
   line-height: 1.1;
 }
 
 .navbar-subtitle {
-  color: var(--primary-accent);
+  /* color: var(--primary-accent); */
+  color: rgb(153, 111, 5);
   font-weight: 800;
-  font-size: 1.25rem;
+  font-size: 1.8rem;
   letter-spacing: 0.22em;
   line-height: 1.1;
 }
 
 .navbar-tagline {
-  color: var(--primary-accent);
+  /* color: var(--primary-accent); */
+  color: rgb(95, 69, 4);
   font-family: var(--font-serif);
   font-size: 0.72rem;
   font-style: italic;

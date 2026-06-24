@@ -32,19 +32,8 @@ const RICE_PRODUCTS = [
   { id: "o1", name: "RICE", origin: "Punjab & Kerala", desc: "Premium basmati & non-basmati rice varieties for global export.", img: "https://6a2a7ecd88751837051fd5d5.imgix.net/Gemini_Generated_Image_dzhsdydzhsdydzhs.png" }
 ];
 
-// Combine first items for the default "All" tab
-const ALL_PRODUCTS_DEFAULT = [
-  SPICES_PRODUCTS[0],
-  SPICES_PRODUCTS[1],
-  COIR_PRODUCTS[0],
-  COIR_PRODUCTS[1],
-  COCONUT_PRODUCTS[0],
-  RICE_PRODUCTS[0]
-];
-
 // Product tags/lists under each category block
 const FULL_PRODUCT_TAGS = {
-  all: [],
   spices: ["Green Cardamom", "Black Pepper", "White Pepper", "Cinnamon", "Cassia", "Cloves", "Turmeric", "Red Chilli", "Cumin Seeds", "Coriander Seeds", "Fenugreek", "Mustard Seeds", "Star Anise", "Nutmeg", "Mace", "Ginger", "Fennel Seeds", "Bay Leaf"],
   coir: ["Coco Peat Blocks", "Coco Peat Discs", "Coir Mat (Plain)", "Coir Mat (Tufted)", "Coir Rope", "Coir Fibre (Brown)", "Coir Fibre (White)", "Geo-Textile Mesh", "Coir Grow Bags", "Coir Logs", "Coir Twine", "Brushes & Brooms"],
   coconut: ["Virgin Coconut Oil", "Refined Coconut Oil", "Desiccated Coconut", "Coconut Milk Powder", "Coconut Shell Charcoal", "Activated Carbon", "Coconut Shell Powder", "Coconut Water"],
@@ -52,7 +41,6 @@ const FULL_PRODUCT_TAGS = {
 };
 
 const CATEGORIES = [
-  { id: "all", label: "All Products", accent: "#c9a84c", bg: "#2d4a1e", tagline: "Our Premium Products", icon: "✦" },
   { id: "spices", label: "Spices", accent: "#c9a84c", bg: "#2d4a1e", tagline: "Premium Indian Spices", icon: "🌶" },
   { id: "coir", label: "Coir Products", accent: "#5aab6e", bg: "#1a4a2e", tagline: "Natural Coir Products", icon: "🌿" },
   { id: "coconut", label: "Coconut", accent: "#b58a30", bg: "#3a2e10", tagline: "Coconut Products", icon: "🥥" },
@@ -71,7 +59,7 @@ export default function Products({ activeCategory, setActiveCategory }) {
       case "coir": return COIR_PRODUCTS;
       case "coconut": return COCONUT_PRODUCTS;
       case "others": return RICE_PRODUCTS;
-      default: return ALL_PRODUCTS_DEFAULT;
+      default: return SPICES_PRODUCTS;
     }
   }
 
@@ -88,7 +76,7 @@ export default function Products({ activeCategory, setActiveCategory }) {
         <div className="products-title-block">
           <div className="title-ornament-row">
             <div className="ornament-line" style={{ background: currentCategoryObj.accent }} />
-            <span className="ornament-tag" style={{ color: currentCategoryObj.accent }}>
+            <span className="ornament-tag" style={{ color:'darkgoldenrod' }}>
               Our Products
             </span>
             <div className="ornament-line" style={{ background: currentCategoryObj.accent }} />

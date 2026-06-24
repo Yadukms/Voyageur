@@ -107,7 +107,7 @@ export default function Hero({
       btnLabel: "EXPLORE SPICES",
       bgUrl: HERO_IMAGES.spicesHeritage,
       overlay: "linear-gradient(to right, rgba(245, 234, 216, 0.28) 24%, rgba(233, 213, 182, 0.22) 56%, rgba(210, 186, 151, 0.10) 100%)",
-      accent: "#c9a84c",
+      accent: "#99781b",
       scrollTarget: "products-section"
     },
     {

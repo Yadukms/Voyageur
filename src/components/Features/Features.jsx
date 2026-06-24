@@ -6,7 +6,7 @@ export default function Features() {
   const items = [
     { icon: Leaf, title: "100% NATURAL", desc: "Pure and natural spices" },
     { icon: Sprout, title: "FARM FRESH", desc: "Sourced directly from Indian farms" },
-    { icon: Globe, title: "GLOBAL EXPORT", desc: "Trusted by clients in 25+ countries" },
+    { icon: Globe, title: "GLOBAL EXPORT", desc: "Delivering quality beyond borders" },
     { icon: ShieldCheck, title: "QUALITY ASSURED", desc: "International quality standards" },
     { icon: Truck, title: "ON TIME DELIVERY", desc: "Reliable & timely shipment" }
   ];

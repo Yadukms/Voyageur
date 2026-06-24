@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, ClipboardList, Package, Globe, CheckCircle, FileText, Calendar, AlertCircle, ChevronDown } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ClipboardList, Package, Globe, CheckCircle, FileText, Calendar, AlertCircle, ChevronDown } from 'lucide-react';
 import './ExportPage.css';
 
 // Product catalog matching specifications
@@ -346,7 +346,7 @@ export default function ExportPage({ setActivePage }) {
                       className="wizard-next-btn"
                     >
                       NEXT: SELECT PRODUCTS
-                      <ArrowLeft size={16} className="rotate-180" />
+                      <ArrowRight size={16} />
                     </button>
                   </div>
                 </div>
@@ -528,7 +528,7 @@ export default function ExportPage({ setActivePage }) {
                       className="wizard-next-btn"
                     >
                       NEXT: DESTINATION
-                      <ArrowLeft size={16} className="rotate-180" />
+                      <ArrowRight size={16} />
                     </button>
                   </div>
                 </div>

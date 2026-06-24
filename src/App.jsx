@@ -19,7 +19,7 @@ import './App.css';
 
 export default function App() {
   const [activePage, setActivePage] = useState("home");
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("spices");
   const [activeNav, setActiveNav] = useState("Home");
 
   // Smooth scroll handler

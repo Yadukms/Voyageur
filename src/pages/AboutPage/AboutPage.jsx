@@ -15,7 +15,7 @@ export default function AboutPage({ setActivePage }) {
   const missionItems = [
     { icon: Leaf, title: "100% Natural", desc: "No artificial additives or preservatives in any of our products." },
     { icon: Award, title: "Certified Quality", desc: "ISO, FSSAI, APEDA & Spices Board certified on every batch." },
-    { icon: Globe, title: "Global Reach", desc: "Exporting to 25+ countries with on-time, doorstep delivery." }
+    { icon: Globe, title: "Global Reach", desc: "Empowering global trade through efficient exporting and importing, ensuring on-time doorstep delivery." }
   ];
 
   return (
@@ -118,15 +118,13 @@ At Voyageur's Overseas, we believe that successful global trade is built on trus
               </div>
               <h2 className="vision-heading-text">Our Vision</h2>
               <p className="vision-desc-text">
-                To become a globally recognised export brand that stands as a symbol of India's 
-                agricultural excellence — one that every international buyer trusts for purity, 
-                consistency, and ethical sourcing.
+               To become a globally recognized export brand that symbolizes India's agricultural excellence, trusted by international buyers for purity, consistency, and ethical sourcing. We envision a future where every kitchen around the world carries a touch of India's richness, and every eco-conscious consumer chooses Kerala's natural coir products. Through efficient global export and import solutions and reliable doorstep delivery, we aim to connect markets seamlessly, serve 50+ countries by 2030, and empower over all Indian farming families through sustainable and fair-trade partnerships.
               </p>
-              <p className="vision-desc-text-sub">
+              {/* <p className="vision-desc-text-sub">
                 We envision a future where every kitchen in the world carries a pinch of India's richness, 
                 and every eco-conscious buyer chooses Kerala's natural coir. By 2030, we aim to serve 
                 50+ countries and empower 1,000+ Indian farming families through fair-trade partnerships.
-              </p>
+              </p> */}
               <div className="vision-quote-card">
                 "From Origin to Destination — We carry India's finest to the world's finest."
               </div>

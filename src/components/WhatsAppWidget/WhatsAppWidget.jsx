@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import './WhatsAppWidget.css';
 
 export default function WhatsAppWidget({ scrollTo, activePage, setActivePage, setActiveNav }) {
@@ -38,7 +38,7 @@ export default function WhatsAppWidget({ scrollTo, activePage, setActivePage, se
         title="Contact Us"
         className="widget-floating-btn contact"
       >
-        <Phone size={24} className="widget-icon" />
+        <Mail size={24} className="widget-icon" />
       </button>
     </div>
   );

@@ -158,9 +158,9 @@ export default function Navbar({
                     <div className="dropdown-divider"></div>
                     <button
                       className="dropdown-view-all"
-                      onClick={() => handleProductCategoryClick("all")}
+                      onClick={() => handleProductCategoryClick("spices")}
                     >
-                      View All Products →
+                      View Products →
                     </button>
                   </div>
                 )}
@@ -231,7 +231,7 @@ export default function Navbar({
                   <div className={`mobile-dropdown-toggle-wrapper ${isLinkActive(label) ? 'active' : ''}`}>
                     <button
                       className="mobile-link-btn-main"
-                      onClick={() => handleProductCategoryClick("all")}
+                      onClick={() => handleProductCategoryClick("spices")}
                     >
                       {label}
                     </button>

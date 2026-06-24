@@ -24,7 +24,7 @@ export default function Footer({ setActivePage, scrollTo, setActiveNav }) {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
-    
+
     setActivePage("home");
     if (link.action === "home") {
       setActiveNav("Home");
@@ -52,7 +52,7 @@ export default function Footer({ setActivePage, scrollTo, setActiveNav }) {
             </div>
           </div>
           <p className="footer-brand-desc">
-            Premium Indian spices & natural coir products exported worldwide. 
+            Premium Indian spices & natural coir products exported worldwide.
             Quality, purity, and authenticity on every shipment.
           </p>
           <div className="footer-social-row">
@@ -108,7 +108,7 @@ export default function Footer({ setActivePage, scrollTo, setActiveNav }) {
                 <div className="contact-info-val">+971 50 246 1236</div>
               </div>
             </a>
-            
+
             <a href="mailto:info@voyageuroverseas.com" className="footer-contact-item group">
               <div className="contact-icon-box">
                 <Mail size={14} />
@@ -118,7 +118,7 @@ export default function Footer({ setActivePage, scrollTo, setActiveNav }) {
                 <div className="contact-info-val">info@voyageuroverseas.com</div>
               </div>
             </a>
-            
+
             <div className="footer-contact-item">
               <div className="contact-icon-box">
                 <MapPin size={14} />

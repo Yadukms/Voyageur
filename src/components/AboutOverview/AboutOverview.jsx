@@ -26,15 +26,18 @@ export default function AboutOverview({ setActivePage, setActiveNav }) {
           <h2 className="about-overview-heading">Voyageur Overseas</h2>
           
           <p className="about-overview-desc">
-            Voyageur Overseas is a trusted name in the export of premium quality spices from India. 
+            {/* Voyageur Overseas is a trusted name in the export of premium quality spices from India. 
             With a strong commitment to quality, purity, and sustainability, we bring the rich 
-            flavors of India to global markets.
+            flavors of India to global markets. */}
+            Voyageur’s Overseas is a trusted export-import company specializing in premium-quality spices, agro products, and essential commodities for global markets. With a strong focus on quality, authenticity, and customer satisfaction, we connect reliable producers with international buyers while ensuring products meet the highest global standards.
+
+Driven by integrity, reliability, and excellence, we emphasize sustainable sourcing, strict quality assurance, and efficient supply chain management to deliver consistent value. At Voyageur’s Overseas, we are committed to building long-term partnerships through trust, transparency, and responsible business practices, while continuously striving for growth and innovation in global trade.
           </p>
-          <p className="about-overview-desc-sub">
+          {/* <p className="about-overview-desc-sub">
             Our spices are carefully handpicked, hygienically processed, and packed to retain 
             their natural aroma, taste, and freshness. Every batch undergoes rigorous testing 
             to meet international quality standards before shipment.
-          </p>
+          </p> */}
 
 
 

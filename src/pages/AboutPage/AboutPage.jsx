@@ -53,16 +53,16 @@ export default function AboutPage({ setActivePage }) {
             </div>
             <h2 className="section-heading">About Voyageur Overseas</h2>
             <p className="section-p">
-              Voyageur Overseas is a trusted export company based in Koyilandy, Kozhikode, Kerala, India. 
-              We specialise in exporting premium-quality Indian spices, natural coir products, and 
-              coconut-based goods to clients across 25+ countries.
+           Voyageur's Overseas is a dynamic export-import company dedicated to delivering premium-quality spices, agro products, and essential commodities to customers across global markets. With a strong commitment to quality, authenticity, and customer satisfaction, we bridge the gap between trusted producers and international buyers by providing products that meet the highest global standards.
+Driven by integrity, reliability, and excellence, we carefully source, process, and supply products that reflect the rich agricultural heritage and natural abundance of their origins. Our focus on quality assurance, sustainable practices, and efficient supply chain management enables us to consistently deliver value and build long-term relationships with customers and business partners worldwide.
+At Voyageur's Overseas, we believe that successful global trade is built on trust, transparency, and mutual growth. Through our dedication to innovation, responsible business practices, and continuous improvement, we strive to become a preferred global partner in the export of spices, agro products, and other premium-quality goods.
             </p>
-            <p className="section-p-secondary">
+            {/* <p className="section-p-secondary">
               Founded with a passion for showcasing India's agricultural richness, Voyageur Overseas 
               bridges Indian farmers with global markets. Every product we ship is carefully 
               handpicked, hygienically processed, and packed to retain its natural aroma, taste, 
               and freshness.
-            </p>
+            </p> */}
 
 
           </div>
@@ -86,9 +86,10 @@ export default function AboutPage({ setActivePage }) {
               </div>
               <h2 className="mission-heading-text">Our Mission</h2>
               <p className="mission-desc-text">
-                To be the most trusted bridge between India's finest agricultural producers and global importers 
+                {/* To be the most trusted bridge between India's finest agricultural producers and global importers 
                 — delivering premium-quality spices, coir products, and natural coconut goods with complete 
-                transparency, reliability, and care.
+                transparency, reliability, and care. */}
+                At Voyageur's Overseas, our mission is to connect global markets through the export and import of premium-quality spices and essential products that enrich everyday lives. We are committed to building a globally respected brand founded on excellence, integrity, and reliability. By maintaining the highest standards of quality assurance, customer satisfaction, and ethical business practices, we deliver products that consistently exceed expectations. Through sustainable sourcing, responsible operations, and a passion for excellence, we strive to create long-term value for our customers, business partners, and communities around the world.
               </p>
 
               <div className="mission-sub-cards">

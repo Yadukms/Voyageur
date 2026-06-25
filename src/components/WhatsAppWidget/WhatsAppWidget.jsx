@@ -2,10 +2,15 @@ import React from 'react';
 import { Mail } from 'lucide-react';
 import './WhatsAppWidget.css';
 
+function dispatchCloseMobileMenu() {
+  document.dispatchEvent(new Event('voyageur-close-mobile-menu'));
+}
+
 export default function WhatsAppWidget({ scrollTo, activePage, setActivePage, setActiveNav }) {
   const whatsappLink = "https://wa.me/919895999505?text=Hello%20Voyageur%20Overseas%2C%20I%20am%20interested%20in%20your%20products.";
 
   function handleContactButtonClick() {
+    dispatchCloseMobileMenu();
     if (activePage !== "home") {
       setActivePage("home");
       setActiveNav("Contact Us");

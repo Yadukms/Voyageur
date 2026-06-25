@@ -58,8 +58,17 @@ export default function Navbar({
         setDropdownOpen(false);
       }
     }
+
+    function handleCloseMobileMenu() {
+      setMobileMenuOpen(false);
+    }
+
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("voyageur-close-mobile-menu", handleCloseMobileMenu);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("voyageur-close-mobile-menu", handleCloseMobileMenu);
+    };
   }, [mobileMenuOpen]);
 
   function handleProductCategoryClick(categoryId) {

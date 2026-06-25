@@ -55,7 +55,7 @@ export default function AboutPage({ setActivePage }) {
             <p className="section-p">
            Voyageur Overseas is a dynamic export-import company dedicated to delivering premium-quality spices, agro products, and essential commodities to customers across global markets. With a strong commitment to quality, authenticity, and customer satisfaction, we bridge the gap between trusted producers and international buyers by providing products that meet the highest global standards.
 Driven by integrity, reliability, and excellence, we carefully source, process, and supply products that reflect the rich agricultural heritage and natural abundance of their origins. Our focus on quality assurance, sustainable practices, and efficient supply chain management enables us to consistently deliver value and build long-term relationships with customers and business partners worldwide.
-At Voyageur's Overseas, we believe that successful global trade is built on trust, transparency, and mutual growth. Through our dedication to innovation, responsible business practices, and continuous improvement, we strive to become a preferred global partner in the export of spices, agro products, and other premium-quality goods.
+At Voyageur Overseas, we believe that successful global trade is built on trust, transparency, and mutual growth. Through our dedication to innovation, responsible business practices, and continuous improvement, we strive to become a preferred global partner in the export of spices, agro products, and other premium-quality goods.
             </p>
             {/* <p className="section-p-secondary">
               Founded with a passion for showcasing India's agricultural richness, Voyageur Overseas 

@@ -488,3 +488,9 @@
     text-align: center;
   }
 }
+
+@media (min-width: 1025px) {
+  .navbar-logo-area {
+    transform: translateY(10px);
+  }
+}

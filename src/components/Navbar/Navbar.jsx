@@ -201,13 +201,17 @@ export default function Navbar({
             </a>
           </div>
           <div className="nav-divider"></div>
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="navbar-phone-info">
-            <div className="phone-line">
-              <Phone size={11} className="phone-icon" />
-              +91 9895 999 505
-            </div>
-            <div className="email-line">info@voyageuroverseas.com</div>
-          </a>
+          <div className="navbar-phone-info">
+            <a href="tel:+919895999505" className="contact-link phone-link">
+              <div className="phone-line">
+                <Phone size={11} className="phone-icon" />
+                +91 9895 999 505
+              </div>
+            </a>
+            <a href="mailto:info@voyageuroverseas.com" className="contact-link email-link">
+              <div className="email-line">info@voyageuroverseas.com</div>
+            </a>
+          </div>
           <button
             onClick={() => { setActivePage("export"); setActiveNav(""); }}
             className="navbar-cta-btn"

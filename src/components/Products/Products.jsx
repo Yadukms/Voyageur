@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import './Products.css';
+function optimizeImg(url) {
+  if (url.includes("imgix.net")) {
+    return `${url}?w=300&q=70&auto=format,compress`;
+  }
+  return url;
+}
 
 // ==========================================
 // PRODUCTS DATA SYSTEM (Easy to update)
@@ -136,7 +142,13 @@ export default function Products({ activeCategory, setActiveCategory }) {
                       : "0 3px 14px rgba(0,0,0,0.10)"
                   }}
                 >
-                  <img src={prod.img} alt={prod.name} className="product-card-img" />
+                  {/* <img src={prod.img} alt={prod.name} className="product-card-img" /> */}
+                  <img
+  src={optimizeImg(prod.img)}
+  alt={prod.name}
+  className="product-card-img"
+  loading="lazy"
+/>
                   <div className="product-card-hover-overlay">
                     <span className="hover-details-text">DETAILS</span>
                   </div>

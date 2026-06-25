@@ -239,9 +239,10 @@ export default function Contact() {
     try {
       setLoading(true);
 
-      const response = await fetch(
-        "http://localhost:5107/api/contact",
-        {
+      // const response = await fetch(
+      //   "http://localhost:5107/api/contact",
+     const response = await fetch("/api/contact", {
+        
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -29,6 +29,7 @@ export default function Navbar({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const mobileDrawerRef = useRef(null);
 
   const menuItems = [
     { label: "Home" },
@@ -53,8 +54,14 @@ export default function Navbar({
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (mobileMenuOpen) return;
+      // Close dropdown if clicked outside dropdownRef
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+
+      // If mobile menu is open and click is outside the mobile drawer, close it
+      if (mobileMenuOpen && mobileDrawerRef.current && !mobileDrawerRef.current.contains(event.target)) {
+        setMobileMenuOpen(false);
         setDropdownOpen(false);
       }
     }
@@ -236,7 +243,7 @@ export default function Navbar({
 
       {/* Mobile navigation drawer */}
       {mobileMenuOpen && (
-        <div className="navbar-mobile-drawer">
+        <div className="navbar-mobile-drawer" ref={mobileDrawerRef}>
           {menuItems.map(({ label, hasDropdown }) => (
             <div key={label} className="mobile-menu-item-group">
               {hasDropdown ? (
